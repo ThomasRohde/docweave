@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from docweave.backends.base import BackendAdapter
+from docweave.backends.docx_annotations import annotation_key, read_annotations
 from docweave.models import Block, HeadingInfo, InspectResult, NormalizedDocument, SourceSpan
 
 
@@ -89,6 +90,9 @@ class WordBackend(BackendAdapter):
         document = Document(str(path))
         body = document.element.body
 
+        # Read annotations from custom XML part
+        stored_annotations = read_annotations(document)
+
         blocks: list[Block] = []
         heading_stack: list[str] = []
         seq = 0
@@ -125,6 +129,12 @@ class WordBackend(BackendAdapter):
                 if not text and kind != "heading":
                     continue
 
+                # Look up annotations for headings
+                annotations: dict[str, Any] = {}
+                if kind == "heading":
+                    key = annotation_key(text, level)
+                    annotations = stored_annotations.get(key, {})
+
                 seq += 1
                 blocks.append(Block(
                     block_id=f"blk_{seq:03d}",
@@ -138,6 +148,7 @@ class WordBackend(BackendAdapter):
                         end_line=para_index,
                     ),
                     stable_hash=_hash(text),
+                    annotations=annotations,
                 ))
 
             elif tag == "tbl":

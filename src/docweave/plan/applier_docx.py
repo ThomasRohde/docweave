@@ -201,6 +201,44 @@ def apply_plan_docx(
                 if not style_id.startswith("Heading"):
                     _set_style_id(target_elem, "Heading1")
 
+        elif op_type == "set_context":
+            from docweave.backends.docx_annotations import (
+                annotation_key,
+                read_annotations,
+                write_annotations,
+            )
+
+            new_context = op.get("context", {})
+            # Read existing annotations, merge, and write back
+            all_annotations = read_annotations(document)
+
+            # Determine heading text and level from the target element
+            tag = target_elem.tag.split("}")[-1] if "}" in target_elem.tag else target_elem.tag
+            if tag == "p":
+                from docx.oxml.ns import qn as _qn
+
+                heading_text = ""
+                for t_elem in target_elem.iter(_qn("w:t")):
+                    if t_elem.text:
+                        heading_text += t_elem.text
+                heading_text = heading_text.strip()
+
+                sid = _get_style_id(target_elem)
+                try:
+                    h_level = int(sid.replace("Heading", "").strip())
+                except (ValueError, IndexError):
+                    h_level = 1
+
+                key = annotation_key(heading_text, h_level)
+                existing = all_annotations.get(key, {})
+                existing.update(new_context)
+                all_annotations[key] = existing
+                write_annotations(document, all_annotations)
+            else:
+                warnings.append(
+                    f"set_context on non-paragraph element at index {start}"
+                )
+
         elif op_type == "normalize_whitespace":
             tag = target_elem.tag.split("}")[-1] if "}" in target_elem.tag else target_elem.tag
             if tag == "p":
