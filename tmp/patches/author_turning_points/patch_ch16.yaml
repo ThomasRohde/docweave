@@ -1,0 +1,79 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch16_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 16: The Descent"
+      section: "Part Four: Underground"
+    content:
+      kind: markdown
+      value: |
+        The construction site was dark when Bosch got there. He parked the Caprice on a fire road above Laurel Canyon and killed the lights. Below him, the skeleton of Victor Kramer's latest project sprawled across the hillside like the bones of something prehistoric. Steel beams and concrete forms. A crane silhouetted against the orange sky. No work crews. No security.
+
+        It was ten o'clock on a Tuesday night and the site was dead.
+
+        Bosch sat in the car and smoked and watched. He'd spent the afternoon in the Hall of Records, pulling permits for the Kramer Development Corporation's Laurel Canyon project. What he'd found didn't add up. The project was eighteen months behind schedule. The building permits had been extended three times. The grading plan showed excavation depths that went far beyond what the foundation required — thirty feet down in places where twelve would do.
+
+        He'd also pulled the old DWP tunnel maps for the Hollywood Hills drainage system. The lines ran everywhere beneath these canyons, a network of concrete and brick pipes laid down in the twenties and thirties to channel rainwater to the river. Most of them were abandoned now, sealed off and forgotten. But the maps showed a main trunk line running directly beneath Kramer's site.
+
+        Bosch flicked the cigarette out the window and watched the ember die in the dirt. He thought about what Billy Tyree had told him in that sweltering trailer in Lancaster. About the gold. About the pact. About the men who were dying because someone wanted it all for himself.
+
+        He thought about Richard Meadows, drowned in fresh water and dumped in the concrete river like trash. He thought about the crossed-out names on that list. Men who'd crawled through the tunnels of Cu Chi and survived, only to be killed years later on the streets of the city they'd come home to.
+
+        Kramer wasn't building condos. He was building a cover story. The construction gave him a reason to dig, a reason to have heavy equipment and excavation crews on site. And somewhere down there, beneath the rebar and the poured concrete and the Hollywood Hills dirt, there was a tunnel that led to whatever he'd brought back from Vietnam.
+
+        Bosch got out of the car and opened the trunk. He took out a flashlight, checked the batteries. He unholstered his Smith & Wesson, checked the cylinder, reholstered it. He put on a dark windbreaker over his shirt and clipped his badge to his belt, though he doubted anyone would be checking credentials where he was going.
+
+        He locked the car and started down the hillside.
+
+        The construction site was surrounded by chain-link fencing topped with razor wire, but Bosch found a section near the back where the fence had been peeled away from a support post. The gap was just wide enough to squeeze through. He noticed the edges of the cut links were bright — fresh cuts. Someone had been coming and going through here. Recently.
+
+        Inside the perimeter, the site was a maze of half-built structures and material piles. Stacks of rebar. Pallets of concrete blocks. A portable office trailer with its windows dark. Bosch moved through it all without the flashlight, letting his eyes adjust to the ambient glow of the city that leaked over the ridge.
+
+        He found the excavation pit at the center of the site. It was deeper than the plans called for — he could see that even in the dark. A ramp of packed earth led down to the bottom, wide enough for a front-end loader. At the base of the pit, he could see the dark mouth of an opening cut into the hillside. Not a natural cave. A tunnel entrance, framed with timber supports like a mine shaft.
+
+        Bosch stood at the edge of the pit and looked down into it. The darkness was absolute. He could feel it pulling at him, the way it always did. The way it had in the villages outside Cu Chi when the sergeants would point at a hole in the ground and say, "Your turn, Bosch."
+
+        He checked his watch. Ten-forty. Nobody was coming to help him. Frankie Sheehan was gone. His lieutenant had all but told him to drop the case. Internal Affairs was building a file. He was alone with this, the way he'd been alone with most things that mattered.
+
+        He started down the ramp.
+
+        The air changed as he descended. Cooler. Damper. The smell of fresh earth and something else underneath it — old concrete and stagnant water. The smell of underground Los Angeles, the city beneath the city that most people never thought about.
+
+        At the bottom of the pit, he paused at the tunnel entrance. The timbers were new, raw pine that hadn't weathered yet. He could see tool marks on the dirt walls where someone had widened the original drainage tunnel into something a man could walk through upright. Power cables ran along the ceiling, stapled to the timber supports, but the lights they fed were off.
+
+        Bosch turned on his flashlight and pointed it into the darkness. The beam reached maybe thirty feet before the tunnel curved and swallowed it. He could hear water somewhere — a thin trickle, the ghost of whatever stream this tunnel had been built to carry.
+
+        He drew his weapon and stepped inside.
+
+        The tunnel ran straight for about fifty yards, then began to branch. Bosch could see where the old DWP drainage system intersected with the new excavation. The original tunnel was brick-lined, about four feet in diameter — you'd have to crouch to move through it. But Kramer's crew had opened it up at the intersection, creating a junction room with enough headspace to stand.
+
+        There were signs of activity everywhere. Boot prints in the mud. Cigarette butts. A stack of empty sandbags. A coil of rope. Against one wall, a portable generator sat silent, connected to a string of caged work lights that disappeared down the main branch.
+
+        Bosch studied the boot prints. Multiple sets, different sizes. Some were fresh — the tread patterns crisp in the wet earth. Others were older, half-dissolved by the seeping moisture. This wasn't a one-man operation. Kramer had a crew down here.
+
+        He chose the main branch — the one with the work lights — and followed it deeper into the hill. The tunnel narrowed again, and he had to duck to avoid hitting the timber supports. The air grew heavier. The flashlight beam danced off wet brick walls that had been laid down sixty years ago by men who probably never imagined anyone would walk these passages again.
+
+        After another hundred yards, the tunnel opened into a larger chamber. This one was different. The floor had been leveled and covered with plywood sheets. Against the far wall, Bosch could see stacked wooden crates — military surplus, olive drab, with stenciled markings he couldn't read from this distance.
+
+        He crossed the chamber and knelt beside the nearest crate. The stenciling was in English and Vietnamese. U.S. Army markings, but the Vietnamese text underneath told the real story. These crates had been captured materiel — Viet Cong supplies seized by American forces and never officially logged.
+
+        He pried up the lid of the nearest crate with his fingers. Inside, packed in straw, were gold bars. Small ones, maybe four inches long. Bosch picked one up. It was heavier than it looked, the way gold always was. The surface was rough, crudely cast, nothing like the polished ingots you saw in bank vaults. This was jungle gold, smelted in field conditions from whatever the Viet Cong had looted or taxed from the villages they controlled.
+
+        Bosch set the bar back in the crate and stood up. He counted the crates. Fourteen of them, stacked two high along the wall. If they were all full, he was looking at a fortune. Millions, maybe. Enough to kill for. Enough to build a real estate empire on, using the construction business to launder what you couldn't explain.
+
+        He thought about Meadows. About the pact the tunnel rats had made in those dark passages half a world away. They'd found this gold — or gold like it — and they'd agreed to come back for it. But they'd come home broken, most of them. Addicts and drifters and men who couldn't hold a job or a conversation. They'd never organized the retrieval. So Kramer had done it himself, and then he'd started cleaning up the loose ends.
+
+        Bosch pulled out his notebook and started documenting what he'd found. He sketched the chamber, noted the number of crates, copied the stenciled markings. He was building a case, the way you always built a case — one detail at a time, one piece of evidence laid against the next until the picture became undeniable.
+
+        He was so focused on the notebook that he almost didn't hear it. A sound from deeper in the tunnel. Not water. Not settling earth. Footsteps.
+
+        Bosch killed the flashlight and pressed himself against the chamber wall. In the sudden darkness, his hand found his weapon and he held it out in front of him, pointed at the tunnel mouth where the sound was coming from.
+
+        He waited. The footsteps grew louder. Someone was coming.
+
+        And Bosch was underground, alone, with no backup and no way out except through whoever was walking toward him in the dark.

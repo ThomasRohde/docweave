@@ -1,0 +1,116 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch05_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "fingerprint match comes back"
+    content:
+      kind: markdown
+      value: |
+        The Army records arrived by fax that afternoon — six pages of service history, discharge papers, and a personnel photograph. Bosch stood at the fax machine in the squad room and read each page as it emerged, warm and curling, from the machine's mouth.
+
+        Richard Allen Meadows. Born April 12, 1943, in Bakersfield, California. Enlisted United States Army, June 1965. Basic training at Fort Benning, Georgia. Advanced infantry training. Airborne school. Then Vietnam.
+
+        Meadows had arrived in-country in January 1966 and been assigned to the 25th Infantry Division, operating in the Cu Chi district of Tay Ninh Province, northwest of Saigon. His MOS — military occupational specialty — was listed as 11B, infantry, but a supplemental notation read: *Qualified tunnel warfare specialist. Assigned tunnel denial operations, Cu Chi sector, March 1966 - November 1967.*
+
+        Bosch stopped reading. He put the page down on the edge of the fax machine and placed both hands flat on either side of it, as if steadying himself against a swell. The room around him receded — the ringing phones, the clatter of typewriters, the detectives' voices — all of it fading to a low hum beneath the sudden roar of memory.
+
+        Cu Chi. The tunnels.
+
+        He had been there. Not with Meadows — different units, different times — but in the same red earth, the same darkness, the same labyrinth of passages that the Viet Cong had carved beneath the surface of the land like a civilization in negative. Two hundred miles of tunnels running under the Cu Chi district — command centers, hospitals, weapons factories, sleeping chambers, all of it underground, all of it invisible from above.
+
+        And men had gone down into those tunnels. Volunteers. They were called tunnel rats — small men, mostly, who could fit through passages eighteen inches wide, armed with a .45 and a flashlight and nothing else, crawling into the dark to find the enemy in his own home. Bosch had been one of them. He had gone down into the earth with a pistol and a bayonet and the certain knowledge that the tunnels could kill you in a hundred ways — booby traps, scorpions, cave-ins, the enemy waiting around a blind corner with a knife — and he had come back up. Every time, he had come back up. Some men didn't.
+
+        And now Richard Meadows, another man who had gone into those tunnels, was lying in the coroner's refrigerator with burnt skin and water in his lungs.
+
+        Bosch picked up the page and kept reading.
+
+        Meadows had done two tours. His record showed a Bronze Star, a Purple Heart, and a Combat Infantry Badge. The Purple Heart was for shrapnel wounds — left hip, the surgical scar Corazon had noted. He'd been evacuated to Japan, healed, and gone back. He'd extended for a second tour voluntarily, which either meant he was brave or he was the kind of man who didn't know how to stop fighting. Maybe both.
+
+        Discharged in 1972 with an honorable. After that, the Army had no more to say about Richard Meadows.
+
+        Bosch carried the fax pages to his desk and started working the phones. He called the VA regional office in West Los Angeles and asked for Meadows' benefits file. He called Bakersfield PD and asked them to locate next of kin. He called the one criminal record on file — the 1978 possession charge — and requested the arrest report from LAPD records.
+
+        While he waited, he studied the personnel photograph. It showed a young man — twenty-two, twenty-three — in dress greens, looking directly at the camera with an expression that gave away nothing. He had a lean face, a strong jaw, and eyes that were flat and watchful. It was the face of a soldier, and Bosch recognized something in it — not the man himself, but the quality of the gaze. The thousand-yard stare, they called it. The look of a man who had seen things that stayed behind his eyes and would never fully leave.
+
+        Sheehan came back from a lunch break and read the service record over Bosch's shoulder.
+
+        "Tunnel rat," Sheehan said. "Like you."
+
+        "Different unit. Different time."
+
+        "But the same job."
+
+        Bosch didn't answer. Sheehan knew about his service — it was in his personnel file and he'd mentioned it once, early in their partnership, and then never again. Sheehan had been in the Army too, but stateside, a clerk at Fort Hood. He'd never been to Vietnam and he had the good sense not to pretend he understood what it had been like.
+
+        "So your victim is a vet who did the same kind of work you did, underground," Sheehan said. "And somebody tortured him and drowned him. You're thinking there's a connection to the service?"
+
+        "I'm not thinking anything yet. I'm gathering."
+
+        "Harry."
+
+        Bosch looked up. Sheehan's face had the expression he wore when he was about to say something his partner didn't want to hear.
+
+        "If this connects to Vietnam, if this goes into that world — the vets, the VA, the government — it gets complicated fast. You know that."
+
+        "Every case is complicated."
+
+        "Not like this. I'm just saying, let's run it straight. Background the victim, find his associates, check his movements, work the evidence. Don't go down the tunnel on this one until the evidence tells you to."
+
+        Bosch understood what Sheehan was really saying. *Don't let your own history pull you into places you can't come back from.* It was good advice. It was the kind of advice Bosch had been ignoring his whole career.
+
+        "I hear you," he said.
+
+        The phone rang. It was a detective in Bakersfield.
+
+        "Your man Meadows has a sister up here. Name's Dorothy Meadows Benton. I did a next-of-kin notification. She's shaken up but she wants to talk to the lead detective."
+
+        Bosch took down the number. "What did she say about her brother?"
+
+        "Said she hadn't heard from him in about three months. Said he'd been doing better lately — got a job, was staying clean. Some kind of construction work down in LA."
+
+        "She say who he was working for?"
+
+        "She didn't know the company name. Said he mentioned he was doing good work, earning good money. She sounded surprised by that. Like she'd been waiting a long time for good news about her brother and had mostly stopped expecting it."
+
+        Bosch thanked the Bakersfield detective and hung up. Construction work. A steady job. A man who'd been drifting for fifteen years after the war, cycling through whatever darkness veterans carried home with them, and he'd finally found his footing. And then someone had tortured him for days and drowned him in a swimming pool and put expensive shoes on his feet.
+
+        He picked up the phone and dialed Dorothy Benton's number in Bakersfield. It rang four times.
+
+        "Hello?" A woman's voice, thick and unsteady.
+
+        "Mrs. Benton, this is Detective Harry Bosch, LAPD Hollywood Division. I'm the lead investigator on your brother's case. I'm sorry for your loss."
+
+        A long silence. Then: "Thank you. Do you — do you know who did this to him?"
+
+        "Not yet, ma'am. That's what I'm working on. I need to ask you some questions about Richard. Can you tell me about the construction job he had? Who was he working for?"
+
+        "He said it was a good company. A developer, building something up in the hills. Hollywood Hills, I think. He was excited about it. Richard was never excited about work, not since he came home from over there. But this was different. He said the pay was good and the man in charge treated the workers fair."
+
+        "Do you remember the name of the developer?"
+
+        "He mentioned a name. Kramer, I think. Or Kraemer. Something like that."
+
+        Bosch wrote it down. Kramer.
+
+        "Mrs. Benton, in the last few weeks, did Richard seem worried about anything? Afraid?"
+
+        Another silence, longer this time. "He called me about a month ago. He sounded different. Not excited anymore. He said he'd found something out about the man he was working for and he didn't know what to do about it. I asked him what he meant but he wouldn't tell me. He said it was better if I didn't know. He said — "
+
+        Her voice broke. Bosch waited.
+
+        "He said some things follow you out of the dark. That's what he said. Some things follow you out of the dark and you can't shake them."
+
+        Bosch closed his eyes. He knew exactly what Meadows meant.
+
+        "Thank you, Mrs. Benton. I'll be in touch."
+
+        He hung up and sat very still at his desk. Around him, the squad room moved and hummed with the routine of the day shift, but Bosch was somewhere else — in a dark passage eighteen inches wide, a thousand miles and fifteen years away, where the air smelled of earth and fear and the only way out was forward.
+
+        He opened the murder book and wrote a single name at the top of a fresh page: *Kramer.*
+
+        Then he started pulling the thread.

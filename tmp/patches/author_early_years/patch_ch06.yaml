@@ -1,0 +1,144 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch06_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Bosch investigates Meadows' background"
+    content:
+      kind: markdown
+      value: |
+        The halfway house was on Sepulveda Boulevard in Van Nuys, a two-story stucco building painted the color of weak coffee. A hand-lettered sign above the door read NEW HORIZONS TRANSITIONAL LIVING. Bosch had seen places like this before — had driven past hundreds of them over the years without stopping, the same way most of the city drove past them. They were the waypoints of the broken, the places where men who had lost everything tried to rebuild something, or at least tried to stop the collapse long enough to catch their breath.
+
+        He pushed through the front door into a common room that smelled of instant coffee and cigarette smoke and the industrial cleaner that institutions used when they couldn't afford to replace the carpet. A man behind a desk near the door looked up. He was thin, with a long face and a beard that needed trimming.
+
+        "Help you?"
+
+        Bosch showed his badge. "I'm looking for information about a resident. Richard Meadows."
+
+        The man's expression changed. Not surprise — something more like resignation.
+
+        "Rich. Yeah. He hasn't been around in almost two weeks. I was about to give his bed away."
+
+        "He's dead."
+
+        The man set down the pen he was holding. "How?"
+
+        "That's what I'm investigating. Can you tell me about him? How long was he here?"
+
+        "About eight months. He came in through the VA referral program. He was a vet — Vietnam."
+
+        "I know."
+
+        The man's name was Gerald Haskins, and he ran New Horizons with a staff of two and a budget that came from county funding and private donations. He'd been doing it for six years. He told Bosch that Meadows had arrived in February, coming off a rough stretch — he'd been living on the streets for most of the previous year, sleeping in the concrete channel of the LA River when the weather allowed, in shelters when it didn't. He'd had a drinking problem and a heroin problem, though by the time he came to New Horizons he said he was clean.
+
+        "Was he?"
+
+        "As far as I could tell. He wasn't using here. He followed the rules, kept his space clean, didn't cause trouble. That already puts him in the top ten percent."
+
+        "His sister says he had a construction job."
+
+        "Yeah, he started that in June. Something about a building project up in Hollywood Hills. He was real proud of it. First steady work he'd had in years. He'd leave early in the morning, come back in the evening, go straight to bed. He was different from when he came in. More focused. Like he had something to hold onto."
+
+        "What changed?"
+
+        Haskins looked at Bosch carefully. "About a month ago, he started coming back later. And quieter. He'd always been quiet — the Vietnam guys usually are, the ones who saw the heavy stuff — but this was different. He was scared. He stopped eating in the common room. Kept to himself. One night I came by his room and he was sitting on the bed with all his stuff packed into a duffel bag, like he was ready to run."
+
+        "Did you ask him about it?"
+
+        "I asked. He said he was fine. Then about two weeks ago he just didn't come back. I figured he'd gone back to the streets. It happens. They stabilize for a while and then something knocks them loose and they're gone."
+
+        Bosch asked to see Meadows' room. Haskins led him upstairs to a small room with a single bed, a dresser, and a window that looked out on the parking lot. The bed was stripped. The dresser drawers were empty. There was nothing personal left in the room except a faint smell that Bosch couldn't place at first — and then he could. Earth. Damp earth, like the smell of a garden after rain. Or the smell of a tunnel.
+
+        "Did he leave anything behind? Papers, a bag, anything?"
+
+        "He cleared out everything. But he did have a storage unit. He mentioned it once — said he had some things from the service that he kept in storage. I think it was one of those places on Victory Boulevard."
+
+        Bosch wrote down the information. He thanked Haskins and went back out into the sun. The Van Nuys heat was different from the Hollywood heat — flatter, more oppressive, with the shimmer of the Valley floor distorting the air above the asphalt.
+
+        He sat in his car and thought about Richard Meadows. A tunnel rat who came home and couldn't find his way. Fifteen years of drifting, drinking, sleeping in the riverbed. Then something changed — a construction job, steady work, a reason to get up in the morning. And then something else changed, something that scared him bad enough to make him pack his bag and prepare to run.
+
+        *What did he find?* Bosch wrote. *What did he learn about the man he worked for?*
+
+        He drove to the Hollywood Hills.
+
+        Kramer Development occupied the top three floors of a glass tower on Sunset Boulevard in Century City. Bosch had run the name that morning and found a company that built luxury residential properties across the west side of Los Angeles — condominiums in Brentwood, townhouses in Pacific Palisades, a planned development of hillside estates above the Cahuenga Pass. The company was privately held, wholly owned by its founder, Victor Kramer.
+
+        Bosch parked in the visitors' lot and went inside. The lobby was marble and glass, cool and quiet after the heat outside. A security guard behind a desk directed him to the eleventh floor. In the elevator, he studied his reflection in the polished brass doors — a man in a rumpled sport coat with dark circles under his eyes who looked like he belonged in the lobby of this building the way a coyote belonged in a shopping mall.
+
+        The receptionist on eleven was a young woman with precise hair and a smile that dimmed slightly when Bosch showed his badge.
+
+        "I'd like to speak with Victor Kramer."
+
+        "Do you have an appointment?"
+
+        "No. I have a badge. Tell Mr. Kramer it's about Richard Meadows."
+
+        She made a call. Bosch waited. Five minutes later, a man came through a set of interior doors and extended his hand.
+
+        "Detective. I'm Victor Kramer. Come in."
+
+        Kramer was in his mid-fifties, tall, with silver hair combed straight back and a tan that spoke of weekends on a boat or a golf course. He wore a blue suit that fit like it had been sewn onto him and a watch that caught the light with every movement of his wrist. His handshake was firm, his smile practiced, his eyes watchful.
+
+        He led Bosch to a corner office with floor-to-ceiling windows that looked out over the west side all the way to the ocean. On clear days, you could probably see Catalina. Today, the Santa Anas had turned the air hazy and brown, and the view stopped at the coastline.
+
+        "Please, sit down. Can I get you anything? Coffee?"
+
+        "No, thank you. Mr. Kramer, I'm investigating the death of Richard Meadows. I understand he worked for your company."
+
+        Kramer's face arranged itself into an expression of concern. "Richard. Yes. He was working on our Cahuenga project — the hillside development above the pass. He was on the construction crew. What happened to him?"
+
+        "He was murdered."
+
+        The concern deepened, but the eyes stayed steady. "That's terrible. When?"
+
+        "His body was found Tuesday night. We believe he died Sunday or Monday. When did you last see him?"
+
+        "I wouldn't have seen him personally. I have a foreman who manages the crew — a man named Tolliver. You'd want to talk to him about the day-to-day."
+
+        "I will. But I'd like to know what Mr. Meadows was doing on your project. What kind of work?"
+
+        "General construction labor, I believe. The Cahuenga project involves significant earthwork — grading, foundation preparation, some underground utility work. It's a steep site. We're building into the hillside."
+
+        "Underground work?"
+
+        "To some extent, yes. There are existing drainage tunnels on the property — old city infrastructure from the twenties. We've been mapping and stabilizing them as part of the foundation work."
+
+        Bosch kept his expression neutral, but something had shifted inside him. Tunnels.
+
+        "Mr. Kramer, did you serve in the military?"
+
+        The question surprised him. The smile flickered. "I was in the Army, yes. Why do you ask?"
+
+        "Vietnam?"
+
+        "I was stationed in Vietnam for a period, yes. Military intelligence. A desk job, mostly. I processed interrogation reports in Saigon. Not very exciting, I'm afraid."
+
+        "Did you know Meadows in Vietnam?"
+
+        "No. I didn't know him at all until he showed up on Tolliver's crew. It's a coincidence — two veterans ending up on the same project. But Vietnam produced a lot of veterans. They're everywhere."
+
+        He said it smoothly, with the ease of a man accustomed to answering questions. But Bosch had been watching interviews for three years, and he had learned to watch the hands. Kramer's hands, which had been loose and open when the conversation began, were now resting on the desk with the fingers interlaced. Locked together.
+
+        "Did Meadows ever come to you with concerns? About the project, about the tunnels, about anything?"
+
+        "Not to me. As I said, Tolliver would be the person to ask. I don't interact with the crew directly."
+
+        Bosch asked a few more routine questions — the project timeline, the number of workers, the company's contact information — and then stood up to leave. Kramer walked him to the elevator. At the doors, Bosch turned back.
+
+        "One more thing, Mr. Kramer. Do you have a swimming pool?"
+
+        The question hung in the air between them. Kramer's expression didn't change, but something behind his eyes did — a contraction, a drawing back, like a curtain dropping over a window.
+
+        "I have a house in Bel Air. It has a pool. Why?"
+
+        "Just covering all the bases. Thank you for your time."
+
+        The elevator doors opened. Bosch stepped in and turned around. Kramer was standing in the hallway, his hands at his sides, his face composed, watching him. The doors closed.
+
+        Bosch rode down alone. He did not know yet what Victor Kramer was hiding, but he knew with the certainty of a man who had spent his career reading faces and hands and the spaces between words that Kramer was hiding something. The tunnels. The military intelligence story. The swimming pool question and the flicker behind the eyes.
+
+        He had a thread, and he was going to pull it until whatever was on the other end came loose.

@@ -841,8 +841,10 @@ def apply_cmd(
         return
 
     # Capture before state
+    init_backends()
+    before_backend = detect_backend(file)
     try:
-        before_text = file.read_text("utf-8")
+        before_text = before_backend.extract_text(file)
     except (PermissionError, UnicodeDecodeError) as exc:
         elapsed = int((time.monotonic() - t0) * 1000)
         is_perm = isinstance(exc, PermissionError)
@@ -857,12 +859,15 @@ def apply_cmd(
         emit(envelope)
         raise typer.Exit(code=exit_code)
 
-    init_backends()
-    before_backend = detect_backend(file)
     before_doc = before_backend.load_view(file)
 
     try:
-        apply_result = apply_plan(file, exec_plan, backup=backup_opt)
+        if exec_plan.backend == "word-docx":
+            from docweave.plan.applier_docx import apply_plan_docx
+
+            apply_result = apply_plan_docx(file, exec_plan, backup=backup_opt)
+        else:
+            apply_result = apply_plan(file, exec_plan, backup=backup_opt)
     except PermissionError:
         elapsed = int((time.monotonic() - t0) * 1000)
         envelope = error_envelope(
@@ -888,9 +893,9 @@ def apply_cmd(
         raise typer.Exit(code=ExitCode.CONFLICT)
 
     # Capture after state
-    after_text = file.read_text("utf-8")
     init_backends()
     after_backend = detect_backend(file)
+    after_text = after_backend.extract_text(file)
     after_doc = after_backend.load_view(file)
 
     # Compute diffs
@@ -1094,7 +1099,12 @@ def fleet_cmd(
                 ev_dir = Path(evidence_dir) / tag
                 ev_dir.mkdir(parents=True, exist_ok=True)
 
-            apply_result = apply_plan(file_path, exec_plan, backup=backup_opt)
+            if exec_plan.backend == "word-docx":
+                from docweave.plan.applier_docx import apply_plan_docx
+
+                apply_result = apply_plan_docx(file_path, exec_plan, backup=backup_opt)
+            else:
+                apply_result = apply_plan(file_path, exec_plan, backup=backup_opt)
 
             return {
                 "patch": str(p_path),
@@ -1196,11 +1206,11 @@ def diff_cmd(
             emit(envelope)
             raise typer.Exit(code=ExitCode.IO)
 
-    _backend_b, before_doc = _load_document("diff", before)
-    _backend_a, after_doc = _load_document("diff", after)
+    backend_b, before_doc = _load_document("diff", before)
+    backend_a, after_doc = _load_document("diff", after)
 
-    before_text = before.read_text("utf-8")
-    after_text = after.read_text("utf-8")
+    before_text = backend_b.extract_text(before)
+    after_text = backend_a.extract_text(after)
 
     raw_hunks = raw_diff(before_text, after_text)
     sem_report = semantic_diff(before_doc, after_doc)

@@ -1,0 +1,98 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch04_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Bosch attends the autopsy at the coroner"
+    content:
+      kind: markdown
+      value: |
+        The Los Angeles County coroner's office occupied a plain brick building on North Mission Road, a block from the county hospital. The building had the functional anonymity of a government warehouse — flat roof, small windows, no sign visible from the street except a small brass plate near the door. Most people in Los Angeles didn't know where it was, and those who did preferred not to think about it. Bosch had been there enough times that the receptionist waved him through without checking his badge.
+
+        The autopsy suite was in the basement. Bosch took the stairs — he never took the elevator; the elevator in this building smelled like the refrigerated storage rooms it serviced — and pushed through the double doors into a hallway tiled in white that led to the cutting rooms. The smell hit him in the hallway: formaldehyde, disinfectant, and beneath them the sweet, dense odor that no chemical could fully mask. The smell of the body breaking down its own structures, cell by cell, in the slow dissolution that began the moment the heart stopped.
+
+        Dr. Corazon was already at work when Bosch entered the suite. She was a small woman with dark hair pulled back under a surgical cap, her hands quick and precise in their latex gloves. She had been an assistant medical examiner for six years and had a reputation for thoroughness that bordered on obsession — she would spend an extra hour on a body that another pathologist would have signed off in twenty minutes. Bosch liked her for that. She treated the dead with the same attention he did.
+
+        Richard Meadows lay on the stainless-steel table under the overhead lights, his body opened in the standard Y-incision. The portable lights of the crime scene had been replaced by the fluorescents of the morgue, and under their blue-white glare every detail of the dead man's suffering was amplified. The burn marks on his torso were dark craters against pale skin. The ligature marks on his wrists were purple-black trenches.
+
+        "Detective," Corazon said without looking up. "You're on time. That's unusual for Hollywood."
+
+        "What do you have?"
+
+        She stepped back from the table and pulled off one glove to consult her notes on a clipboard hanging from a hook on the wall.
+
+        "Cause of death is asphyxia by drowning. The lungs are fully saturated — both lobes, consistent with submersion rather than aspiration of a small amount. He breathed water until his lungs couldn't hold any more."
+
+        "Fresh water?"
+
+        "Fresh water. And I found traces of chlorine in the bronchial tissue and the stomach. He swallowed a good amount before he died. This is treated water — municipal or pool."
+
+        Bosch wrote it down. "Not the river."
+
+        "Definitely not the river. The LA River, such as it is, would show different chemical markers — agricultural runoff, petroleum traces, urban sediment. This is clean water. Chlorinated. My best guess is a swimming pool."
+
+        "How long was he in the water?"
+
+        "Based on the lung saturation and the condition of the bronchial tissue, I'd estimate the drowning took between four and seven minutes. He was held under. There's bruising on the back of the neck and shoulders consistent with downward pressure — someone pushing him under and holding him there."
+
+        She walked around the table and pointed to the dead man's neck. Beneath the skin, Bosch could see the dark blotching of deep bruises — four points of pressure on one side, a thumb mark on the other. A handprint. Someone had gripped the back of his neck and forced his face into the water.
+
+        "He fought," Corazon said. "There's tissue under his fingernails — his own skin, from clawing at whatever surface he was pressed against. And there's bruising on the forearms consistent with restraint. I think his arms were held behind his back while his head was submerged."
+
+        "Two people."
+
+        "At least two. One to hold the arms, one to hold the head."
+
+        Bosch processed this. Two killers, working together, drowning a man in a swimming pool. Organized. Practiced.
+
+        "Time of death?"
+
+        "Based on lividity, core temperature, and the stage of decomposition — accounting for the Santa Ana conditions, which accelerate everything — I'd estimate he died between thirty-six and forty-eight hours before he was found. That puts it somewhere Sunday night or early Monday morning."
+
+        "And the torture?"
+
+        Corazon moved to the torso. She pointed to the burn marks with the tip of a pen.
+
+        "Eight thermal contact burns, made with a cylindrical metal object — heated, not a cigarette. The diameter is consistent with a soldering iron or a metal rod, about three-eighths of an inch. The burns were inflicted at different times. The oldest" — she pointed to a mark near the right hip — "shows early granulation tissue. I'd say it's four to five days old. The most recent" — she pointed to one on the upper chest — "was made within hours of death, possibly minutes. There's minimal inflammatory response."
+
+        "So he was tortured over four or five days before they killed him."
+
+        "That's my reading. They worked on him in sessions. The burn pattern isn't random — the marks are evenly spaced, almost geometric. Whoever did this was controlled. Patient. They were asking questions."
+
+        Bosch stared at the burns. Eight marks in five days. One or two a day, each one a session, each session a round of questioning. He'd seen this before. Not in Los Angeles, not in any case file. He'd seen it in the tunnels, in the war, in the places underground where the rules were different and the only currency was information and the willingness to inflict pain to get it.
+
+        He shook the memory off.
+
+        "Anything else?"
+
+        "His general health was fair. Signs of long-term alcohol use — early-stage liver damage. An old fracture of the left radius that healed without surgical intervention. And a surgical scar on his left hip — looks like a shrapnel removal, possibly military."
+
+        Military. Vietnam. Bosch filed it alongside the Army service record.
+
+        "There's one more thing," Corazon said. She moved to the head of the table. "The water on the body — the dampness you noted at the scene. It wasn't just on the shirt. There was water in the ear canals, in the nasal passages, and in the hair. The body was fully submerged at some point, then dried — but not completely. The killer moved the body while it was still wet, and the remaining moisture settled into the clothing and hair. By the time you found him, most of it had evaporated, but the shirt retained enough to leave that damp pattern."
+
+        "So he was drowned, pulled out of the water, dressed in those shoes, transported to the river channel, and arranged. All while still wet."
+
+        "That's the sequence. The shoes were put on after death — there's no wear pattern on the soles consistent with walking, and the shoes don't match his foot size. Someone put them on him."
+
+        Bosch stood there for a moment, looking at the dead man. Richard Meadows. Army veteran. Tortured for days, drowned in a swimming pool, dressed in expensive shoes that weren't his, and placed under a freeway overpass as if on display.
+
+        "Doctor, what does this say to you?"
+
+        Corazon met his eyes. She had dark eyes, serious and unguarded, the eyes of someone who spent her days looking at the aftermath of violence and had not yet learned to look away.
+
+        "It says someone wanted something from him very badly. And when they got it — or decided they wouldn't get it — they killed him and made a presentation of it. The shoes, the location, the arrangement. This is theater, Detective. Someone is sending a message."
+
+        "To who?"
+
+        "That's your department."
+
+        Bosch closed his notebook. He thanked her, walked out of the suite, up the stairs, and into the late morning sunlight. The heat was still fierce — the Santa Anas had not broken. He stood on the sidewalk and squinted against the glare and thought about swimming pools and expensive shoes and the kind of men who tortured other men for information over a period of days.
+
+        He thought about Vietnam.
+
+        Then he got in his car and drove back to Hollywood Station to start pulling the thread.

@@ -1,0 +1,65 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch21_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 21: The Grave"
+      section: "Part Five: After"
+    content:
+      kind: markdown
+      value: |
+        On a Saturday morning in January, Bosch drove to the VA cemetery in Westwood for the second time. The carnations he'd left a month earlier were gone — cleared away by the groundskeepers who maintained the rows with military precision, every headstone aligned, every blade of grass trimmed to regulation height. The dead kept better order than the living. They always did.
+
+        He parked on the access road and walked through the gates. The cemetery was quiet. A funeral was in progress on the far side — a small group of mourners clustered around an open grave, an honor guard standing at attention, the folded flag passed from gloved hands to trembling ones. The bugler played taps. The notes drifted across the headstones like something lost looking for a place to land.
+
+        Bosch stood at a distance and listened until the last note faded. Then he walked to Meadows' grave.
+
+        He hadn't brought flowers this time. He'd brought something else — a patch. Embroidered, faded, the stitching frayed at the edges. A rat with a flashlight, descending into a hole. The insignia of the tunnel rats, unofficial and unrecognized by any branch of the military. Bosch had found it in a box at the back of his closet, buried under discharge papers and old photographs and a Purple Heart he never wore. The patch had been given to him by a sergeant named Ortega in a firebase outside Cu Chi in 1970. Ortega had been dead for sixteen years now — cancer, the VA said, though everyone who'd served in those jungles knew what the real cause was.
+
+        Bosch knelt at the headstone and placed the patch at its base, leaning it against the marble. The rat stared up at him with its embroidered eyes, frozen in its eternal descent.
+
+        "I got him," Bosch said to the headstone. "Not all the way. But I got him."
+
+        He didn't know if he was talking to Meadows or to himself. It didn't matter. The words needed to be said out loud, spoken into the January air where they could exist as something more than thoughts.
+
+        He stayed on his knees for a while. The grass was damp from the sprinklers and he could feel the moisture soaking through his pants, but he didn't move. Around him, the headstones stretched in their perfect rows — hundreds of them, thousands, each one marking a life that had been given in service to something larger than itself. Some of the men buried here had died in combat. Some had died in hospitals, years or decades after the wars that broke them. Some had died on the streets, homeless and forgotten, their service records gathering dust in filing cabinets that nobody opened.
+
+        Meadows was one of these. A man who had gone underground for his country and had never fully emerged. The tunnels of Cu Chi had followed him home, had lived inside him the way they lived inside Bosch — a darkness that couldn't be illuminated, a weight that couldn't be set down. Meadows had carried it through VA hospitals and halfway houses and the slow erosion of a life that the war had hollowed out from the inside.
+
+        And then Kramer had found him. Had used him the way the Army had used him — sent him into the dark to retrieve something valuable, something that other men wanted but were unwilling to get themselves. When Meadows became a liability, Kramer had disposed of him with the same cold efficiency that the military had disposed of its tunnel rats — sent them forward, used them up, left them behind.
+
+        Bosch thought about the other names on the list. The crossed-out ones. Jimmy Frechette, found dead in an alley in Bakersfield — heroin overdose, the coroner said, though Frechette had been clean for three years. Robert Scales, killed in a hit-and-run on Pacific Coast Highway — no suspect, no witnesses, case closed. Antonio Perez, drowned in his own bathtub in a rooming house in Long Beach — accidental death, according to the report, though the water in the tub had been ice-cold and Perez had bruises on his shoulders consistent with being held under.
+
+        Three men. Three veterans. Three deaths that looked like accidents or bad luck or the inevitable end of broken lives. Nobody had connected them because nobody had been looking. They were casualties of a war that had ended twelve years ago, and the country had moved on.
+
+        But Bosch hadn't moved on. He sat on the damp grass in the VA cemetery and thought about each of them. He didn't know their faces — he'd only seen their names on Meadows' list and their photographs in the case file. But he knew their stories because their stories were his story. They'd gone into the tunnels young and come out old. They'd carried the dark with them and the dark had won, one way or another.
+
+        Kramer's plea deal meant that these deaths would never be prosecuted. The murder charges had been dropped. The files would be closed. The names would be forgotten.
+
+        Unless someone remembered.
+
+        Bosch reached into his jacket and pulled out a piece of paper. He'd written the names down that morning, copied from the case file in his careful block print. Richard Meadows. Jimmy Frechette. Robert Scales. Antonio Perez. Four names. Four tunnel rats. Four men who deserved better than they got.
+
+        He folded the paper and placed it under the patch at the base of Meadows' headstone. A futile gesture, maybe. The groundskeepers would remove it. The rain would dissolve it. In a week, there would be no trace of it.
+
+        But for now, the names were there. Written down. Acknowledged. That was something.
+
+        Bosch stood up and brushed the grass from his knees. He looked out across the cemetery one more time. The funeral on the far side was over. The mourners were dispersing to their cars. The honor guard was folding up, their rifles cased, their duty done. An old man in a wheelchair sat alone by the freshly filled grave, one hand resting on the mound of turned earth as if he were touching someone's face.
+
+        Bosch watched him for a moment. Then he turned and walked back to his car.
+
+        On the drive home, he took Wilshire to the 405 and then Mulholland east to Woodrow Wilson. The route took him over the Sepulveda Pass, and from the crest, he could see the city spreading out in every direction — the Valley to the north, the Westside to the south, downtown rising in the east like a fist. The city was immense and indifferent and it swallowed people whole. It swallowed their stories and their grievances and their dead. It took everything and gave back only the illusion of consequence.
+
+        But Bosch lived here. This was his city, for better or worse. These were his streets and his dead and his unsolved cases. The city didn't care about justice, but he did. That was the difference. That was always the difference.
+
+        He parked in front of his house and went inside. The house was small and mostly empty — he'd never accumulated much in the way of possessions. A stereo with a collection of jazz records. A bookshelf of crime novels. A kitchen with a coffee maker and not much else. The house suited him. It was a place to sleep and think and listen to music. It didn't ask anything of him and he didn't ask anything of it.
+
+        He put on a record — Art Pepper, straight-ahead jazz, a saxophone sound that was both beautiful and wounded — and sat in the chair by the window and listened. The music filled the empty spaces in the house the way it always did. Not erasing the silence but reshaping it, giving it form and purpose.
+
+        He thought about Meadows one last time. About the tunnel rat patch leaning against the white marble headstone. About the names on the folded paper. About the distance between what happened and what was remembered.
+
+        Then he let it go. Not forget — Bosch never forgot. But he set it down, the way you set down a heavy thing that you'd been carrying too long. He set it down and sat in the quiet of his house and listened to Art Pepper play and waited for whatever came next.

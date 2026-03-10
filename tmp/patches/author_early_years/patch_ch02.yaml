@@ -1,0 +1,64 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch02_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "works the crime scene methodically"
+    content:
+      kind: markdown
+      value: |
+        The crime scene techs arrived twenty minutes after Bosch. Two of them — a photographer named Donovan and a print man named Sakai — came down the concrete slope with their kits and set up portable lights that threw harsh white circles against the gray walls of the channel. Under the lights, the scene took on a theatrical quality, the body at center stage, the support columns framing it like a set.
+
+        Bosch stood back and let them work. This was the part of homicide investigation that most detectives rushed through, impatient to get to the interviews, the backgrounds, the hunt. Bosch had learned early that the scene was everything. The scene was where the killer had been, where the victim had been, where the two of them had shared a moment that ended one life and defined another. If you rushed the scene, you were telling the dead person that their last place on earth didn't matter.
+
+        He walked the perimeter first, moving in a widening spiral outward from the body. The concrete was smooth and featureless — no tire marks, no shoe prints, nothing dropped or discarded. Whoever had brought the body here had been careful, or the Santa Anas had been helpful. Three days of hot wind could scour a surface clean.
+
+        Near the edge of the channel, where the concrete slope met the flat bottom, he found a cluster of cigarette butts — Marlboro Reds, smoked down to the filters. Five of them, grouped together as if someone had stood in one spot for a long time. He flagged them for Donovan.
+
+        "These are fresh," he told the photographer. "Last day or two. Bag them."
+
+        He went back to the body. Under the portable lights, the details sharpened. The ligature marks on the wrists were wire — thin gauge, the kind used in picture framing or electrical work. The abrasion on the fingertips was methodical, not random — each fingertip had been rubbed with something rough, like sandpaper, in a circular pattern. Someone had tried to remove the prints. They'd done a decent job on the left hand, but the right still had partials on the thumb and index finger.
+
+        "Sakai, get what you can off the right hand. Thumb and index. The left is gone."
+
+        The print man knelt beside the body and went to work with his brush and powder. Bosch watched for a moment, then turned his attention to the shoes.
+
+        They were Allen Edmonds wingtips, brown leather with Goodyear welt construction. Bosch knew shoes. When you grew up without money, you noticed expensive things. These were three-hundred-dollar shoes, and they were nearly new — the soles showed minimal wear, the leather was barely creased. But they didn't fit the body. The man's clothes said he was struggling. The shoes said someone else.
+
+        He crouched and looked at the soles. The right shoe had a smear of something dark in the leather's grain — mud, maybe, or clay. He'd have the lab look at it. The shoes were also a half-size too large for the man's feet, which meant they probably weren't his.
+
+        *Someone dressed him in these shoes after he was dead,* Bosch wrote. *Why?*
+
+        The torso told its own story. When the techs unbuttoned the flannel shirt, Bosch counted eight circular burns on the man's chest and abdomen — each about the size of a cigarette but deeper, more deliberate. These were made with something heated, a metal rod or a soldering iron, pressed against the skin with controlled pressure. The burns were at different stages of healing. Some were fresh, the skin still blistered. Others had scabbed over and begun to scar. This man had been tortured over a period of days, not hours.
+
+        "Jesus," Donovan said, lowering his camera.
+
+        Bosch said nothing. He'd seen worse in the tunnels. He'd seen what men could do to other men when the rules dissolved and the darkness was absolute and the only thing that mattered was information. He'd seen it done and he'd seen it done to people he knew and the memory of it lived in a place inside him that he kept locked most of the time but that opened on nights like this, when the evidence demanded it.
+
+        The dampness on the shirt had dried under the lights, but the pattern was still visible — a V-shape radiating down from the collar, heavier on the left side. Consistent with water poured over the face. Consistent with drowning.
+
+        "We'll need to check the lungs," Bosch said to no one in particular. "I think he drowned."
+
+        "Out here?" Donovan asked. "There's not enough water in the channel to drown a cat."
+
+        "Not here. Somewhere else. Then he was brought here."
+
+        He stood up and looked at the body from above, the way you might look at a painting, trying to see the composition. The man was laid out neatly — arms at his sides, legs together, eyes open. He had not been dumped or rolled. He had been arranged. Placed. Displayed.
+
+        *This is a message,* Bosch wrote. *The body is a message. The shoes are part of it. The location is part of it. What is the message?*
+
+        He walked to the edge of the light and looked out into the darkness of the channel. To the east, the concrete ribbon stretched toward the San Fernando Valley, disappearing under the next overpass. To the west, it curved south toward the narrows where it met Griffith Park. Somewhere out there, in the city that hummed and sprawled in every direction, was the place where this man had actually died — a room with a bathtub, maybe, or a swimming pool, somewhere with enough water and enough privacy for someone to hold a man under until his lungs filled.
+
+        The scene told him three things. One: the killer or killers were organized, methodical, and experienced. The body had been moved without leaving evidence, which required planning. Two: the torture was purposeful — someone wanted information from this man, and they had been patient enough to work on him for days. Three: this was not a crime of passion or impulse. This was an execution. The arrangement of the body was deliberate. It was meant to be found and meant to be understood — by someone.
+
+        Bosch closed his notebook and took one last look at the dead man's face.
+
+        "Donovan, I want full documentation. Every angle. And get me a close-up of those shoes."
+
+        He walked back up the concrete slope toward his car, the heat wrapping around him like a hand. Behind him, the lights turned the crime scene into an island of brightness in the dark channel, the dead man at its center, patient and still, waiting for someone to read the message his body carried.
+
+        Bosch intended to be that someone.

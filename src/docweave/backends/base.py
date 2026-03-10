@@ -56,3 +56,7 @@ class BackendAdapter(ABC):
     @abstractmethod
     def diff(self, original: str, modified: str) -> dict[str, Any]:
         """Produce a structured diff between original and modified content."""
+
+    def extract_text(self, path: Path) -> str:
+        """Extract plain text for diff purposes. Override for binary formats."""
+        return path.read_text("utf-8")

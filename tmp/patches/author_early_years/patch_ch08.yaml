@@ -1,0 +1,76 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch08_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Bosch obtains Meadows' personal effects"
+    content:
+      kind: markdown
+      value: |
+        The storage facility on Victory Boulevard was a concrete fortress divided into rows of orange-doored units behind a chain-link fence topped with razor wire. Bosch showed the manager his badge and a copy of the death certificate he'd gotten from the coroner's office, and the manager — a heavy man in a stained polo shirt who'd been watching a portable TV behind the counter — handed over a key without argument.
+
+        "Unit 117. End of row C. He paid through the end of the month."
+
+        Bosch walked down the row. The units were eight-by-ten, identical, the kind of space where people stored the things they couldn't carry and couldn't throw away. The accumulation of lives that didn't fit anywhere else. He'd searched dozens of these units over the years, and they always told the same story — a person reduced to objects, the objects waiting in the dark for someone who might never come back.
+
+        He unlocked the padlock and rolled up the door. The unit was half full. A metal-frame cot against one wall, a sleeping bag rolled on top of it — Meadows had been sleeping here, at least sometimes. A footlocker with U.S. ARMY stenciled on the lid. Three cardboard boxes stacked in the corner. A transistor radio. A coffee can with cigarette butts. A canvas duffel bag.
+
+        Bosch started with the footlocker. It was unlocked. Inside, he found the artifacts of a soldier's war: a set of jungle fatigues, faded and worn soft; a pair of combat boots, the leather cracked; a beret with a unit patch — 25th Infantry Division, the Tropic Lightning — and beneath it a smaller patch that Bosch recognized immediately. A rat, descending into a hole. The tunnel rat insignia.
+
+        He held the patch in his hand. He had one like it somewhere — in a box in his closet, buried beneath things he didn't look at. The patch was unofficial; it had never been authorized by the Army. The tunnel rats had made them themselves, had them sewn by Vietnamese women in the villages near Cu Chi. A small defiance, a way of marking themselves as different from the infantry above ground. *Non gratum anus rodentum.* Not worth a rat's ass. That was the motto they'd given themselves, and they'd meant it as a joke, but like all the best jokes it was true.
+
+        Beneath the military items, he found personal papers. A discharge certificate. A VA hospital admission record from 1974. Another from 1979. A letter from the VA denying a disability claim. And at the bottom, a manila envelope, unsealed, thick with documents.
+
+        Bosch opened the envelope and spread the contents on the cot. There were three items inside.
+
+        The first was a handwritten list of names. Fourteen names, written in pencil on a sheet of yellow legal paper. Each name was followed by a location — a city and state. Some had phone numbers. Three of the names had lines drawn through them.
+
+        Bosch read the list. He didn't recognize any of the names, but the list had the quality of a roster — a military roster, organized and specific. These were men who had served together.
+
+        The crossed-out names were: Thomas Delacroix (Phoenix, AZ), Frank Villanueva (Tucson, AZ), and David Chen (Portland, OR). Three names, three lines.
+
+        The second item was a composition notebook — the kind you bought in a drugstore, with a marbled black-and-white cover. Bosch opened it and began to read. Meadows' handwriting was small and tight, the letters pressed hard into the paper as if the words had to be forced out.
+
+        The entries were dated. They began six weeks ago.
+
+        *August 28. Went into the east tunnel today. It goes deeper than Tolliver thinks — branches twice, runs under the ridge toward the canyon. Found old equipment down there, pickaxes, a rusted wheelbarrow. The tunnel is old but solid. Concrete walls for the first 200 feet, then cut rock. The air is cool. The smell is the same. Always the same.*
+
+        *September 3. Found something in the deep branch. A steel door, set into the tunnel wall. Padlocked. New lock on old hinges. Someone has been down here recently. Boot prints in the silt. Didn't tell Tolliver.*
+
+        *September 8. Went back. Brought bolt cutters. The door opens into a chamber — maybe 10x12, concrete walls, dry. Inside: wooden crates. Military surplus. I opened one. Gold. Bars of gold, each one about two pounds, stamped with Vietnamese characters. I counted twenty bars in the one crate. There are six crates.*
+
+        Bosch stopped reading. He sat on the metal cot in the storage unit and looked at the notebook and felt the pieces of the case rearrange themselves in his mind like cards being shuffled and dealt into a new hand.
+
+        Gold. Vietnamese gold. Hidden in a tunnel beneath a construction site in the Hollywood Hills.
+
+        He kept reading.
+
+        *September 10. I know what this is. During the war, the VC hid gold in the tunnel systems — taxes collected from villagers, payments from the North, treasure accumulated over years. Some of it was found by the Army, some wasn't. The tunnel rats found caches sometimes — small ones, a few bars, a bag of coins. There were rumors of a larger cache in the Cu Chi system, but nobody ever found it. Or maybe someone did and didn't report it.*
+
+        *September 15. I showed the list to Kramer. I shouldn't have. I thought he was a good man. I thought he would want to do the right thing. Instead he got quiet. He asked me who else knew. I said nobody. He asked me where the list came from. I told him the truth — I'd been keeping track of the squad for years, writing to the men, keeping in touch. He wanted the list. I gave him a copy. I shouldn't have done that.*
+
+        *September 20. Delacroix is dead. I called his number in Phoenix and his wife said he died three months ago. Heart attack, she said. He was 42 years old. Then I called Villanueva in Tucson. His roommate said he was dead too. Car accident in July. I called Chen in Portland. His mother said he died in May. Overdose, she said, but David had been clean for years.*
+
+        *Three men from the list. Dead in five months. All accidents or natural causes. I don't believe it.*
+
+        The third item in the envelope was a photograph. Black and white, creased and faded, taken in bright sunlight. It showed a group of soldiers standing in front of a tunnel entrance — a dark hole in red earth, framed by sandbags and timber. The men were shirtless, lean, young, holding pistols and flashlights. Tunnel rats, posing before or after a mission.
+
+        Bosch counted eleven men in the photograph. He turned it over. On the back, in pencil, someone had written names. Eleven names, matching eleven faces. The second name on the list read: *V. Kramer.*
+
+        Bosch looked at the photograph again. He found the man labeled Kramer — young, lean, tan, standing near the left edge of the group with his arms crossed and a .45 in his right hand. He was not an intelligence officer behind a desk in Saigon. He was a tunnel rat. He had gone underground with the rest of them.
+
+        Victor Kramer had lied.
+
+        Bosch carefully placed the list, the notebook, and the photograph into evidence bags. He sealed the bags, labeled them, and put them in his briefcase. Then he went through the rest of the storage unit methodically — the cardboard boxes held clothes, books, a few letters from the sister in Bakersfield. Nothing else connected to the case.
+
+        He locked the unit and drove back to Hollywood Station with the evidence bags on the passenger seat and the shape of the case forming in his mind like a structure emerging from fog. Kramer had been a tunnel rat. Kramer had known about the gold. Kramer had built a construction site above the old tunnels and was using it as cover to access the cache. And Meadows — another tunnel rat, hired for the crew because of his skills underground — had found the gold and made the mistake of telling Kramer about it.
+
+        Three names crossed off a list. Three dead men who had served in the same unit. And now Meadows made four.
+
+        Someone was eliminating the people who knew about the gold. And that someone had a corner office in Century City, a house with a swimming pool in Bel Air, and a construction site full of tunnels in the Hollywood Hills.
+
+        Bosch drove through the evening traffic on the 101, the freeway passing directly over the spot where Meadows' body had been found two nights ago. He didn't look down. He was looking ahead.

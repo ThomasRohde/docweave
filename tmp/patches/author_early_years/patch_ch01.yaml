@@ -1,0 +1,78 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch01_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "body is discovered in the concrete channel"
+    content:
+      kind: markdown
+      value: |
+        The call came at eleven-forty on a Tuesday night in October, and Bosch knew before he picked up the phone that it was going to be bad. The good ones never came at night. The night calls were the ones that stayed with you — the ones where the body had been out there long enough for the city to notice, or messy enough that patrol couldn't pretend it was anything other than what it was.
+
+        He was sitting in the living room of his small house on stilts, the one cantilevered over the hillside on Woodrow Wilson Drive with a view of the Cahuenga Pass. Art Pepper was on the stereo, working through "Straight Life," and Bosch had a bottle of Henry's on the arm of the chair. The windows were open because the Santa Anas had been blowing for three days and the house was still holding the heat from the afternoon. The wind came through the screens carrying the smell of dry brush and something chemical from the freeway below.
+
+        He picked up on the third ring.
+
+        "Bosch."
+
+        "Harry, it's Jessup at the watch desk. You're catching tonight. Got a body down in the wash — the river channel, east side, under the one-oh-one overpass at Cahuenga. Patrol's got it taped off."
+
+        "Who's the uniform?"
+
+        "Crowley. He says it's a bad one."
+
+        Bosch took down the location and hung up. He sat there for a moment, listening to Pepper navigate the changes, and then he turned off the stereo and went to the bedroom for his gun and badge. The .38 Smith & Wesson went on his hip. The badge went in his pocket. He pulled on a sport coat despite the heat — you always wore the coat to a scene; it was part of the uniform of the homicide detective, as much a part of it as the badge and the gun.
+
+        He drove down out of the hills in the Caprice, taking Cahuenga to the 101 and then doubling back on the surface streets. He could see the blue and red lights strobing against the concrete walls of the river channel from two blocks away. Three patrol cars and a crime scene van were parked along the access road that ran parallel to the channel. A fire department rescue unit sat behind them with its engine running and its lights off, the paramedics having already determined they weren't needed.
+
+        Bosch parked and got out. The heat hit him like a physical thing. Even at midnight, the Santa Anas kept the temperature above eighty, and the concrete of the river channel held and radiated the day's heat like an oven wall. He could feel sweat start along his spine beneath the sport coat.
+
+        The Los Angeles River was a joke and everyone knew it. Fifty-one miles of concrete channel carrying a trickle of runoff nine months of the year, a roaring flood the other three. In October, at the tail end of the dry season, there was barely enough water to cover the bottom — a dark, slow line of moisture threading through the center of the channel like a vein of something diseased. The concrete walls rose thirty feet on either side, angled and smooth, stained with the high-water marks of past floods and the spray paint of taggers who had claimed the space between storms.
+
+        Under the overpass, the channel widened into a flat apron where the support columns rose like the trunks of dead trees. This was where the body was.
+
+        Bosch showed his badge to the patrol officer at the tape line and ducked under. He walked down the concrete slope, his shoes scraping on the gritty surface, toward the cluster of flashlights near the base of the nearest column.
+
+        Officer Crowley was a big man with a flat face and twenty years on the job. He'd seen plenty. But when Bosch reached him, Crowley's face had a gray quality that Bosch recognized. The kind of gray that came from seeing something that rearranged your understanding of what one person could do to another.
+
+        "Detective," Crowley said. "He's over here."
+
+        The body lay on its back on the concrete, positioned between two support columns as if it had been placed there with deliberation. It was a white male, middle-aged — Bosch guessed mid-forties — with graying hair cut short and a weathered face. His eyes were open, staring up at the underside of the freeway overhead where ten thousand cars a day passed without knowing what lay beneath them.
+
+        The man wore cheap clothes — a flannel shirt with a frayed collar, work pants with a tear at one knee, a canvas belt. But the shoes were wrong. The shoes were Italian leather, brown wingtips with a shine that didn't belong anywhere near the concrete river. They looked like two-hundred-dollar shoes on a twenty-dollar body.
+
+        Bosch crouched beside the dead man and studied him without touching. There were marks on the wrists — ligature marks, deep ones, the kind that came from wire or thin cord pulled tight over hours. The fingertips on both hands were abraded, the skin rubbed raw, as if the man had been clawing at something — or someone had rubbed them deliberately. Trying to erase his prints.
+
+        "Somebody worked on this guy," Crowley said from behind him.
+
+        Bosch didn't respond. He was looking at the dead man's shirt, which was damp in a way that didn't match the dry concrete beneath him. The dampness had a pattern — it spread out from the chest and neck, soaking the flannel dark. But there was no blood. This wasn't bleeding. This was water.
+
+        He leaned closer and caught a faint chemical smell — chlorine, maybe. Swimming pool water. He filed it away.
+
+        "No ID," Crowley said. "We checked. No wallet, no keys, no nothing. Just the clothes and the shoes."
+
+        Bosch stood up and looked around the scene. The body was forty feet from the thin line of water running through the channel's center, on dry concrete. There was no indication of how it got there — no drag marks in the silt that collected along the channel walls, no footprints in the patches of dried mud. The concrete around the body was clean.
+
+        "Who found him?" Bosch asked.
+
+        "Caltrans crew. They were doing an inspection of the overpass supports — earthquake retrofit project. Came down with flashlights around ten-thirty and there he was."
+
+        Bosch looked up at the freeway above. The sound of passing cars was a constant low roar, a white noise that swallowed everything beneath it. You could fire a gun under here and nobody up there would hear it.
+
+        He pulled a notebook from his inside pocket and began to write. The date, the time, the location, the temperature. The condition of the body. The shoes. The water. The absence of evidence that should have been present and the presence of evidence that shouldn't.
+
+        He wrote: *Placed here. Arranged. This was not where he died.*
+
+        The wind shifted, and for a moment the smell of the dead man cut through the heat and the concrete dust and the faint chlorine odor. Bosch had smelled death plenty of times. You never got used to it, but you learned to work through it the way you learned to work through anything — by focusing on the details, the small things, the puzzle pieces that would eventually tell you who this man was and who had put him here and why.
+
+        He looked down at the dead man's face. The open eyes reflected the flashlight beams that moved around the scene, giving the illusion of awareness, of watching.
+
+        "I see you," Bosch said quietly, so no one else could hear. "I'm going to find out what happened to you."
+
+        It was something he said at every scene. A promise to the dead. He'd been making the promise since his first homicide case three years ago, and he had not yet broken it. He did not intend to start now.
+
+        He flipped his notebook to a fresh page and went to work.

@@ -1,0 +1,43 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: epilogue_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Epilogue"
+      section: "Part Five: After"
+    content:
+      kind: markdown
+      value: |
+        Six months later.
+
+        Bosch was at his desk on a Wednesday afternoon, working a cold case that nobody had asked him to work, when Sheehan dropped the newspaper on his blotter. The Times, metro section, below the fold. The headline read: BRAZEN BANK HEIST: THIEVES TUNNEL INTO VAULT FROM STORM DRAINS.
+
+        Bosch picked up the paper and read. A branch of the Bank of America on Wilshire Boulevard had been robbed over the weekend. The vault had been breached from below — someone had tunneled up through the floor from the city's storm drain system. The entry point was a maintenance tunnel that connected to the main channel. The thieves had worked over the three-day Veterans Day weekend, when the bank was closed and the vault's time lock was disengaged.
+
+        The haul was estimated at two to three million dollars in cash and safe deposit box contents. There were no suspects. No witnesses. No physical evidence except the tunnel itself — a professional job, reinforced with timber, wired with lights and ventilation. Whoever had done this knew tunnels. Knew how to work underground. Knew how to move through the dark.
+
+        Bosch read the article twice. Then he set the paper down and stared at it.
+
+        "Sound familiar?" Sheehan asked.
+
+        It did. It sounded like the tunnels beneath Kramer's construction site. It sounded like Cu Chi. It sounded like men who had learned their trade in the narrow passages beneath the Vietnamese jungle and had brought that knowledge home.
+
+        It sounded like an echo.
+
+        Bosch picked up the phone and dialed the Wilshire Division detective bureau. He identified himself and asked who had caught the bank tunnel case. He was transferred twice, put on hold once, and then connected to a detective named Rourke who said he was FBI, not LAPD — the feds had taken jurisdiction because of the bank's federal charter.
+
+        "I might have some background that's relevant to your case," Bosch said. "Vietnam veterans. Tunnel rats. There's a connection."
+
+        Rourke was quiet for a moment. Then he said, "Come in tomorrow. Bring what you've got."
+
+        Bosch hung up. He sat at his desk and felt the familiar pull — the gravity of a case that was calling to him, drawing him toward it the way the tunnels had always drawn him. Downward. Into the dark.
+
+        He looked at the newspaper one more time. The storm drains. The tunnels. The echo of Vietnam, reverberating through the concrete arteries of Los Angeles, refusing to fade.
+
+        Some things you buried stayed buried. And some things came back up.
+
+        Bosch put on his jacket and went to work.

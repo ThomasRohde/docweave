@@ -1,0 +1,110 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch07_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "last known employer was a construction company"
+    content:
+      kind: markdown
+      value: |
+        The Cahuenga Pass project was halfway up a ridge above the Hollywood Bowl, on a road that switched back and forth across the hillside like a wound. Bosch drove the Caprice up through the turns, passing houses that clung to the slope on stilts and cantilevers — houses not unlike his own, except these were larger, newer, and priced in the high six figures. The city sprawled below him, dulled by the haze.
+
+        The construction site occupied a raw terrace carved into the hillside. A chain-link fence surrounded it, and behind the fence, heavy equipment sat idle in the late afternoon sun — a Cat excavator, a front loader, two dump trucks. The ground was torn earth, red-brown and exposed, with rebar stakes marking the outlines of foundations. A temporary office trailer sat near the gate, its windows dark with dust.
+
+        Bosch parked outside the fence and found the gate unlocked. A man was coming out of the trailer — big, sunburned, wearing a hard hat and a flannel shirt with the sleeves cut off. He had the arms of someone who'd been lifting heavy things for thirty years.
+
+        "Help you?"
+
+        "Detective Bosch, LAPD. Are you Tolliver?"
+
+        "Ray Tolliver. Foreman." He didn't offer his hand. "What's this about?"
+
+        "Richard Meadows."
+
+        Tolliver's face tightened. "What about him?"
+
+        "He's dead. Murdered."
+
+        Tolliver took off his hard hat and ran a hand through sweat-flattened hair. He looked at the ground, then at the hills, then back at Bosch.
+
+        "Goddamn it," he said quietly. "Goddamn it."
+
+        "When did you last see him?"
+
+        "Two weeks ago, maybe. He stopped showing up. I figured he'd moved on. Workers do that — they're here one day, gone the next. Especially the vet types. No offense."
+
+        "None taken. Tell me about his work here."
+
+        Tolliver put his hard hat back on and gestured for Bosch to walk with him. They moved across the site toward the back, where the cut into the hillside was deepest. The exposed earth was layered — topsoil, clay, decomposed granite — and at the base of the cut, Bosch could see the dark mouth of an opening in the rock.
+
+        "Rich was a good worker. Showed up on time, did what you asked, didn't complain. Better than most. He had a skill that was useful up here — he wasn't afraid of tight spaces. A lot of guys won't go underground. Rich would."
+
+        "Underground where?"
+
+        Tolliver pointed at the opening. "There's a network of old drainage tunnels under this ridge. City built them in the twenties to handle runoff. They're not on most maps — we only found them when we started cutting into the hillside. Mr. Kramer wanted them surveyed and mapped before we poured the foundations. Rich volunteered. He said he'd done underground work before."
+
+        *In Cu Chi,* Bosch thought. *He'd done underground work in Cu Chi.*
+
+        "He'd go in with a flashlight and a tape measure and come back out an hour later with sketches of the tunnels — the dimensions, the condition of the walls, where they branched. He was good at it. Natural."
+
+        "Did he find anything unusual in the tunnels?"
+
+        Tolliver hesitated. It was brief — less than a second — but Bosch caught it.
+
+        "Like what?"
+
+        "Anything. Anything that surprised him or that he talked about."
+
+        "No. He just mapped them. Standard survey work."
+
+        Bosch let it go for now. He'd come back to it.
+
+        "Did Meadows interact with Kramer directly?"
+
+        "Not really. Mr. Kramer comes up here once or twice a week to check progress. He might have talked to Rich in passing, but there was no special relationship there."
+
+        "Did anyone else on the crew have issues with Meadows? Arguments, conflicts?"
+
+        "No. Rich kept to himself. He ate lunch alone, drove himself home, didn't hang around after hours. Quiet guy. The only person I saw him talk to regular was Vance."
+
+        "Who's Vance?"
+
+        "Daryl Vance. He's not on the regular crew — he works for Mr. Kramer directly. Security, I think. Big guy, military bearing. He'd come up to the site and walk around, check on things. I saw him talking to Rich a few times. Once I saw them arguing."
+
+        "About what?"
+
+        "I wasn't close enough to hear. But Rich looked upset. He walked off the site after and didn't come back for the rest of the day. That was maybe three weeks ago."
+
+        Bosch wrote down the name: Daryl Vance. Security. Military bearing.
+
+        "Is Vance here today?"
+
+        "Haven't seen him this week. Like I said, he comes and goes. He doesn't answer to me."
+
+        Bosch asked Tolliver for Vance's contact information. Tolliver didn't have it — said Vance reported to Kramer's office, not to the construction crew. Bosch took Tolliver's number and told him he'd be back with more questions.
+
+        He walked back to the tunnel entrance alone. It was a concrete-lined hole about four feet in diameter, set into the base of the cut. The concrete was old — cracked and stained with mineral deposits that had leached through over decades. A faint current of cool air came from inside, carrying the smell of damp earth and standing water. It was the same smell he'd detected in Meadows' room at the halfway house.
+
+        Bosch stood at the entrance and looked into the darkness. The tunnel ran straight for about twenty feet before curving to the left and disappearing. The floor was covered with a thin layer of silt. He could see footprints in it — multiple sets, including what looked like fresh boot prints.
+
+        He did not go in. Not today. But he stood there long enough to feel the old familiar pull — the gravity of the underground, the way darkness invited you forward, the way the tunnel promised answers if you were willing to go deep enough to find them.
+
+        He walked back to his car. On the drive down the hill, he called Sheehan at the station.
+
+        "I need you to run a name. Daryl Vance. Check military records, criminal history, known associates. And run it against Kramer's company filings."
+
+        "What did you find up there?"
+
+        "Tunnels," Bosch said. "There are tunnels under Kramer's construction site. And Meadows was the man who went into them."
+
+        There was a pause on the line. Bosch could hear the squad room in the background — phones, voices, the steady hum of the machine.
+
+        "Harry," Sheehan said carefully. "This is starting to sound like a story."
+
+        "It is a story. I just don't know the ending yet."
+
+        He hung up and drove through the fading afternoon light toward the Valley, toward the storage unit on Victory Boulevard where Richard Meadows had kept the things he'd carried home from the war.

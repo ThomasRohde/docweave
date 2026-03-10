@@ -1,0 +1,111 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch20_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 20: The Price"
+      section: "Part Four: Underground"
+    content:
+      kind: markdown
+      value: |
+        The plea deal came down six weeks later, on a Tuesday morning in December. Bosch heard about it the way he heard about most things in this case — secondhand, through Sheehan, who heard it from a clerk in the DA's office who owed him a favor.
+
+        Victor Kramer would plead guilty to one count of money laundering and one count of conspiracy. The murder charges — four of them, one for each dead veteran — were dropped. In exchange, Kramer would surrender the remaining gold, forfeit three properties, and serve eighteen months in a federal minimum-security facility. With good behavior, he'd be out in a year.
+
+        Eighteen months. For four dead men.
+
+        Bosch was sitting at his desk in the Hollywood Division bullpen when Sheehan told him. He'd been reinstated two weeks earlier — the shooting review had cleared him, and the IAD investigation into the press leak had gone nowhere because there was nothing to find. Bosch had been careful. He always was.
+
+        He listened to Sheehan recite the terms of the deal and then he sat very still for a long time, staring at the murder book on his desk. It was thick — three inches of reports and photographs and forensic analyses and witness statements. Six weeks of work, most of it done by RHD downtown but some of it his, gathered before they'd taken the case from him. It represented the best case he'd ever built. And it was being traded away for a year in Club Fed.
+
+        "The DA says the evidence problems made a trial too risky," Sheehan said. "The initial entry. The warrant timing. Kramer's lawyers would have turned the whole thing into a trial about your methods instead of his crimes."
+
+        "I know."
+
+        "And the gold — the twelve missing crates. Without those, the money laundering case is weaker. They've got two crates. That's enough to prove possession, but the conspiracy case needs the full operation."
+
+        "I know, Frankie."
+
+        "Also, the victims. Three of the four were homeless, no families to push for prosecution. Meadows' only living relative is a sister in Florida who hasn't spoken to him in ten years. There's nobody to make noise."
+
+        Bosch looked at him. "There's me."
+
+        Sheehan didn't say anything to that.
+
+        Bosch stood up and put on his jacket. He walked out of the bullpen and through the station lobby and out into the December light. Los Angeles in December was not what the rest of the country imagined when they thought of winter. The sun was bright and the air was clear and the temperature was in the low seventies. The jacaranda trees along Wilcox Avenue had dropped their purple flowers months ago and now stood bare and skeletal against the sky.
+
+        He drove to the Criminal Courts Building on Temple Street. The DA who'd handled the plea was named Roger Jessup. He was the kind of prosecutor who measured success in convictions, not in justice — a man who saw every case as a calculation, a balancing of odds and outcomes and political considerations. He was good at his job, which was the worst thing Bosch could say about him.
+
+        Jessup's office was on the eighth floor. His secretary told Bosch to wait. He waited twenty minutes, standing by the window, looking out at the city. From up here, you could see downtown in one direction and the Hollywood Hills in the other. Somewhere between those two points, in the tunnels beneath the hills and the corridors of power downtown, the machinery of compromise had done its work.
+
+        Jessup came out and waved him in. He was tall and thin, with silver hair and the permanent half-smile of a man who was always calculating whether you were useful to him.
+
+        "Detective Bosch. I assume you've heard."
+
+        "I've heard. I want to know why."
+
+        Jessup leaned back in his chair. "You know why. The evidence issues—"
+
+        "The evidence issues are manageable. The initial entry is problematic, but the telephonic warrant covers the recovery. The gold, the body, Lofton's presence — that's all clean. You could have gone to trial."
+
+        "Could have. With a fifty-fifty chance of conviction on the murder counts and Kramer's defense team putting you on trial instead of their client. Your unauthorized entry, your history with Internal Affairs, your personal connection to the victim's military background — they'd have made you the story, Bosch. Not Kramer."
+
+        "So you let a murderer walk."
+
+        "He's not walking. He's doing eighteen months."
+
+        "For laundering money. Not for killing four men."
+
+        Jessup spread his hands. The gesture said: This is the world. This is how it works. Bosch had seen that gesture before, from lieutenants and captains and deputy chiefs and every other bureaucrat who'd ever chosen expedience over principle.
+
+        "The families—" Jessup began.
+
+        "There are no families. That's the point. These men had nothing. They came home from Vietnam broken, and the system that sent them there left them to rot. And now the system that's supposed to deliver justice for their murders is letting their killer buy his way out with a year in a country club prison."
+
+        Jessup's half-smile faded. For a moment, Bosch thought he saw something real behind it — a flicker of something that might have been shame. But it was gone so quickly he couldn't be sure it had been there at all.
+
+        "The deal is done, Detective. I understand your frustration. But the alternative was the risk of acquittal, which would have meant Kramer walks away with nothing."
+
+        "Sometimes the risk is worth taking."
+
+        "Easy to say when you're not the one taking it."
+
+        Bosch stood up. There was nothing else to say. Jessup was right in his calculations and wrong in his soul, and there was no argument that could bridge that gap.
+
+        "One more thing," Bosch said from the doorway. "The twelve missing crates of gold. Somebody moved them through the drainage tunnels while Parsons was buying time with his shotgun. Those crates are worth millions. They're out there somewhere, and whoever has them has the seed money for whatever comes next. Kramer's operation doesn't end with a plea deal. It just changes shape."
+
+        Jessup said nothing. Bosch walked out.
+
+        He drove back to Hollywood Station. On the way, he stopped at a florist on Cahuenga and bought a cheap bouquet — white carnations, the only flowers they had. He drove to the VA cemetery in Westwood, the one tucked behind the federal building where the headstones ran in perfect rows like soldiers in formation.
+
+        Meadows' grave was in the newer section, near the back wall. The headstone was standard VA issue — white marble, name, rank, dates, branch of service. RICHARD J. MEADOWS. SGT. US ARMY. VIETNAM. It said nothing about how he'd died. Headstones never did.
+
+        Bosch set the carnations against the base of the stone. He stood there for a while, hands in his pockets, not praying — Bosch didn't pray — but thinking. About Meadows. About the tunnels. About the distance between what happened and what the official record would say happened.
+
+        Kramer would serve his eighteen months. He'd emerge from prison diminished but not destroyed. His lawyers would rehabilitate his reputation. His money — what was left of it — would rebuild his influence. In five years, maybe less, Victor Kramer would be back in the game, attending fundraisers and cutting ribbons and shaking hands with the same politicians who'd protected him.
+
+        And Richard Meadows would still be dead. And Billy Tyree would still be hiding in a trailer in Lancaster. And the other names on the list — the crossed-out ones — would still be names in closed files, unsolved cases that nobody had the time or the inclination to pursue.
+
+        This was the price. Not Bosch's price — the administrative leave, the IAD investigation, the stain on his record. Those were inconveniences. The real price was paid by the dead, and it was paid in the currency of forgotten justice.
+
+        Bosch had learned something in these past weeks, something he'd suspected but never fully understood until now. The law and justice were not the same thing. The law was a system — a machine built by human hands, operated by human beings, subject to human failures. It could be manipulated, circumvented, bargained with. Justice was something else. Justice was an idea, pure and uncompromising, and it existed only in the space between what the system delivered and what the truth demanded.
+
+        He would spend the rest of his career in that space. He knew it now. He would work inside the system because that was where the tools were — the badges and the warrants and the authority to knock on doors and demand answers. But he would never mistake the system for the thing it was supposed to serve. The system was imperfect. Justice was not. And when the two diverged, Bosch would follow justice.
+
+        It was a lonely way to live. He understood that too.
+
+        He touched the top of Meadows' headstone once, a gesture that was not quite a salute and not quite a goodbye. Then he walked back to his car and drove to the station.
+
+        There was work to do. There was always work to do. On his desk, a new case file was waiting — a shooting in a parking lot on Ivar Avenue, two victims, no witnesses. The machine rolled on. The city generated its dead and its mysteries at a rate that never slowed, and the detectives who worked the cases were just men trying to hold back a tide that couldn't be held.
+
+        Bosch opened the file and started reading. He made notes. He picked up the phone and started making calls.
+
+        The Meadows case was over. The system had rendered its verdict, and the verdict was insufficient. But the work continued. It always continued.
+
+        And somewhere in that continuance — in the daily grind of cases and evidence and the stubborn refusal to look away — there was something that resembled, if not justice, then at least its shadow. Its promise. The idea that someone was paying attention. That the dead were not forgotten.
+
+        That would have to be enough. For now.

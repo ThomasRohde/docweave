@@ -1,0 +1,115 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch03_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Hollywood Station, Bosch sits at his desk"
+    content:
+      kind: markdown
+      value: |
+        Hollywood Station sat on Wilcox Avenue, a squat concrete building that looked like it had been designed by someone who hated architects and didn't think much of cops either. The detective bureau was on the second floor — a large open room divided into sections by chest-high partitions that gave the illusion of privacy without delivering any. Each section was a "table," and each table had its own cases, its own detectives, and its own culture. The homicide table was in the back corner, near the windows that looked out on the parking lot and, beyond it, the Hollywood Hills rising brown and dry against the October sky.
+
+        Bosch got to his desk at three in the morning with a murder book already started. The blue binder held his crime scene notes, Donovan's preliminary photos (Polaroids — the real prints would take days), Sakai's print cards, and his own sketches of the body's position relative to the overpass supports. He spread the material across his desk and began the initial paperwork — the death report, the crime scene log, the request for autopsy priority.
+
+        His partner's desk sat empty across from him. Frankie Sheehan worked days and was not on call. He'd hear about the case in a few hours when he came in at seven. Bosch could have called him out to the scene, but Sheehan had a wife and two daughters in Simi Valley and a forty-minute commute, and the truth was Bosch preferred to work scenes alone. Other people at a crime scene were a distraction. They talked when they should have been looking. They looked at you when they should have been looking at the ground.
+
+        He pinned one of the Polaroids to the corkboard above his desk — a close-up of the dead man's face, eyes open, staring at nothing. Bosch looked at it for a long moment.
+
+        "Who are you?" he asked.
+
+        The man didn't answer, but that was all right. He would.
+
+        Bosch ran the victim's prints through the system — what partials Sakai had lifted from the right hand — and requested a rush. He called the Missing Persons unit at Parker Center and read them the physical description: white male, mid-forties, five-ten, one-sixty, gray hair, no tattoos, no scars except the burn marks. No jewelry except a Timex watch with a cracked crystal. No wallet, no keys, no identification of any kind.
+
+        "How long has he been dead?" the MP clerk asked.
+
+        "Coroner will tell me. I'm guessing twenty-four to forty-eight hours."
+
+        "Nothing matching in the last week. You want me to put out a bulletin?"
+
+        "Yeah. And check surrounding counties — Ventura, Orange, San Bernardino. He could be from anywhere."
+
+        He hung up and leaned back in his chair. The squad room was empty except for a burglary detective on the other side of the room who was doing paperwork with headphones on, bobbing his head to something Bosch couldn't hear. The fluorescent lights hummed. The coffee machine in the break room gurgled and popped. These were the sounds of the police station in the deep hours of the night — the mechanical hum of a system that never fully shut down.
+
+        Bosch opened his notebook and went back through his scene notes. He wrote a list of questions:
+
+        *1. Who is he? (Prints pending.)*
+        *2. Where was he killed? (Drowning in fresh water — not the river.)*
+        *3. Why the shoes? (Too expensive, too new, wrong size. A message?)*
+        *4. Why the location? (Under the 101 — accessible but not visible. Chosen, not random.)*
+        *5. Who tortured him, and for what? (Multiple sessions over days. They wanted something.)*
+        *6. The cigarette butts — the killer waiting? Watching? Pre-scouting the dump site?*
+
+        He stared at the list. Six questions and zero answers. This was the hardest part of any case — the beginning, when you had nothing but a body and a scene and the vast darkness of everything you didn't know.
+
+        At six-thirty, he walked to the break room and made a fresh pot of coffee. By seven, the day shift was trickling in — detectives hanging up jackets, checking message slips, settling into chairs with the slow reluctance of men who knew the day would bring nothing they wanted to deal with.
+
+        Frankie Sheehan arrived at seven-fifteen, carrying a brown bag from a bakery in Simi Valley. He was a thick man with red hair going gray at the temples and a face that looked like it had been assembled from spare parts — a broad nose that had been broken twice, deep-set eyes, a jaw that jutted forward like a dare. He'd been in homicide for eight years and had the comfortable competence of a man who had seen enough to know what mattered and what didn't.
+
+        He saw the murder book on Bosch's desk and the Polaroid pinned to the board.
+
+        "You caught one."
+
+        "Last night. Body in the river channel under the one-oh-one at Cahuenga."
+
+        Sheehan sat down, opened the bakery bag, and offered Bosch a Danish. Bosch shook his head. Sheehan shrugged and took a bite, then pulled the murder book across the desk and started flipping through it.
+
+        "No ID?"
+
+        "Prints are running. Somebody worked him over — burns on the torso, ligature marks, fingertips abraded. And he drowned, but not in the river."
+
+        "Drowned somewhere else?"
+
+        "That's what it looks like. Water on the body was chlorinated. Like a pool."
+
+        Sheehan chewed and thought about that. "Tortured and drowned and dumped. That's organized."
+
+        "Very."
+
+        "What about the shoes?"
+
+        Bosch told him about the Allen Edmonds — wrong size, too expensive, out of place.
+
+        Sheehan studied the Polaroid on the board. "So somebody dresses him in fancy shoes that don't fit, takes his wallet and keys, works over his fingertips, and lays him out neat under a freeway. That's not a robbery gone wrong. That's not a drug deal. That's something else."
+
+        "That's what I think."
+
+        "What does Pounds say?"
+
+        Lieutenant Harvey Pounds ran the detective bureau at Hollywood Division. He was a career administrator, a man who had come up through the department on the administrative track and had never worked a case himself. He cared about statistics and clearance rates and the appearance of efficiency. He and Bosch had a relationship best described as mutual contempt held in check by the chain of command.
+
+        "Haven't briefed him yet. I wanted to wait for the prints."
+
+        "Smart. If this turns out to be a homeless guy with a sheet, Pounds'll want it cleared fast. If it turns out to be somebody with connections, he'll want it handled delicately. Either way, he'll want to be the one who tells the brass."
+
+        That was Sheehan — he understood the politics. He was a good detective, careful and thorough, but he also knew how the department worked and he navigated it with an ease that Bosch couldn't manage and didn't want to. Bosch worked cases. Sheehan worked cases and the system both. It was why they were good partners, and it was why they sometimes disagreed about how far to push.
+
+        The phone rang at eight-forty. It was the fingerprint lab at Parker Center.
+
+        "Detective Bosch? We got a hit on your partials. Right thumb and index finger matched to a ten-card on file."
+
+        Bosch grabbed his pen. "Go."
+
+        "The name is Richard Allen Meadows. White male, born April 12, 1943. The prints are on file because of a military service record — U.S. Army, enlisted 1965, discharged 1972."
+
+        Bosch wrote it all down, his pulse steady but his mind accelerating. Army. Vietnam era.
+
+        "Any criminal record?"
+
+        "One arrest, 1978. Possession of a controlled substance. Charges dropped. That's it."
+
+        "Send me everything you've got."
+
+        He hung up and looked at Sheehan. "Richard Meadows. Army vet, Vietnam era."
+
+        Sheehan wiped Danish crumbs from his mouth. "All right. So we know who he is. That's a start."
+
+        It was a start. But Bosch was already somewhere else, his mind turning over the dates. Enlisted 1965, discharged 1972. That was a long stretch — two tours at least, maybe three. Vietnam. The word landed in his chest the way it always did, heavy and dark, carrying the weight of everything he had seen and done and tried to forget in the fifteen years since he'd come home.
+
+        He looked at the dead man's photograph. Richard Meadows had been in the war. Maybe in the same war Bosch had fought, in the same country, under the same sky. And now he was dead on a concrete slab under a Los Angeles freeway, tortured and drowned and dressed in another man's shoes.
+
+        Bosch pulled the murder book toward him and began filling in the name.

@@ -1,0 +1,179 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch17_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 17: The Trap"
+      section: "Part Four: Underground"
+    content:
+      kind: markdown
+      value: |
+        The footsteps stopped.
+
+        Bosch stood in the absolute dark with his back against the wet brick wall and his weapon up and tried to control his breathing. His heart was slamming against his ribs and he could feel the sweat crawling down his spine despite the cold of the underground air. He waited. One minute. Two. The silence was worse than the footsteps.
+
+        Then a voice, close enough to touch: "I know you're in there, cop."
+
+        The work lights exploded on all at once, a chain of caged bulbs running along the tunnel ceiling that flooded the chamber with harsh yellow light. Bosch squinted against the sudden brightness and saw a man standing at the tunnel entrance. Big. Six-three at least, wide through the shoulders, wearing work boots and a canvas jacket. He had a shotgun — a Remington 870, police model — held easy across his body, the barrel pointed at the space between Bosch's chest and his face.
+
+        "Put the piece down," the man said. His voice was flat. No anger in it. No fear. The voice of a man who'd done this kind of work before.
+
+        Bosch didn't move. He kept his Smith & Wesson leveled at the man's center mass.
+
+        "You're the one from Kramer's crew," Bosch said. "You killed Meadows."
+
+        The man smiled. It didn't reach his eyes. "I said put it down."
+
+        "LAPD. You shoot a cop, there's no hole deep enough."
+
+        "Down here there is."
+
+        They stood like that for what felt like a long time. Two men in a hole in the ground, each pointing a weapon at the other. Bosch could see the man calculating, the way a machine processes inputs. Shotgun versus revolver at fifteen feet. The shotgun would win that math every time. They both knew it.
+
+        "Who are you?" Bosch asked, not because he expected a real answer but because he needed time. Time to think. Time to find a way out of this that didn't end with him becoming another name on Meadows' list.
+
+        "Doesn't matter."
+
+        "It will when I arrest you."
+
+        The man laughed. One short sound, like a bark. "You're not arresting anybody tonight, Detective. You're trespassing on private property. You're in a tunnel with no warrant, no backup, and no jurisdiction. Even if you walk out of here, anything you found is inadmissible. You know that."
+
+        Bosch knew it. He'd known it when he climbed through the fence. But he'd needed to see for himself. He'd needed to know that the gold was real, that Kramer's operation was what he thought it was. Now he knew, and the knowing was a stone in his chest.
+
+        "So what happens now?" Bosch said.
+
+        "Now you put the gun down and we have a conversation about how this ends without anyone else getting hurt."
+
+        The man shifted his weight slightly. It was a small movement, but Bosch caught it. The shotgun barrel dipped a fraction of an inch, and in that fraction Bosch saw his opening.
+
+        He didn't take it. Instead, he did something that surprised even himself. He lowered his weapon.
+
+        "Okay," Bosch said. "Let's talk."
+
+        The man nodded. He didn't lower the shotgun. "Smart. Walk toward me. Slowly. Keep the piece in your right hand, barrel down."
+
+        Bosch took a step forward. Then another. He was five feet from the man when he saw the second tunnel opening behind him — a narrow branch that split off from the main passage, barely visible in the work-light shadows. Old brick, unimproved. A drainage pipe, maybe three feet in diameter. It led into darkness.
+
+        Something shifted in Bosch's mind. A gear turning, a connection made. He'd seen openings like that before. Not here. Not in Los Angeles.
+
+        ---
+
+        *Cu Chi District, Republic of Vietnam, 1970.*
+
+        *The hole was barely wider than his shoulders. Sergeant Meadows pointed at it with his flashlight and said, "Your turn, Bosch."*
+
+        *Bosch looked at the hole. It was cut into the red laterite clay at the bottom of a trench, hidden under a cook-fire pit that the engineers had pulled apart. The tunnel entrance was reinforced with bamboo poles and the air coming out of it smelled like earth and smoke and something else — something sweet and rotten that you learned not to think about.*
+
+        *"I went last time," Meadows said. Not apologizing. Just stating fact.*
+
+        *Bosch nodded. He stripped off his flak jacket and his web gear. He took his .45 in his right hand and a flashlight in his left, the way they'd been taught, holding them crossed at the wrists so the light and the barrel pointed the same direction. He got on his belly and started into the hole.*
+
+        *The tunnel was hot. That was the first thing — the heat of the earth pressing in from all sides, the air so thick and wet that breathing it felt like drowning. The walls were smooth, worn by the passage of hundreds of bodies over years of use. He could feel the history of the place in the clay against his elbows and knees.*
+
+        *Ten feet in, the tunnel dropped and turned. He slid down the slope headfirst, arms extended, the flashlight beam catching nothing but red dirt. Twenty feet. Thirty. The tunnel branched and he took the left fork because that was the protocol — always go left, so you could find your way back by always turning right.*
+
+        *He found the chamber forty feet down. It was large enough to sit up in, and when he swung the flashlight around, he saw them — wooden crates stacked against the wall. Rice bags. Ammunition boxes. Medical supplies. And in the corner, smaller boxes with Chinese characters on them.*
+
+        *He was reaching for one of the smaller boxes when he heard the sound. A scraping, dragging sound, like something being pulled through the tunnel behind him. Then the flashlight caught movement — a shadow at the edge of the beam — and he fired twice without thinking, the .45 deafening in the confined space, the muzzle flash turning the world white.*
+
+        *The silence after was the loudest thing he'd ever heard.*
+
+        *He lay there in the dark — the flashlight had gone out from the concussion — and waited for whatever was coming next. His ears rang. His hands shook. The smell of cordite and blood filled the chamber.*
+
+        *When he finally got the flashlight working again, he saw what he'd shot. A boy. Fifteen, maybe sixteen. Viet Cong, armed with a knife. The boy was dead, his eyes open and looking at something Bosch couldn't see.*
+
+        *Bosch sat in the chamber with the dead boy for a long time before he started back up.*
+
+        ---
+
+        The memory hit him like a physical force, a wave of heat and darkness and the smell of clay. He staggered, and the man with the shotgun saw it.
+
+        "Something wrong, Detective?"
+
+        Bosch steadied himself. The tunnel around him was Los Angeles, not Vietnam. The walls were brick, not laterite. The year was 1987, not 1970. But his body didn't know the difference. His body remembered.
+
+        "Nothing," he said. "Where do you want to talk?"
+
+        The man gestured with the shotgun barrel. "Back the way you came. Move."
+
+        Bosch turned and walked back through the chamber, past the crates of gold, toward the junction room where the tunnels branched. The man followed three paces behind — close enough to kill, far enough to react. Professional distance.
+
+        At the junction, Bosch stopped. He could see the narrow branch tunnel to his left — the old drainage pipe, unimproved, disappearing into the dark. He could feel the air moving through it, a faint current that meant it connected to something on the other end. An exit.
+
+        He'd spent enough time underground to know what moving air meant.
+
+        "Keep going," the man said behind him.
+
+        Bosch didn't keep going. He turned, fast — not toward the man but away, diving left into the narrow tunnel opening. He hit the brick floor on his shoulder and rolled, and the shotgun blast tore through the space where he'd been standing a half-second earlier. The noise was enormous, a roar that filled the tunnel system and bounced off every wall. Brick fragments sprayed across his back.
+
+        Then he was in the pipe and crawling. On his hands and knees in three feet of diameter, moving fast in the dark, the way he'd moved through a thousand feet of tunnel in Vietnam. The flashlight was gone — he'd dropped it in the dive — but it didn't matter. He'd learned to navigate by feel, by the current of air against his face, by the slope of the ground under his palms.
+
+        Behind him, another shotgun blast. The pellets ricocheted off the curved brick walls of the pipe, whining past him like angry insects. The man was firing blind into the tunnel mouth, trying to catch him before he got out of range.
+
+        Bosch kept crawling. The pipe narrowed slightly and then opened again. He could feel standing water under his hands — an inch, maybe two. The smell was thick: mud and rust and decades of accumulated sediment. His hands found debris — chunks of concrete, a rusted piece of rebar, something soft that he didn't want to identify.
+
+        ---
+
+        *The tunnel dropped again and Bosch's hands found water. Warm water, blood-warm in the Vietnamese heat. He kept going because there was no going back — the tunnel behind him might be compromised, might have more VC waiting in the dark. Forward was the only option. Forward was always the only option.*
+
+        *His shoulders scraped the walls. The ceiling pressed down on his back. He could feel the weight of the earth above him — how many feet of dirt and rock and root system separated him from the sky. He tried not to think about it. He tried to think about nothing at all, to reduce himself to a machine — a thing that moved forward through the dark and kept moving until it reached the end or the end reached it.*
+
+        *But the panic was there. It was always there, crouching in the corner of his mind like an animal. The walls were too close. The air was too thick. He couldn't breathe. He couldn't—*
+
+        *He stopped. He pressed his forehead against the wet clay and closed his eyes and counted. One. Two. Three. Four. Five. The counting was the anchor. It was the thing that kept the animal in its corner. He counted to ten and then he started moving again.*
+
+        ---
+
+        In the drainage pipe beneath the Hollywood Hills, Bosch stopped. He pressed his forehead against the wet brick and closed his eyes and counted. One. Two. Three. Four. Five.
+
+        The footsteps behind him had stopped. The man was too big for this pipe — his shoulders wouldn't fit. Bosch could hear him cursing, his voice echoing and distorted through the tunnel. Then he heard the footsteps retreating. The man was going around. Looking for another way to cut him off.
+
+        Bosch started moving again. The pipe branched twice and both times he followed the air — the faint current that promised an opening somewhere ahead. The water got deeper. Three inches. Four. He could feel it soaking through his pants, cold against his knees and shins.
+
+        After what felt like an hour but was probably ten minutes, the pipe opened into a larger tunnel — one of the main trunk lines from the old DWP system. He could stand here, and he did, pressing his back against the wall and breathing hard, letting the adrenaline cycle through him.
+
+        He'd lost his flashlight. He still had his weapon — he'd holstered it during the crawl, the way you holstered it in Vietnam when you needed both hands to move. He drew it again and held it in front of him, pointed at nothing, pointed at everything.
+
+        The darkness was total. He was deep underground in a drainage system that predated the freeways, somewhere beneath the Hollywood Hills, and the only person who knew he was down here was the man trying to kill him.
+
+        He stood still and listened. Water trickling. The distant hum of the city above — traffic on Laurel Canyon Boulevard, maybe, transmitted through the earth as a vibration more felt than heard. No footsteps. No breathing except his own.
+
+        Bosch began to move. He kept one hand on the tunnel wall and walked slowly, feeling for branches, for obstacles, for changes in the air current that would tell him which way led out. The tunnel curved to the right, following the contour of the canyon. He could feel it descending — heading downhill toward the flats, toward the river.
+
+        He moved for twenty minutes in the dark before he saw it: a faint gray glow ahead, barely visible. Not a light — just a lessening of the darkness. He moved toward it and found a vertical shaft with rusted iron rungs set into the concrete wall. Above him, a manhole cover with light leaking around its edges.
+
+        Bosch holstered his weapon and climbed. The rungs were slippery with moisture and corrosion, but they held his weight. At the top, he put his shoulder against the manhole cover and pushed. It moved an inch, then two. He smelled asphalt and exhaust and the dry heat of the October night.
+
+        He pushed the cover aside and climbed out onto a residential street he didn't recognize. He sat on the curb next to the open manhole and breathed. Just breathed. The night air was warm and dry and it tasted like the best thing he'd ever put in his lungs.
+
+        After a minute, he stood up and looked around. He was on a side street off Laurel Canyon Boulevard, about a half mile south of the construction site. The houses were dark. A dog barked somewhere. A car passed on the boulevard without slowing.
+
+        Bosch was covered in mud and tunnel water. His hands were scraped raw. His windbreaker was torn. He looked like something that had crawled out of a grave, which wasn't far from the truth.
+
+        He walked to Laurel Canyon Boulevard and found a payphone at a gas station. He picked up the receiver and stood there with the dial tone humming in his ear, thinking about who to call.
+
+        Not his lieutenant. Not dispatch. Not Internal Affairs.
+
+        He put in a quarter and dialed a number from memory. It rang four times.
+
+        "Yeah." A sleepy voice. Frankie Sheehan.
+
+        "It's Bosch. I need your help."
+
+        A long pause. Then: "Where are you?"
+
+        "Laurel Canyon. I just came out of the ground."
+
+        Another pause, longer this time. Bosch could hear Sheehan breathing, could hear the calculations being made on the other end of the line. The career risk. The personal risk. The weight of a partnership that had been broken by bureaucratic pressure.
+
+        "Stay there," Sheehan said. "I'm coming."
+
+        Bosch hung up and leaned against the phone booth. Above him, the Hollywood Hills were dark shapes against the lighter sky. Somewhere up there, in a tunnel beneath a construction site, there were fourteen crates of gold and a man with a shotgun. And somewhere in a drawer at Parker Center, there was an Internal Affairs file with Bosch's name on it.
+
+        None of it mattered right now. What mattered was that he'd gone underground and come back up. He'd done it in Vietnam and he'd done it tonight. The darkness hadn't taken him. Not yet.
+
+        He lit a cigarette and waited for Sheehan.

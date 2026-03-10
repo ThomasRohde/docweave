@@ -1,0 +1,187 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch18_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 18: The Confrontation"
+      section: "Part Four: Underground"
+    content:
+      kind: markdown
+      value: |
+        Sheehan showed up in twenty minutes driving his personal car, a beat-up Dodge pickup. He pulled to the curb and looked at Bosch through the open window and didn't say anything for a long time.
+
+        "You look like hell," he finally said.
+
+        "I feel like it too."
+
+        Bosch got in. The truck smelled like cigarettes and Old Spice and the vinyl seat was cracked and patched with electrical tape. Sheehan pulled away from the curb and drove north on Laurel Canyon, back toward the construction site.
+
+        "Tell me," Sheehan said.
+
+        Bosch told him. The tunnel. The crates. The gold. The man with the shotgun. He told it flat, without embellishment, the way you told it in a report — just the facts, ordered by time. Sheehan listened without interrupting, his hands on the wheel at ten and two, his jaw working on a piece of gum.
+
+        When Bosch finished, Sheehan drove in silence for a minute. Then he said, "You're out of your goddamn mind, Harry."
+
+        "Probably."
+
+        "You went in alone. No warrant. No backup. No notification."
+
+        "Yes."
+
+        "And now you want to go back."
+
+        It wasn't a question. Sheehan knew him. That was the thing about a good partner — they knew what you were going to do before you did it.
+
+        "The evidence is down there, Frankie. Fourteen crates of gold smuggled out of Vietnam. That's the foundation of Kramer's whole operation. That's why Meadows is dead. That's why three other veterans are dead. If we don't get to it tonight, it'll be gone by morning. The guy in the tunnel will have Kramer on the phone by now."
+
+        "And if we do get to it tonight, it's fruit of the poisonous tree. You entered that property without a warrant."
+
+        "We don't use the gold as evidence. We use it as probable cause. I saw it — that's enough for a warrant. We call a judge, get a telephonic warrant based on my observations, and go in legally."
+
+        Sheehan thought about it. Bosch could see the conflict in his face, the streetlights passing over it in rhythmic waves. Sheehan had a wife. Two kids. A mortgage on a house in Simi Valley. He had things to lose that Bosch didn't.
+
+        "There's a man with a shotgun down there," Sheehan said.
+
+        "He's not going to be in the tunnel. He'll be up top, waiting. Or gone."
+
+        "You don't know that."
+
+        "No. I don't."
+
+        Sheehan pulled into a gas station and stopped. He left the engine running. He looked at Bosch and Bosch looked back at him and something passed between them that didn't require words. An understanding. A contract renewed.
+
+        "Let me make some calls," Sheehan said.
+
+        He got out and used the payphone. Bosch watched him through the windshield, saw him feed quarters and talk and listen, his free hand rubbing the back of his neck the way he did when things were tense. He made three calls. Each one lasted five minutes or more.
+
+        When he got back in the truck, he said, "Judge Aliso will sign a telephonic warrant based on your observations. I called it into Hollywood Station — they're typing it up now. I also called SIS."
+
+        Special Investigation Section. The surveillance and tactical unit. Bosch hadn't expected that.
+
+        "They owe me a favor," Sheehan said. "They'll have a team at the site in forty minutes. We go in with them."
+
+        "Frankie—"
+
+        "Don't. You're not going back in that tunnel with just me and a prayer. We do this right or we don't do it."
+
+        Bosch nodded. Sheehan was right. He'd already done the cowboy thing once tonight. It had nearly gotten him killed.
+
+        They drove to the staging point — a turnout on Mulholland above the construction site. Two unmarked SIS cars were already there when they arrived. Four men in dark clothing, tactical vests, with MP5 submachine guns. They looked like soldiers. They were soldiers, in their own way — the LAPD's quiet professionals, the ones who did the work that never made the newspapers.
+
+        The SIS team leader was a sergeant named Kehoe. He was compact and calm, with a flattop haircut and eyes that missed nothing. Bosch had worked with him once before, on a stakeout in Rampart that had gone sideways. Kehoe had kept his head when everyone else was losing theirs.
+
+        Bosch briefed them using a DWP tunnel map spread on the hood of Sheehan's truck. He showed them the construction site layout, the excavation pit, the tunnel entrance, the junction room, the chamber with the gold. He described the man with the shotgun — his size, his weapon, his professionalism.
+
+        "He's ex-military," Bosch said. "Maybe private security, maybe worse. He handled that shotgun like he'd been born with it."
+
+        Kehoe nodded. "We'll enter through the construction site. Two-man teams, leapfrog pattern. Bosch, you and your partner come in behind us. You know the layout — we'll need you to guide at the junctions."
+
+        "One thing," Bosch said. "The narrow drainage pipes — the old ones. They're too small for anyone over about five-ten, hundred-sixty pounds. If this guy is down there, he'll be in the main tunnels. The improved sections."
+
+        "Noted."
+
+        They moved out at midnight. Down the hillside in a single file, through the gap in the fence, across the construction site to the excavation pit. The SIS team moved like ghosts — no sound, no wasted motion. Bosch and Sheehan followed, feeling clumsy by comparison.
+
+        At the pit's edge, Kehoe held up a fist. Stop. He pointed to his eyes, then down into the pit. Bosch looked. Nothing had changed — the timber-framed tunnel entrance was still there, still dark. But something was different. Bosch could smell it. Exhaust fumes. The portable generator in the junction room was running.
+
+        Someone had turned on the lights.
+
+        Kehoe hand-signaled his team. Two men started down the ramp, weapons up. The other two covered from the rim. Bosch and Sheehan waited.
+
+        The lead team reached the tunnel entrance and paused. One man swept the entrance with a flashlight mounted on his weapon. Clear. They moved in.
+
+        Bosch counted to thirty, then followed with Sheehan. Down the ramp, the earth smell rising around them. Into the timber-framed entrance. The work lights were on now — a chain of yellow bulbs stretching into the tunnel, humming with generator current. The tunnel looked different in the light. Smaller. More solid. Less like a nightmare.
+
+        They moved quickly to the junction room. The generator was there, rumbling in the corner, feeding power to the lights. The sandbags and rope were still there. The boot prints. Everything the same as before, except for one thing.
+
+        Fresh tire tracks. Narrow — a hand truck or a dolly. They ran from the main branch tunnel to the entrance ramp and back. Multiple passes. Someone had been moving cargo.
+
+        Bosch pointed at the tracks and looked at Sheehan. Sheehan's face was grim. They were already clearing it out.
+
+        Kehoe's voice came from the main branch, ahead of them. Low and controlled: "Contact."
+
+        Then everything happened at once.
+
+        The shotgun blast came from somewhere ahead — the main tunnel, past the first curve. One of the SIS men returned fire, the MP5 chattering in short bursts that echoed through the tunnels like a jackhammer in a cathedral. Shouts. Another shotgun blast. Then the sharp crack of a pistol — different caliber, different weapon.
+
+        Bosch and Sheehan moved forward, weapons drawn, staying low. They rounded the curve and found the SIS team pressed against the tunnel walls, using the timber supports for cover. Ahead of them, the chamber where the gold had been was lit up bright. And in the chamber, two figures.
+
+        The man with the shotgun — Bosch recognized his bulk — was crouched behind a stack of crates. He had cover and a clear field of fire down the tunnel. Next to him, a second man — smaller, wearing a suit that was absurdly out of place underground. He had a pistol and he was firing it wildly, without aiming, the rounds sparking off the tunnel walls.
+
+        "LAPD!" Kehoe shouted. "Drop your weapons! There is no way out!"
+
+        The man in the suit stopped firing. He looked at the man with the shotgun. Something passed between them. Then the suit dropped his pistol and put his hands up. Just like that. No negotiation, no standoff. He was done.
+
+        The man with the shotgun wasn't done. He racked another round and fired down the tunnel. The pellets hit the ceiling above Bosch's head and he felt brick fragments rain down on his neck and shoulders. He pressed himself flat against the wall.
+
+        "Last chance!" Kehoe called.
+
+        The shotgun man didn't answer with words. He fired again, and this time the blast caught one of the SIS officers in the arm. The man grunted and fell back, his weapon clattering against the floor. His partner pulled him behind cover.
+
+        Bosch saw it then — what the shotgun man was trying to do. He wasn't trying to escape. He was buying time. Behind him, Bosch could see a narrow tunnel opening in the back of the chamber — another drainage pipe, like the one Bosch had used earlier. The gold wasn't in the crates anymore. The crates were open and empty. Someone had already moved it.
+
+        Through the drainage pipe. To another exit point. Where a vehicle was probably waiting.
+
+        Bosch touched Sheehan's arm and pointed. Sheehan looked and understood. The shotgun man was a rearguard action. A delaying tactic while Kramer's real crew moved the evidence.
+
+        There was no time.
+
+        Bosch did the thing that everyone would later tell him was reckless, that Internal Affairs would later use as evidence of his "pattern of insubordination." He left the cover of the tunnel wall and moved forward. Not running — running in a tunnel gets you killed. Walking. Steady. His weapon up, aimed at the shotgun man.
+
+        The man saw him coming and swung the Remington. For a fraction of a second, they were looking at each other down the lengths of their respective weapons. Bosch saw the man's finger tighten on the trigger.
+
+        Bosch fired first. Two rounds. Center mass.
+
+        The man sat down heavily, his back against the crate. The shotgun slipped from his hands. He looked at Bosch with an expression that might have been surprise or might have been respect. Then he looked at nothing at all.
+
+        Bosch moved past him to the back of the chamber. The narrow tunnel opening was there, and through it he could feel cold air moving — the passage was open to the outside. But there was no one in it. Whoever had moved the gold was long gone.
+
+        He turned back to the chamber. Sheehan was there now, cuffing the man in the suit, who was babbling about lawyers and rights and Victor Kramer. Kehoe was tending to his wounded officer. The other SIS men were clearing the rest of the tunnel system.
+
+        Bosch knelt beside the man he'd shot. He was dead. Bosch patted down his pockets and found a wallet. California driver's license. The name was Dale Parsons. Former Army, if Bosch had to guess. One of Kramer's contractors. A man who'd gone underground and wouldn't be coming back up.
+
+        He stood and looked at the empty crates. Fourteen of them, open, the straw packing scattered across the plywood floor. The gold was gone. Most of it, anyway. Against the far wall, two crates remained sealed. Either they'd run out of time or these were the last to be moved.
+
+        Bosch pried one open. Gold. Still there. At least some of it.
+
+        Sheehan came over and looked into the crate. He let out a low whistle.
+
+        "That what I think it is?"
+
+        "Vietnamese gold," Bosch said. "Smuggled out during the war. Kramer's been sitting on it for seventeen years, using it to build his empire. When the tunnel rats who knew about it started becoming liabilities, he started eliminating them."
+
+        Sheehan looked at the dead man, then at the crate, then at Bosch.
+
+        "Harry. This is going to be the biggest mess you've ever made."
+
+        Bosch looked at him. In the work-light glare, underground, covered in mud and brick dust, with the smell of cordite still hanging in the air, he almost smiled.
+
+        "I know," he said. "But at least now we know the truth."
+
+        The man in the suit was still talking when they brought him up to the surface. He'd been identified as Gerald Lofton, an attorney for Kramer Development Corporation. He stopped talking only when Kehoe told him that anything he said would be used against him. Then he asked for his own lawyer, which Bosch supposed was an occupational reflex.
+
+        The SIS team secured the tunnel system. Bosch led a forensic team down to document the chamber, the empty crates, the two full ones, the tire tracks, the body. Everything by the book. Every photograph taken, every measurement recorded, every piece of evidence tagged and logged. Whatever happened next — and Bosch knew it was going to be ugly — the physical evidence would be unassailable.
+
+        It was after three in the morning when Bosch finally came up for the last time. He stood at the edge of the excavation pit and looked up at the sky. No stars — the city's light pollution saw to that. Just a flat orange glow, the color of a sodium lamp, the color of Los Angeles at night.
+
+        Sheehan handed him a coffee from somewhere. It was lukewarm and bitter and perfect.
+
+        "The DA's office is sending someone," Sheehan said. "And the captain called. He's not happy."
+
+        "He doesn't have to be happy. He just has to do his job."
+
+        Sheehan looked at him. "You know they're going to try to bury this. Kramer's got friends all the way up to the chief's office."
+
+        "Let them try."
+
+        Bosch drank the coffee and watched the forensic team work. Somewhere in the city, Victor Kramer was probably already on the phone with his lawyers, his PR people, his contacts at city hall. The machinery of power was spinning up, getting ready to protect one of its own.
+
+        But the gold was real. The body was real. The tunnels were real. And Harry Bosch had seen them all with his own eyes, had walked through them and fought in them and come out the other side. You could bury a lot of things in Los Angeles. You could bury scandals and crimes and inconvenient truths. You could bury bodies in the concrete river and names in bureaucratic files.
+
+        But you couldn't bury what a detective had seen. Not if he was willing to stand up and say it.
+
+        Bosch finished the coffee and crushed the cup and went to write his report.

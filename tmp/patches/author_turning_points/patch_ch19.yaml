@@ -1,0 +1,141 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch19_content
+    op: replace_block
+    anchor:
+      by: heading
+      value: "Chapter 19: The Surface"
+      section: "Part Four: Underground"
+    content:
+      kind: markdown
+      value: |
+        The captain's name was Pounds and he was waiting at Hollywood Station when Bosch came in at four in the morning. He was standing behind the front desk with his arms crossed and a face like a closed door. He wore a white shirt and a red tie and he looked like he'd been awake for exactly as long as it had taken him to drive from wherever he lived to the station.
+
+        "My office," Pounds said. "Now."
+
+        Bosch followed him through the detective bullpen, past the empty desks and the silent phones and the coffee-stained reports stacked on every surface. The overnight shift had cleared out — there was nobody to witness whatever was about to happen.
+
+        Pounds closed the door and sat behind his desk. He didn't offer Bosch a chair, so Bosch stood. He was still wearing the muddy clothes. His hands were still raw. He could smell himself — earth and sweat and cordite.
+
+        "You shot a man," Pounds said.
+
+        "He shot at me first. At us. He hit an SIS officer."
+
+        "In a tunnel beneath a private construction site that you entered without authorization."
+
+        "I had a telephonic warrant. Judge Aliso signed it at eleven forty-seven. It's on file with the court clerk."
+
+        "A warrant obtained after you'd already trespassed on the property and conducted an illegal search."
+
+        Bosch said nothing. Pounds wasn't wrong about the sequence, and they both knew it.
+
+        "The DA's office has been on the phone," Pounds continued. "They're sending an investigator in the morning to review the shooting. And Kramer's attorney has already filed a motion to suppress all physical evidence recovered from the tunnel, citing the initial illegal entry."
+
+        "The gold is still there, Captain. Two crates of it. And there's a dead man down there who was employed by Kramer's company. And Gerald Lofton, Kramer's own lawyer, was in the tunnel at two in the morning with a gun. You tell me what an innocent man's attorney is doing underground with a pistol at that hour."
+
+        Pounds rubbed his temples. He was a bureaucrat, not a detective. He'd come up through administration, through budgets and staffing reports and community relations seminars. The tunnel world that Bosch inhabited — the world of evidence and hunches and two a.m. confrontations in the dark — was foreign territory to him.
+
+        "I'm putting you on administrative leave pending the shooting review," Pounds said. "Paid leave. Turn in your weapon to the watch commander."
+
+        "Captain—"
+
+        "This is not a discussion. You're off the case. The investigation will be reassigned to Robbery-Homicide Division downtown."
+
+        Bosch felt the anger rise in his chest like bile. He'd been down in the tunnels. He'd found the gold. He'd been shot at and nearly killed. And now they were taking the case from him and sending him home.
+
+        "RHD doesn't know this case," Bosch said. "They don't know the players. They don't know the tunnels. They'll spend three weeks reinventing the wheel while Kramer's people destroy whatever evidence is left."
+
+        "That's not your concern anymore."
+
+        "The hell it isn't. Richard Meadows is my case. The dead veterans on that list are my case. I'm not handing it to some downtown suit who's going to trade it away in a plea deal."
+
+        Pounds stood up. He was a small man and standing didn't make him much taller than he was sitting, but he tried.
+
+        "Detective Bosch. You are on administrative leave. Effective immediately. Turn in your weapon. Go home. If I hear that you've contacted any witness, any suspect, or any person associated with this investigation, I will recommend termination. Am I clear?"
+
+        Bosch looked at him. He thought about all the things he could say. He thought about Meadows, drowned and dumped in the river. He thought about Billy Tyree, terrified in his Lancaster trailer. He thought about the fourteen crates of gold — twelve of which were now gone, moved through the tunnels while Kramer's enforcer bought time with a shotgun.
+
+        "You're clear," Bosch said.
+
+        He turned in his weapon to the watch commander. He signed the administrative leave papers. He drove home to his house on Woodrow Wilson Drive and stood in the shower until the water ran clear and then stood in it some more.
+
+        He didn't sleep. He sat on his back deck in the dark and smoked and watched the lights of the Valley spread out below him like a circuit board. The air was warm and dry and smelled like eucalyptus and car exhaust. A Santa Ana wind was pushing in from the east, the devil wind that made the whole city feel restless and dangerous.
+
+        He thought about what Pounds had said. Turn in your weapon. Go home. Stay away.
+
+        He thought about what Sheehan had said. They're going to try to bury this.
+
+        He thought about what the enforcer — Dale Parsons — had said in the tunnel. Even if you walk out of here, anything you found is inadmissible.
+
+        Were they right? Could Kramer's lawyers suppress the evidence? Could the political machinery grind the case down to nothing? Bosch had seen it happen before. Powerful men with powerful friends, skating on charges that would have put an ordinary citizen in prison for life. The system was built to protect people like Kramer. It wasn't built to protect people like Meadows.
+
+        At seven in the morning, Bosch drove downtown. Not to Parker Center. To the Los Angeles Times building on Spring Street.
+
+        The metro desk was already active when he got there — reporters on phones, editors huddled over layout boards, the controlled chaos of a morning newsroom preparing its first edition. Bosch found the reporter he was looking for at a desk near the back, half-hidden behind stacks of paper. Her name was Keisha Russell. She was young — maybe twenty-eight — and she'd been covering the LAPD beat for two years. She was good. More importantly, she was honest.
+
+        "Detective Bosch," she said when she saw him. She didn't seem surprised. In Bosch's experience, good reporters were never surprised. "You look terrible."
+
+        "I need to talk to you. Off the record first."
+
+        She studied him for a moment, then nodded. "Coffee?"
+
+        They went to a diner on Spring Street, one of the old places with a counter and vinyl booths and a waitress who called everyone "hon." Bosch told her the story — not all of it, not the tunnel crawl or the shooting, but enough. He told her about Victor Kramer. About the Vietnam connection. About the dead veterans. About the gold. About the political pressure to bury the investigation.
+
+        Russell listened the way Sheehan had listened — without interruption, without expression. When Bosch finished, she was quiet for a long time, stirring her coffee.
+
+        "You know what you're doing," she said. It wasn't a question.
+
+        "I know what I'm doing."
+
+        "Going to the press with an active investigation. You'll be fired."
+
+        "Maybe. But if I don't, the investigation dies. Kramer's lawyers suppress the evidence, the DA cuts a deal, and nobody pays for what happened to those men."
+
+        "I can't use you as a named source. Not without corroboration."
+
+        "You won't need to. The warrant is public record. The SIS operation is logged. There's a dead man in the morgue with Kramer Development Corporation on his pay stubs. You pull those threads, you'll have enough for a story without my name anywhere near it."
+
+        Russell nodded slowly. "Give me two days."
+
+        "You've got one."
+
+        She gave him a look — half annoyance, half respect. "One day. Fine."
+
+        Bosch left the diner and drove back to his house. He sat on the deck and waited. It was all he could do now. He'd set the pieces in motion — the warrant, the SIS report, the forensic evidence, and now the press. The machine would either process Kramer or protect him, and there was nothing more Bosch could do to influence which way it went.
+
+        The call came at nine that evening. It was Sheehan.
+
+        "You watching the news?"
+
+        Bosch turned on the television. Channel 4 had it. Russell must have shared her findings with the TV people — or the TV people had picked it up independently once the warrant became public record. The anchor was talking about a "stunning development" in a homicide investigation linked to a prominent Los Angeles developer. The screen showed aerial footage of Kramer's construction site, ringed with police tape, patrol cars parked at angles on the access road.
+
+        Then the anchor said the words that Bosch had been waiting for: "Victor Kramer was arrested this evening at his Bel Air home on charges including conspiracy to commit murder, money laundering, and illegal possession of stolen foreign property."
+
+        Bosch stared at the screen. He felt something loosen in his chest — not triumph, nothing so clean as that. Relief, maybe. Or just the release of a tension he'd been carrying since he first saw Meadows' body in the concrete river.
+
+        Sheehan's voice in his ear: "Harry? You there?"
+
+        "I'm here."
+
+        "The DA filed charges before the suppression hearing. Russell's story went live on the Times website an hour ago. Once it was public, the DA's office couldn't bury it without looking complicit. They had to act."
+
+        "Smart."
+
+        "You're still on administrative leave. And IAD is going to want to talk to you about the leak."
+
+        "Let them."
+
+        Sheehan was quiet for a moment. Then he said, "You did good, Harry. Ugly, but good."
+
+        Bosch hung up and turned off the television. The night was quiet. The wind had died down and the city below was still, or as still as Los Angeles ever got. He went to the kitchen and opened a beer and stood at the window and drank it slowly.
+
+        He'd gotten the arrest. But the arrest was just the beginning. What came next — the lawyers, the hearings, the plea negotiations, the political maneuvering — that was where cases went to die. That was where the system showed its true face. And Bosch knew, with a certainty that sat in his gut like a stone, that this case would not end the way it should.
+
+        But at least it wouldn't end in silence. The names on Meadows' list — the dead veterans, the men who'd gone underground in Vietnam and never really come home — would not be forgotten. Someone had spoken for them. Someone had gone into the dark and brought back the truth.
+
+        That had to count for something. It had to.
+
+        Bosch finished the beer and went to bed. He didn't dream.

@@ -1,0 +1,110 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch10_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Frankie Sheehan wants to back off"
+    content:
+      kind: markdown
+      value: |
+        Bosch knew he was being followed before he reached the station the next morning. The tail was a brown sedan, a department-issue Crown Vic, sitting two cars back in the traffic on Cahuenga. It had been there when he pulled out of his driveway, and it was still there when he turned onto Wilcox. Internal Affairs.
+
+        He parked in the station lot and watched the Crown Vic roll past without stopping. Two men in the front seat, both in suits, both looking straight ahead with the practiced indifference of cops who knew they'd been made. Bosch recognized the type — IAD surveillance teams ran in pairs and drove brown sedans and had the subtlety of a marching band.
+
+        He went inside and found Sheehan already at the table, but Sheehan's face told him something was wrong before he sat down.
+
+        "I'm being moved," Sheehan said.
+
+        "What?"
+
+        "Pounds told me this morning. I'm being transferred to Van Nuys, effective Monday. Burglary table."
+
+        "Van Nuys burglary. That's a demotion."
+
+        "Pounds called it a lateral. Said they're short-handed in the Valley and my experience would be valuable. He kept a straight face when he said it."
+
+        Bosch sat down slowly. He looked at the glass wall of Pounds' office. The lieutenant was inside, on the phone, facing away.
+
+        "This is because of Kramer."
+
+        Sheehan leaned forward and spoke quietly. "Harry, listen to me. Chandler's call was just the opening shot. This morning I heard from a buddy at Parker Center that IAD opened a preliminary on you. Lewis and Clarke."
+
+        Lewis and Clarke. Bosch knew them. Detectives from the Internal Affairs Division who had earned their nicknames not for any spirit of exploration but for their relentless, plodding approach to ruining other cops' careers. They were the department's internal enforcers — the ones who got sent when someone upstairs wanted a detective leaned on.
+
+        "What's the preliminary about?"
+
+        "Conduct unbecoming. They're saying you harassed Kramer — showed up at his office without cause, made accusations. Chandler filed a formal complaint."
+
+        "I asked him questions about a homicide victim who worked for his company. That's my job."
+
+        "I know that. You know that. But if Irving's behind this, the facts don't matter as much as the pressure. They'll open the file, they'll follow you around, they'll talk to your witnesses. The goal isn't to prove misconduct — the goal is to slow you down. Make the case so uncomfortable that you back off or make a mistake they can use."
+
+        Bosch looked at his partner. Sheehan had been good to him — had covered for him when he worked late, had talked him down when he pushed too hard, had done the political work that kept the machine running while Bosch did the investigating. And now Sheehan was being punished for it.
+
+        "I'm sorry, Frankie."
+
+        "Don't be sorry. Be smart. You've got something here — I can see it. But if you go at Kramer head-on, they'll cut you off at the knees. You need to go around."
+
+        "Around how?"
+
+        "Build the case from the outside. Don't touch Kramer — not yet. Work the list. Work the dead men. Find the connection between the deaths that doesn't rely on Kramer's involvement. When you've got enough, take it to someone who can't be leaned on."
+
+        "Who would that be?"
+
+        Sheehan smiled, but it was thin. "I don't know. But there's got to be somebody."
+
+        Sheehan spent the rest of the day packing his desk. Eight years at the homicide table, and it fit into two boxes. He carried them out at the end of the shift without ceremony. At the door, he turned back.
+
+        "Harry. Watch your back. Lewis and Clarke are out there."
+
+        "I saw them this morning."
+
+        "Good. Keep seeing them. The moment you stop seeing them, that's when you're in trouble."
+
+        He left. Bosch sat alone at the table — his table now, his cases, his section of the squad room. The empty desk across from him looked like a gap in a row of teeth.
+
+        He opened a fresh notebook — not the murder book, not an official department notebook, but a pocket-sized spiral he bought at a drugstore on the way in. He'd keep his real notes here, separate from the official file. The murder book would have what the department expected to see. The spiral notebook would have what he actually knew.
+
+        In the spiral, he wrote the names from Meadows' list — all fourteen of them. He crossed out the four who were dead: Delacroix, Villanueva, Chen, Meadows. Ten names remained. He needed to find them, warn them, and learn what they knew.
+
+        He started calling. The first number — a man named Halsey in Sacramento — was disconnected. The second — Winters in San Diego — rang and rang without answer. The third — Billy Tyree in Lancaster — picked up on the first ring.
+
+        "Who is this?" The voice was sharp, wired, the voice of a man who answered the phone like it might be a weapon.
+
+        "Mr. Tyree, my name is Harry Bosch. I'm a detective with the LAPD. I'm investigating the death of Richard Meadows."
+
+        Silence. Then, very quietly: "Rich is dead?"
+
+        "Yes, sir. He was murdered. I believe you may be in danger as well. I'd like to come out and talk to you."
+
+        A longer silence. Bosch could hear breathing on the line — shallow, fast.
+
+        "Are you alone?"
+
+        "Yes."
+
+        "Not on a department phone?"
+
+        "No. Personal line."
+
+        "Lancaster. Take the 14 north to Avenue J, go east four miles. There's a trailer on the south side of the road with aluminum foil on the windows. That's me. Come at night. Come alone. And Detective — "
+
+        "Yes?"
+
+        "Were you in the tunnels?"
+
+        The question hit Bosch like a hand on the chest. He hadn't mentioned Vietnam. He hadn't mentioned the tunnels. But Tyree had asked, because Tyree knew what this was about, and he knew that only a man who had been underground would understand what he had to say.
+
+        "Yes," Bosch said. "I was in the tunnels."
+
+        "Then you'll understand. Come tonight."
+
+        The line went dead.
+
+        Bosch closed the spiral notebook and put it in his inside pocket. He looked at the empty desk across from him and the brown sedan he knew was sitting somewhere outside the station, waiting for him to move. Lewis and Clarke. The watchers.
+
+        He waited until dark. Then he drove north.

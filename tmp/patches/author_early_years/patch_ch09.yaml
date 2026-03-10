@@ -1,0 +1,118 @@
+version: 1
+target:
+  file: book/the-concrete-river.md
+  backend: auto
+operations:
+  - id: ch09_content
+    op: replace_block
+    anchor:
+      by: quote
+      value: "Bosch visits the VA hospital in Westwood"
+    content:
+      kind: markdown
+      value: |
+        The West Los Angeles VA Medical Center sat on a sprawling campus off Wilshire Boulevard in Westwood, its buildings spread across manicured grounds that looked more like a university than a hospital. Bosch had been here before — not as a detective, but as a patient, once, in 1973, when he'd come back from the war and the Army had sent him here for what they called a readjustment evaluation. He'd spent two days answering questions from a psychiatrist who had never been to Vietnam and who kept looking at his watch. Bosch had told the man what he wanted to hear and walked out. He'd never gone back.
+
+        The psychiatric ward was on the third floor of Building 209. Bosch found the nursing station and asked for anyone who had known Richard Meadows. A nurse named Foley — a heavyset woman with kind eyes and the patient manner of someone who had spent years caring for men the world had forgotten — told him that Meadows had been an outpatient in the substance abuse program until about a year ago.
+
+        "He was one of the ones who was going to make it," she said. They were sitting in a small break room that smelled of microwave popcorn and antiseptic. "He came to his sessions, did his twelve steps, got himself together. When he moved to that halfway house, I thought, good for Rich. He's going to pull through."
+
+        "Did you see him recently?"
+
+        "He came back about a month ago. Not for treatment — just to talk. He looked bad. Not using, but scared. He asked if he could talk to me, privately, off the record."
+
+        "What did he say?"
+
+        Foley hesitated. She looked at the door to the break room, then back at Bosch.
+
+        "He said someone was cleaning the tunnel. Those were his exact words. He said it twice. 'Someone is cleaning the tunnel.' He said the men from his unit were being killed and nobody was paying attention because they were just vets — homeless vets, men with records, men nobody cared about. He said someone powerful was doing it and he didn't know how to stop it."
+
+        "Did he name anyone?"
+
+        "No. He was afraid to. He said the less I knew, the safer I'd be. He asked if the VA kept records of who visited patients — like a sign-in log. I told him we did, for the inpatient ward. He asked me to check the logs for any visits from someone who wasn't family or medical staff. I looked it up for him."
+
+        "And?"
+
+        "There were three visits logged for Richard Meadows over the past year. Two from his sister in Bakersfield. And one, about six months ago, from a man named Victor Kramer."
+
+        Bosch said nothing. He let the name settle.
+
+        "Rich went white when I told him," Foley continued. "He said, 'He was checking up on me. He's been checking on all of us.' Then he left. That was the last time I saw him."
+
+        "Nurse Foley, do you have a copy of that visitor log?"
+
+        "I made a copy for Rich when he asked. I can make another one for you."
+
+        She left the break room and came back five minutes later with a photocopy. Bosch put it in his briefcase with the other evidence. He asked Foley a few more questions about Meadows' state of mind, his history at the VA, and whether he'd mentioned any names from his military service. She couldn't add much — Meadows had been guarded even in his most open moments.
+
+        Bosch thanked her and walked back through the corridors of the VA hospital. The halls were quiet in the midafternoon. He passed open doors and saw men in beds — some old, some not old enough — staring at television sets or at the walls or at nothing. The walls were painted the institutional green that the government bought by the tanker load, and the floors were linoleum, and the light was the flat fluorescent light of a system that processed human damage in bulk.
+
+        These were the men who had gone to war and come home broken. Some had been broken by the war itself — the violence, the fear, the things they'd seen and done. Others had been broken by the coming home — by the country that had sent them and then turned its back, by the jobs that weren't there, by the families that couldn't understand, by the silence that surrounded them like a second kind of darkness. They had served, and this was what service had earned them: a bed in a government hospital and a view of a government wall.
+
+        Bosch walked out into the sunlight and stood on the grass and breathed the clean air and thought about Richard Meadows saying *someone is cleaning the tunnel.*
+
+        He got in his car and drove back to Hollywood Station. Lieutenant Harvey Pounds was waiting for him.
+
+        Pounds was behind his desk in the glass-walled office at the front of the detective bureau. He was a small man with a pinched face and a comb-over that he maintained with a commitment that bordered on the heroic. His desk was clean — Pounds was a clean-desk man, which Bosch took as evidence that he didn't do enough real work to generate mess.
+
+        "Bosch. Close the door."
+
+        Bosch closed the door and sat down without being asked.
+
+        "I got a call this afternoon from a lawyer named Honey Chandler. You know who that is?"
+
+        Bosch knew. Honey Chandler was a civil rights attorney who specialized in suing the LAPD. She was smart, aggressive, and had won several large judgments against the department. She was also, Bosch had heard, socially connected to some of the wealthier people in Los Angeles.
+
+        "She represents Victor Kramer," Pounds continued. "Kramer Development. She says you visited Kramer's office today and questioned him about a homicide case. She says her client cooperated fully and has nothing to do with the death of Richard Meadows. She says any further contact should go through her office."
+
+        "That was fast," Bosch said.
+
+        "What?"
+
+        "I talked to Kramer four hours ago. He's already lawyered up. Most innocent people don't call their attorney before the detective gets back to the station."
+
+        Pounds' face tightened. "Don't play games with me, Bosch. Chandler also said her client has a relationship with the department — specifically with the deputy chief's office. She implied that continued harassment would not be well received at Parker Center."
+
+        "Deputy Chief Irving?"
+
+        "She didn't name names. She didn't have to."
+
+        Irvin Irving was the deputy chief of operations, the highest-ranking officer below the chief himself. He was a political animal, a man who had survived five chiefs and three decades of departmental politics by being useful to everyone and loyal to no one. If Kramer had a connection to Irving, this case had just gotten harder.
+
+        "Lieutenant, my victim was tortured for five days, drowned in fresh water, and dumped under a freeway. He was a Vietnam veteran who worked for Kramer's construction company. He found something on Kramer's property that got him killed. I'm not going to back off because a lawyer made a phone call."
+
+        "Nobody's telling you to back off. I'm telling you to be careful. Work the evidence. Don't go poking at Kramer unless you have something solid to justify it. If you're wrong about this, it's not just your career — it's mine, and the division's."
+
+        "I'm not wrong."
+
+        "Then prove it. With evidence. Not hunches."
+
+        Bosch stood up. "Is that all?"
+
+        "That's all."
+
+        He went back to his desk. Sheehan was there, and Bosch could tell from his partner's face that he'd heard about the Chandler call.
+
+        "How bad?" Sheehan asked.
+
+        "Pounds told me to be careful."
+
+        "That's not bad. When Pounds tells you to be careful, he's telling you he'll cover you as long as you don't embarrass him. It's when he tells you to stand down that you're in trouble."
+
+        "He didn't say that. Not yet."
+
+        Sheehan leaned back in his chair. "So Kramer lawyered up four hours after you talked to him. And the lawyer happens to know people at Parker Center. That tells you something."
+
+        "It tells me he's got something to protect."
+
+        "It also tells you he's got the connections to protect it. Be smart, Harry. Build the case file. Document everything. Make it so solid that when you go at him, nobody can say you were on a fishing expedition."
+
+        It was good advice, and Bosch knew it. He also knew that building a solid case took time, and time was a luxury he might not have. Three men from the list were already dead. There were more names on it — men who might be next.
+
+        He opened the murder book and began cataloging the evidence from the storage unit. The list. The notebook. The photograph. The visitor log from the VA. He worked through the evening and into the night, alone at his desk, the squad room emptying around him as the day shift left and the night skeleton crew took over.
+
+        At ten o'clock, he pinned the photograph from the storage unit to his corkboard, next to the Polaroid of Meadows' dead face. Eleven young men in front of a tunnel entrance in Vietnam. One of them was now a millionaire developer. At least four of the others were dead.
+
+        He looked at the young faces and thought about the tunnels beneath the Hollywood Hills — the same darkness that had been beneath the red earth of Cu Chi, the same air, the same gravity pulling you down. The tunnels didn't care what country they were in. They were always the same. Dark. Close. Full of things that could kill you.
+
+        Bosch turned off his desk lamp and drove home.

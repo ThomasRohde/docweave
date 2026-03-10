@@ -21,6 +21,11 @@ author.
    specs resolve correctly before applying a teammate's patch.
 5. **Use `--backup` for safety.** Pass `--backup` on every `docweave apply`.
 6. **Validate after each batch.** Run `docweave validate` after applying patches.
+7. **Use project-relative paths for patches.** All patch files MUST be saved
+   under `tmp/patches/` relative to the project root (e.g., `tmp/patches/author_foo/`).
+   NEVER use absolute paths like `/tmp/patches/` — on Windows, `/tmp` resolves to
+   a system temp directory that is not visible across agents. Before spawning
+   teammates, create the patch directories with `mkdir -p tmp/patches/`.
 
 ## Docweave CLI Quick Reference
 
@@ -133,7 +138,7 @@ match the document size — use 2 authors for 10 sections, 3 for 15-20, 4 for
 - Each owns a non-overlapping batch of sections
 - Reads the document skeleton with `docweave view <file> --section "X"`
 - Drafts patch YAML files for their assigned sections
-- Saves patches to `/tmp/patches/author_<name>/` (one file per section group)
+- Saves patches to `tmp/patches/author_<name>/` inside the project root (one file per section group)
 - Messages you (the lead) when patches are ready to apply
 
 **Continuity Agent** (1 teammate)
@@ -168,7 +173,11 @@ WORKFLOW:
 2. Read the document skeleton: docweave view <file> --section "Section Name"
 3. Wait for research notes from the Research Agent
 4. For each assigned section, draft rich content and write a patch YAML file
-5. Save patches to /tmp/patches/author_<your-name>/patch_<section>.yaml
+5. Save patches to tmp/patches/author_<your-name>/patch_<section>.yaml
+   IMPORTANT: Use a project-relative path (tmp/patches/...), NOT an absolute
+   path like /tmp/patches/. On Windows, /tmp resolves to a system temp
+   directory that other agents cannot access. Always write relative to the
+   project root directory.
 6. Message the lead when your patches are ready
 
 WRITING STYLE: Information-dense, structured, engaging but precise. No filler.

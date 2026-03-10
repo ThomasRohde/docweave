@@ -45,6 +45,8 @@ def list_backends() -> list[BackendAdapter]:
 def init_backends() -> None:
     """Initialize and register all built-in backends."""
     _registry.clear()
+    from docweave.backends.docx_backend import WordBackend
     from docweave.backends.markdown_native import MarkdownBackend
 
     register(MarkdownBackend())
+    register(WordBackend())
