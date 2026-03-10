@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-import yaml
 import pytest
+import yaml
 
 SAMPLE_CONTENT = "# Doc\n\nOriginal content.\n"
 

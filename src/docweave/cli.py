@@ -14,7 +14,14 @@ from docweave.backends.base import BackendAdapter
 from docweave.backends.registry import detect as detect_backend
 from docweave.backends.registry import init_backends
 from docweave.config import ExitCode, RuntimeConfig, detect_config
-from docweave.envelope import ErrorDetail, Warning, emit, error_envelope, make_envelope, success_envelope
+from docweave.envelope import (
+    ErrorDetail,
+    Warning,
+    emit,
+    error_envelope,
+    make_envelope,
+    success_envelope,
+)
 from docweave.models import NormalizedDocument
 
 app = typer.Typer(
@@ -177,7 +184,10 @@ def guide() -> None:
                 "result_schema": {
                     "cli": "string",
                     "version": "string",
-                    "commands": "object — per-command descriptor with description, status, result_schema",
+                    "commands": (
+                        "object — per-command descriptor with"
+                        " description, status, result_schema"
+                    ),
                     "error_codes": "object",
                     "exit_codes": "object",
                     "patch_schema": "object",
@@ -201,7 +211,10 @@ def guide() -> None:
                 "description": "Return the full normalized block list for a document.",
                 "status": "available",
                 "result_schema": {
-                    "blocks": "array[Block] — {block_id, kind, section_path, text, raw_text, level, source_span, stable_hash}",
+                    "blocks": (
+                        "array[Block] — {block_id, kind, section_path,"
+                        " text, raw_text, level, source_span, stable_hash}"
+                    ),
                     "block_count": "integer",
                 },
             },
@@ -231,7 +244,10 @@ def guide() -> None:
                     "backend": "string",
                     "fingerprint": "string — SHA-256 of file at plan time",
                     "valid": "boolean",
-                    "resolved_operations": "array[ResolvedOp] — {operation, anchor_match, affected_lines}",
+                    "resolved_operations": (
+                        "array[ResolvedOp] —"
+                        " {operation, anchor_match, affected_lines}"
+                    ),
                     "warnings": "array[string]",
                 },
             },
@@ -250,7 +266,10 @@ def guide() -> None:
                 },
             },
             "fleet": {
-                "description": "Apply multiple self-describing patch files to their respective target documents.",
+                "description": (
+                    "Apply multiple self-describing patch files"
+                    " to their respective target documents."
+                ),
                 "status": "available",
                 "result_schema": {
                     "total": "integer",
@@ -258,14 +277,21 @@ def guide() -> None:
                     "failed": "integer",
                     "dry_run": "boolean",
                     "parallel": "boolean",
-                    "results": "array[FleetResult] — {patch, file, ok, ops_applied, dry_run, error?, fingerprint_before?, fingerprint_after?}",
+                    "results": (
+                        "array[FleetResult] — {patch, file, ok,"
+                        " ops_applied, dry_run, error?,"
+                        " fingerprint_before?, fingerprint_after?}"
+                    ),
                 },
             },
             "diff": {
                 "description": "Compute raw and semantic diff between two documents.",
                 "status": "available",
                 "result_schema": {
-                    "raw_diff": "array[RawHunk] — {old_start, old_count, new_start, new_count, lines}",
+                    "raw_diff": (
+                        "array[RawHunk] —"
+                        " {old_start, old_count, new_start, new_count, lines}"
+                    ),
                     "semantic_diff": "object — {summary, changes: array[BlockChange]}",
                 },
             },
@@ -282,9 +308,17 @@ def guide() -> None:
                 "description": "List or retrieve transaction journal entries.",
                 "status": "available",
                 "result_schema": {
-                    "entries": "array[JournalEntry] — {txn_id, timestamp, file, backend, operations, fingerprint_before, fingerprint_after, operations_applied, warnings, validation_result}",
+                    "entries": (
+                        "array[JournalEntry] — {txn_id, timestamp, file,"
+                        " backend, operations, fingerprint_before,"
+                        " fingerprint_after, operations_applied,"
+                        " warnings, validation_result}"
+                    ),
                     "count": "integer",
-                    "note": "When called with a transaction ID, returns {entry: JournalEntry} instead.",
+                    "note": (
+                        "When called with a transaction ID,"
+                        " returns {entry: JournalEntry} instead."
+                    ),
                 },
             },
         },
@@ -964,7 +998,9 @@ def fleet_cmd(
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview without modifying files."),
     backup_opt: bool = typer.Option(False, "--backup", help="Create backups before applying."),
     strict: bool = typer.Option(False, "--strict", help="Fail on ambiguous anchors."),
-    parallel: bool = typer.Option(False, "--parallel", help="Apply patches concurrently via threads."),
+    parallel: bool = typer.Option(
+        False, "--parallel", help="Apply patches concurrently via threads.",
+    ),
     evidence_dir: Path | None = typer.Option(
         None, "--evidence-dir",
         help="Write evidence bundles here (one subdirectory per file).",
