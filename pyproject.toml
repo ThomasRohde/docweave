@@ -1,12 +1,30 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
 name = "docweave"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Agent-first CLI for structured document editing"
+readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.12"
+authors = [
+    { name = "Thomas Klok Rohde", email = "rohde.thomas@gmail.com" },
+]
+keywords = ["markdown", "cli", "document editing", "ai", "automation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
 dependencies = [
     "typer[all]>=0.15",
     "pydantic>=2.0",
@@ -15,6 +33,11 @@ dependencies = [
     "pyyaml>=6.0",
     "rich>=13.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ThomasRohde/docweave"
+Repository = "https://github.com/ThomasRohde/docweave"
+Issues = "https://github.com/ThomasRohde/docweave/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -25,6 +48,9 @@ dev = [
 
 [project.scripts]
 docweave = "docweave.cli:main"
+
+[tool.hatch.version]
+path = "src/docweave/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/docweave"]

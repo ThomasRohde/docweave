@@ -1,20 +1,10 @@
-<p align="center">
-  <h1 align="center">Docweave</h1>
-  <p align="center">
-    <strong>Agent-first CLI for structured document editing</strong>
-  </p>
-  <p align="center">
-    <a href="#installation">Installation</a> &middot;
-    <a href="#quick-start">Quick Start</a> &middot;
-    <a href="#commands">Commands</a> &middot;
-    <a href="#patch-format">Patch Format</a> &middot;
-    <a href="#contributing">Contributing</a>
-  </p>
-</p>
+# docweave
 
----
+Agent-first CLI for structured document editing.
 
 Docweave parses Markdown documents into a normalized block model, resolves structural anchors, and applies targeted edits through a declarative YAML patch format. Every command returns a stable JSON envelope on `stdout`, making it ideal for AI agents, CI pipelines, and scriptable workflows.
+
+The PyPI package name is `docweave`, and it installs the `docweave` command.
 
 ## Highlights
 
@@ -29,9 +19,22 @@ Docweave parses Markdown documents into a normalized block model, resolves struc
 
 Requires **Python 3.12+**.
 
+### With `uv` (after the PyPI release)
+
 ```bash
-# Clone and install in development mode
-git clone https://github.com/your-username/docweave.git
+uv tool install docweave
+```
+
+### From the repository
+
+```bash
+uv tool install git+https://github.com/ThomasRohde/docweave.git
+```
+
+### Development install
+
+```bash
+git clone https://github.com/ThomasRohde/docweave.git
 cd docweave
 pip install -e ".[dev]"
 ```
@@ -39,14 +42,14 @@ pip install -e ".[dev]"
 Or with [uv](https://github.com/astral-sh/uv):
 
 ```bash
-uv venv .venv && source .venv/bin/activate
-uv pip install -e ".[dev]"
+uv sync --extra dev
 ```
 
 Verify the installation:
 
 ```bash
 docweave --version
+docweave guide
 ```
 
 ## Quick Start
@@ -114,7 +117,7 @@ Every command emits a JSON envelope to `stdout`:
   "errors": [],
   "warnings": [],
   "metrics": { "duration_ms": 12 },
-  "version": "0.1.0"
+  "version": "x.y.z"
 }
 ```
 
@@ -238,6 +241,9 @@ src/docweave/
 ```bash
 # Install dev dependencies
 pip install -e ".[dev]"
+
+# Or with uv
+uv sync --extra dev
 
 # Run tests
 pytest tests/ -v

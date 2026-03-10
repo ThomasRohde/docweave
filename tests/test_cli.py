@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
+from docweave import __version__
 from docweave.cli import main
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -17,7 +18,7 @@ def test_version_flag(run_cli):
     env = result.json
     assert env["ok"] is True
     assert env["command"] == "version"
-    assert env["result"]["version"] == "0.1.0"
+    assert env["result"]["version"] == __version__
 
 
 def test_guide_returns_valid_envelope(run_cli):
@@ -29,10 +30,10 @@ def test_guide_returns_valid_envelope(run_cli):
     assert "commands" in env["result"]
     assert "error_codes" in env["result"]
     assert "exit_codes" in env["result"]
-    assert env["result"]["version"] == "0.1.0"
+    assert env["result"]["version"] == __version__
     assert env["result"]["cli"] == "docweave"
     assert "duration_ms" in env["metrics"]
-    assert env["version"] == "0.1.0"
+    assert env["version"] == __version__
 
 
 def test_no_args_returns_json_error(run_cli):
