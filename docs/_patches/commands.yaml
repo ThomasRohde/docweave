@@ -1,0 +1,130 @@
+version: 1
+target:
+  backend: auto
+operations:
+  - id: op_add_content
+    op: insert_after
+    anchor:
+      by: heading
+      value: Command Reference
+    content:
+      kind: markdown
+      value: |
+        All commands output a JSON envelope to `stdout`. The `--format json` flag is the
+        default and must come before the subcommand if specified explicitly.
+
+        ## guide
+
+        Show the command catalog, error codes, and exit codes.
+
+        ```bash
+        docweave guide
+        ```
+
+        ## inspect
+
+        Return structural metadata: block count, heading list, and file fingerprint.
+
+        ```bash
+        docweave inspect FILE
+        ```
+
+        ## view
+
+        Return the full normalized block list.
+
+        ```bash
+        docweave view FILE
+        docweave view FILE --section "Section Name"
+        ```
+
+        Each block includes `block_id`, `kind`, `section_path`, `text`, and `stable_hash`.
+
+        ## find
+
+        Search blocks for a text query.
+
+        ```bash
+        docweave find FILE QUERY
+        docweave find FILE QUERY --section "Section Name"
+        ```
+
+        ## anchor
+
+        Resolve an anchor specification to a specific block.
+
+        ```bash
+        docweave anchor FILE "heading:Introduction"
+        docweave anchor FILE "quote:must be unique" --context-before "The value"
+        docweave anchor FILE "ordinal:paragraph:3"
+        ```
+
+        **Anchor types:**
+
+        | Syntax | Description |
+        | ------ | ----------- |
+        | `heading:TEXT` | Match heading by text |
+        | `quote:TEXT` | Match block containing text |
+        | `block_id:blk_NNN` | Match by sequential block ID |
+        | `hash:PREFIX` | Match by stable content hash prefix |
+        | `ordinal:KIND:N` | Match Nth block of a kind |
+
+        ## plan
+
+        Preview an execution plan from a YAML patch file. No changes are written.
+
+        ```bash
+        docweave plan FILE --patch PATCH.yaml
+        docweave plan FILE --patch PATCH.yaml --strict
+        docweave plan FILE --patch PATCH.yaml --out PLAN.json
+        ```
+
+        ## apply
+
+        Apply a patch or saved execution plan to a document.
+
+        ```bash
+        docweave apply FILE --patch PATCH.yaml
+        docweave apply FILE --patch PATCH.yaml --dry-run
+        docweave apply FILE --patch PATCH.yaml --backup
+        docweave apply FILE --patch PATCH.yaml --evidence-dir ./evidence
+        docweave apply FILE --plan PLAN.json
+        ```
+
+        ## diff
+
+        Compute raw and semantic diff between two documents.
+
+        ```bash
+        docweave diff BEFORE.md AFTER.md
+        ```
+
+        Returns both a line-level unified diff and a block-level semantic diff.
+
+        ## validate
+
+        Validate the structural integrity of a document.
+
+        ```bash
+        docweave validate FILE
+        ```
+
+        ## journal
+
+        List or retrieve transaction journal entries.
+
+        ```bash
+        docweave journal --file FILE
+        docweave journal TXN_ID
+        ```
+
+        ## Exit Codes
+
+        | Code | Meaning |
+        | ---- | ------- |
+        | `0` | Success |
+        | `10` | Validation error |
+        | `20` | Permission error |
+        | `40` | Conflict (fingerprint mismatch) |
+        | `50` | I/O error |
+        | `90` | Internal error |

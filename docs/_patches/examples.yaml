@@ -1,0 +1,140 @@
+version: 1
+target:
+  backend: auto
+operations:
+  - id: op_add_content
+    op: insert_after
+    anchor:
+      by: heading
+      value: Examples
+    content:
+      kind: markdown
+      value: |
+        These examples show complete docweave workflows for common tasks.
+
+        ## Inspect and Explore
+
+        ```bash
+        # Get document metadata
+        docweave inspect README.md
+
+        # View all blocks
+        docweave view README.md
+
+        # View blocks in a specific section
+        docweave view README.md --section "Installation"
+
+        # Search for blocks containing "authentication"
+        docweave find README.md "authentication"
+
+        # Resolve an anchor to verify it matches what you expect
+        docweave anchor README.md "heading:Quick Start"
+        ```
+
+        ## Basic Edit Workflow
+
+        Create a patch file `add-note.yaml`:
+
+        ```yaml
+        version: 1
+        target:
+          backend: auto
+        operations:
+          - id: op_add_note
+            op: insert_after
+            anchor:
+              by: heading
+              value: Installation
+            content:
+              kind: markdown
+              value: |
+                > **Note:** Docweave requires Python 3.12 or later.
+        ```
+
+        Preview, then apply:
+
+        ```bash
+        # Preview — no file changes
+        docweave plan README.md --patch add-note.yaml
+
+        # Apply with backup
+        docweave apply README.md --patch add-note.yaml --backup
+        ```
+
+        ## Precise Targeting with Context
+
+        When a heading appears multiple times, use `occurrence` to disambiguate:
+
+        ```yaml
+        operations:
+          - id: op_001
+            op: insert_after
+            anchor:
+              by: heading
+              value: Overview
+              occurrence: 2
+            content:
+              kind: markdown
+              value: |
+                Second occurrence content.
+        ```
+
+        ## Replace Text
+
+        Fix a typo or update a specific phrase:
+
+        ```yaml
+        operations:
+          - id: op_fix_typo
+            op: replace_text
+            anchor:
+              by: quote
+              value: teh quick brown fox
+            replacement: the quick brown fox
+        ```
+
+        ## Evidence Bundle
+
+        Capture a full audit trail alongside an edit:
+
+        ```bash
+        docweave apply README.md --patch edit.yaml --evidence-dir ./evidence
+        ```
+
+        The evidence directory contains:
+
+        - `plan.json` — The resolved execution plan
+        - `before.json` — Normalized block list before edits
+        - `after.json` — Normalized block list after edits
+        - `semantic_diff.json` — Block-level diff
+        - `raw_diff.txt` — Line-level unified diff
+
+        ## Transaction Journal
+
+        Review all changes made to a file:
+
+        ```bash
+        docweave journal --file README.md
+        ```
+
+        Retrieve a specific transaction by ID:
+
+        ```bash
+        docweave journal txn_20260310_143022_a1b2
+        ```
+
+        ## Concurrent Operations
+
+        Read commands are safe to run concurrently on the same file. Mutation commands
+        use atomic writes, so concurrent applies to **different** files proceed without
+        interference:
+
+        ```bash
+        # These run safely in parallel (PowerShell)
+        $jobs = @(
+          Start-Job { docweave apply docs/index.md --patch docs/_patches/index.yaml },
+          Start-Job { docweave apply docs/commands.md --patch docs/_patches/commands.yaml },
+          Start-Job { docweave apply docs/examples.md --patch docs/_patches/examples.yaml }
+        )
+        $jobs | Wait-Job | Receive-Job
+        ```

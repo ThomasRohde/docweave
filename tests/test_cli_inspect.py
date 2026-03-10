@@ -16,7 +16,8 @@ def test_inspect_envelope(run_cli):
     assert env["ok"] is True
     assert env["command"] == "inspect"
     assert env["result"]["backend"] == "markdown-native"
-    assert env["result"]["document_summary"]["heading_count"] == 7
+    assert len(env["result"]["headings"]) == 7
+    assert env["result"]["block_count"] == 18
 
 
 def test_inspect_file_not_found(run_cli):

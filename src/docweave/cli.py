@@ -14,7 +14,7 @@ from docweave.backends.base import BackendAdapter
 from docweave.backends.registry import detect as detect_backend
 from docweave.backends.registry import init_backends
 from docweave.config import ExitCode, RuntimeConfig, detect_config
-from docweave.envelope import ErrorDetail, Warning, emit, error_envelope, success_envelope
+from docweave.envelope import ErrorDetail, Warning, emit, error_envelope, make_envelope, success_envelope
 from docweave.models import NormalizedDocument
 
 app = typer.Typer(
@@ -174,42 +174,118 @@ def guide() -> None:
             "guide": {
                 "description": "Show command catalog, error codes, and exit codes.",
                 "status": "available",
+                "result_schema": {
+                    "cli": "string",
+                    "version": "string",
+                    "commands": "object — per-command descriptor with description, status, result_schema",
+                    "error_codes": "object",
+                    "exit_codes": "object",
+                    "patch_schema": "object",
+                },
             },
             "inspect": {
                 "description": "Return structural metadata about a document.",
                 "status": "available",
+                "result_schema": {
+                    "file": "string",
+                    "backend": "string",
+                    "tier": "string",
+                    "editable": "boolean",
+                    "block_count": "integer",
+                    "headings": "array[string] — heading texts in document order",
+                    "supports": "object — {comments, tables, styles, track_changes}",
+                    "fidelity": "object — {write_mode, roundtrip_risk}",
+                },
             },
             "view": {
                 "description": "Return the full normalized block list for a document.",
                 "status": "available",
+                "result_schema": {
+                    "blocks": "array[Block] — {block_id, kind, section_path, text, raw_text, level, source_span, stable_hash}",
+                    "block_count": "integer",
+                },
             },
             "find": {
                 "description": "Search blocks for a text query.",
                 "status": "available",
+                "result_schema": {
+                    "query": "string",
+                    "results": "array[Block]",
+                    "count": "integer",
+                },
             },
             "anchor": {
                 "description": "Resolve an anchor spec to a specific block.",
                 "status": "available",
+                "result_schema": {
+                    "spec": "string",
+                    "matches": "array[AnchorMatch] — {block, confidence, match_reason}",
+                    "count": "integer",
+                },
             },
             "plan": {
                 "description": "Preview an execution plan from a YAML patch file.",
                 "status": "available",
+                "result_schema": {
+                    "file": "string",
+                    "backend": "string",
+                    "fingerprint": "string — SHA-256 of file at plan time",
+                    "valid": "boolean",
+                    "resolved_operations": "array[ResolvedOp] — {operation, anchor_match, affected_lines}",
+                    "warnings": "array[string]",
+                },
             },
             "apply": {
                 "description": "Apply a patch or execution plan to a document.",
                 "status": "available",
+                "result_schema": {
+                    "file": "string",
+                    "operations_applied": "integer",
+                    "fingerprint_before": "string",
+                    "fingerprint_after": "string",
+                    "backup_path": "string | null",
+                    "journal_txn_id": "string | null",
+                    "semantic_summary": "object — {added, removed, changed, unchanged}",
+                    "evidence_dir": "string | null — only present when --evidence-dir was set",
+                },
+            },
+            "fleet": {
+                "description": "Apply multiple self-describing patch files to their respective target documents.",
+                "status": "available",
+                "result_schema": {
+                    "total": "integer",
+                    "succeeded": "integer",
+                    "failed": "integer",
+                    "dry_run": "boolean",
+                    "parallel": "boolean",
+                    "results": "array[FleetResult] — {patch, file, ok, ops_applied, dry_run, error?, fingerprint_before?, fingerprint_after?}",
+                },
             },
             "diff": {
                 "description": "Compute raw and semantic diff between two documents.",
                 "status": "available",
+                "result_schema": {
+                    "raw_diff": "array[RawHunk] — {old_start, old_count, new_start, new_count, lines}",
+                    "semantic_diff": "object — {summary, changes: array[BlockChange]}",
+                },
             },
             "validate": {
                 "description": "Validate structural integrity of a document.",
                 "status": "available",
+                "result_schema": {
+                    "valid": "boolean",
+                    "issues": "array[ValidationIssue] — {code, message, block_id?}",
+                    "block_count": "integer",
+                },
             },
             "journal": {
                 "description": "List or retrieve transaction journal entries.",
                 "status": "available",
+                "result_schema": {
+                    "entries": "array[JournalEntry] — {txn_id, timestamp, file, backend, operations, fingerprint_before, fingerprint_after, operations_applied, warnings, validation_result}",
+                    "count": "integer",
+                    "note": "When called with a transaction ID, returns {entry: JournalEntry} instead.",
+                },
             },
         },
         "error_codes": {
@@ -875,6 +951,187 @@ def apply_cmd(
     elapsed = int((time.monotonic() - t0) * 1000)
     envelope = success_envelope(
         "apply", result_dict, target=str(file), duration_ms=elapsed,
+    )
+    emit(envelope)
+
+
+@app.command(name="fleet")
+def fleet_cmd(
+    patches: list[Path] = typer.Option(
+        ..., "--patch", "-p",
+        help="YAML patch files to apply. Each must have target.file set.",
+    ),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Preview without modifying files."),
+    backup_opt: bool = typer.Option(False, "--backup", help="Create backups before applying."),
+    strict: bool = typer.Option(False, "--strict", help="Fail on ambiguous anchors."),
+    parallel: bool = typer.Option(False, "--parallel", help="Apply patches concurrently via threads."),
+    evidence_dir: Path | None = typer.Option(
+        None, "--evidence-dir",
+        help="Write evidence bundles here (one subdirectory per file).",
+    ),
+) -> None:
+    """Apply multiple self-describing patch files to their respective target documents."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    from docweave.plan.applier import FingerprintConflictError, apply_plan
+    from docweave.plan.planner import generate_plan
+    from docweave.plan.schema import load_patch
+
+    t0 = time.monotonic()
+    init_backends()
+
+    # Phase 1: Validate all patches upfront before touching any file.
+    patch_jobs: list[tuple[Path, Path, object]] = []
+    for p in patches:
+        if not p.exists():
+            envelope = error_envelope(
+                "fleet",
+                [ErrorDetail(code="ERR_IO_FILE_NOT_FOUND", message=f"Patch file not found: {p}")],
+            )
+            emit(envelope)
+            raise typer.Exit(code=ExitCode.IO)
+
+        try:
+            patch_data = load_patch(p)
+        except ValueError as exc:
+            envelope = error_envelope(
+                "fleet",
+                [ErrorDetail(code="ERR_VALIDATION_PATCH_SCHEMA", message=str(exc))],
+            )
+            emit(envelope)
+            raise typer.Exit(code=ExitCode.VALIDATION)
+
+        target_file_str = patch_data.target.get("file")
+        if not target_file_str:
+            envelope = error_envelope(
+                "fleet",
+                [ErrorDetail(
+                    code="ERR_VALIDATION",
+                    message=f"Patch '{p}' must have target.file set for fleet apply.",
+                )],
+            )
+            emit(envelope)
+            raise typer.Exit(code=ExitCode.VALIDATION)
+
+        file_path = Path(target_file_str)
+        if not file_path.exists():
+            envelope = error_envelope(
+                "fleet",
+                [ErrorDetail(
+                    code="ERR_IO_FILE_NOT_FOUND",
+                    message=f"Target file not found: {file_path} (referenced by patch {p})",
+                )],
+            )
+            emit(envelope)
+            raise typer.Exit(code=ExitCode.IO)
+
+        patch_jobs.append((p, file_path, patch_data))
+
+    # Phase 2: Run applies — serial or parallel.
+    def _run_one(job: tuple) -> dict:
+        p_path, file_path, patch_data = job
+        try:
+            exec_plan = generate_plan(file_path, patch_data, strict=strict)
+            if not exec_plan.valid:
+                return {
+                    "patch": str(p_path),
+                    "file": str(file_path),
+                    "ok": False,
+                    "ops_applied": 0,
+                    "dry_run": dry_run,
+                    "error": "Plan invalid: " + "; ".join(exec_plan.warnings),
+                }
+
+            if dry_run:
+                return {
+                    "patch": str(p_path),
+                    "file": str(file_path),
+                    "ok": True,
+                    "ops_applied": len(exec_plan.resolved_operations),
+                    "dry_run": True,
+                }
+
+            ev_dir: Path | None = None
+            if evidence_dir is not None:
+                import hashlib
+                tag = hashlib.md5(str(file_path).encode()).hexdigest()[:8]
+                ev_dir = Path(evidence_dir) / tag
+                ev_dir.mkdir(parents=True, exist_ok=True)
+
+            apply_result = apply_plan(file_path, exec_plan, backup=backup_opt)
+
+            return {
+                "patch": str(p_path),
+                "file": str(file_path),
+                "ok": True,
+                "ops_applied": apply_result.operations_applied,
+                "fingerprint_before": apply_result.fingerprint_before,
+                "fingerprint_after": apply_result.fingerprint_after,
+                "dry_run": False,
+            }
+        except FingerprintConflictError as exc:
+            return {
+                "patch": str(p_path),
+                "file": str(file_path),
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": f"ERR_CONFLICT_FINGERPRINT: {exc}",
+            }
+        except PermissionError:
+            return {
+                "patch": str(p_path),
+                "file": str(file_path),
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": f"ERR_PERMISSION: Permission denied writing to {file_path}",
+            }
+        except Exception as exc:
+            return {
+                "patch": str(p_path),
+                "file": str(file_path),
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": str(exc),
+            }
+
+    results: list[dict] = []
+    if parallel:
+        with ThreadPoolExecutor() as executor:
+            futures = {executor.submit(_run_one, job): job for job in patch_jobs}
+            for future in as_completed(futures):
+                results.append(future.result())
+        # Re-sort to match input order (as_completed is non-deterministic).
+        patch_index = {str(p): i for i, (p, _, _) in enumerate(patch_jobs)}
+        results.sort(key=lambda r: patch_index.get(r["patch"], 999))
+    else:
+        for job in patch_jobs:
+            results.append(_run_one(job))
+
+    succeeded = sum(1 for r in results if r["ok"])
+    failed = len(results) - succeeded
+    elapsed = int((time.monotonic() - t0) * 1000)
+
+    fleet_result = {
+        "total": len(results),
+        "succeeded": succeeded,
+        "failed": failed,
+        "dry_run": dry_run,
+        "parallel": parallel,
+        "results": results,
+    }
+
+    errors: list[ErrorDetail] = []
+    if failed:
+        errors = [ErrorDetail(
+            code="ERR_FLEET_PARTIAL",
+            message=f"{failed} of {len(results)} patches failed.",
+        )]
+
+    envelope = make_envelope(
+        "fleet", ok=(failed == 0), result=fleet_result, errors=errors, duration_ms=elapsed,
     )
     emit(envelope)
 

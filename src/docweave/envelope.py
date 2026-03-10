@@ -91,6 +91,32 @@ def error_envelope(
     )
 
 
+def make_envelope(
+    command: str,
+    ok: bool,
+    result: Any,
+    *,
+    errors: list[ErrorDetail] | None = None,
+    warnings: list[Warning] | None = None,
+    target: str | None = None,
+    duration_ms: int = 0,
+) -> Envelope:
+    """Build an envelope with explicit ok flag — useful for partial success."""
+    from docweave import __version__
+
+    return Envelope(
+        ok=ok,
+        request_id=_generate_request_id(),
+        command=command,
+        target=target,
+        result=result,
+        errors=errors or [],
+        warnings=warnings or [],
+        metrics=Metrics(duration_ms=duration_ms),
+        version=__version__,
+    )
+
+
 def emit(envelope: Envelope, *, file: Any = None) -> None:
     """Serialize envelope as JSON and write to stdout (or given file)."""
     data = orjson.dumps(envelope.model_dump(mode="json"))

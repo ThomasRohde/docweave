@@ -49,4 +49,5 @@ class InspectResult(BaseModel):
     editable: bool
     supports: dict
     fidelity: dict
-    document_summary: dict
+    block_count: int
+    headings: list[str]

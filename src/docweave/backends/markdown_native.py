@@ -281,10 +281,8 @@ class MarkdownBackend(BackendAdapter):
                 "write_mode": "native",
                 "roundtrip_risk": "low",
             },
-            document_summary={
-                "block_count": doc.block_count,
-                "heading_count": doc.heading_count,
-            },
+            block_count=doc.block_count,
+            headings=[b.text for b in doc.blocks if b.kind == "heading"],
         )
 
     def resolve_anchor(self, view: Any, anchor: dict[str, Any]) -> Any:

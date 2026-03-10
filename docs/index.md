@@ -1,0 +1,43 @@
+# Docweave
+
+Docweave is an **agent-first CLI for structured document editing**. It parses
+Markdown documents into a normalized block model, resolves structural anchors,
+and applies targeted edits through a declarative YAML patch format.
+
+Every command returns a stable JSON envelope on `stdout`, making it ideal for
+AI agents, CI pipelines, and scriptable workflows.
+
+## Features
+
+- **Structured JSON output** — Every response is a Pydantic-validated `Envelope`
+  with `ok`, `errors`, `warnings`, and `metrics` fields.
+- **Anchor-based editing** — Target blocks by heading, content, block ID, or hash.
+- **Atomic writes** — Fingerprint-based conflict detection prevents lost updates.
+- **Semantic diffs** — Block-level comparison, not just line-by-line.
+- **Evidence bundles** — Before/after snapshots and diffs for audit trails.
+- **Transaction journal** — Full provenance on every `apply` operation.
+- **Concurrency safe** — Reads run concurrently; mutations use atomic writes.
+
+## Documentation
+
+| Page | Description |
+| ---- | ----------- |
+| [Installation](installation.md) | Requirements and install methods |
+| [Quick Start](quickstart.md) | Your first docweave workflow |
+| [Command Reference](commands.md) | All commands with examples |
+| [Patch Format](patch-format.md) | YAML patch file reference |
+| [Architecture](architecture.md) | Internal module structure |
+| [Examples](examples.md) | Practical usage examples |
+
+## Quick Install
+
+```bash
+uv tool install docweave
+```
+
+Verify:
+
+```bash
+docweave --version
+docweave guide
+```

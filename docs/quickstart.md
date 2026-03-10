@@ -1,0 +1,76 @@
+# Quick Start
+
+This guide walks through a complete docweave workflow.
+
+## Step 1: Inspect a Document
+
+Examine a document's structure before making any changes:
+
+```bash
+docweave inspect README.md
+```
+
+Returns a JSON envelope with block count, heading list, and the file fingerprint.
+
+## Step 2: View All Blocks
+
+List every block in normalized form:
+
+```bash
+docweave view README.md
+```
+
+Each block has a unique `id` (e.g., `blk_001`), `kind` (heading, paragraph,
+code_block), its section path, and a stable content hash.
+
+## Step 3: Write a Patch File
+
+Create a YAML file describing your edits:
+
+```yaml
+version: 1
+target:
+  backend: auto
+operations:
+  - id: op_001
+    op: insert_after
+    anchor:
+      by: heading
+      value: Introduction
+    content:
+      kind: markdown
+      value: |
+        This paragraph was added by docweave.
+```
+
+## Step 4: Preview the Plan
+
+See what will happen before writing anything:
+
+```bash
+docweave plan README.md --patch edit.yaml
+```
+
+## Step 5: Apply the Patch
+
+Apply with an automatic backup:
+
+```bash
+docweave apply README.md --patch edit.yaml --backup
+```
+
+The response includes the applied operations, a semantic diff, and the new fingerprint.
+
+## Step 6: Review the Journal
+
+See the full transaction history:
+
+```bash
+docweave journal --file README.md
+```
+
+## Next Steps
+
+- [Command Reference](commands.md) — All commands and options
+- [Patch Format](patch-format.md) — Full patch YAML reference
+- [Examples](examples.md) — Real-world usage patterns
