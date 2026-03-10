@@ -48,6 +48,8 @@ class NormalizedDocument(BaseModel):
 class HeadingInfo(BaseModel):
     text: str
     level: int
+    block_id: str
+    section_path: list[str]
     annotations: dict[str, Any] = {}
 
 

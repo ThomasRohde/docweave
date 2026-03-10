@@ -196,7 +196,11 @@ class WordBackend(BackendAdapter):
             },
             block_count=doc.block_count,
             headings=[
-                HeadingInfo(text=b.text, level=b.level or 1, annotations=b.annotations)
+                HeadingInfo(
+                    text=b.text, level=b.level or 1,
+                    block_id=b.block_id, section_path=b.section_path,
+                    annotations=b.annotations,
+                )
                 for b in doc.blocks if b.kind == "heading"
             ],
         )

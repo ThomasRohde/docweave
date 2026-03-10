@@ -142,11 +142,15 @@ def test_inspect_includes_annotations(backend, tmp_path):
     h1 = result.headings[0]
     assert h1.text == "Authentication"
     assert h1.level == 1
+    assert h1.block_id == "blk_001"
+    assert h1.section_path == ["Authentication"]
     assert h1.annotations == {"summary": "auth stuff", "tags": ["security"]}
 
     h2 = result.headings[1]
     assert h2.text == "Plain Sub"
     assert h2.level == 2
+    assert h2.block_id == "blk_003"
+    assert h2.section_path == ["Authentication", "Plain Sub"]
     assert h2.annotations == {}
 
 
@@ -291,4 +295,92 @@ def test_inspect_cli_annotations(run_cli, tmp_path):
     assert len(headings) == 1
     assert headings[0]["text"] == "My Section"
     assert headings[0]["level"] == 1
+    assert headings[0]["block_id"] == "blk_001"
+    assert headings[0]["section_path"] == ["My Section"]
     assert headings[0]["annotations"]["summary"] == "cli test"
+
+
+# --- Tag filtering ---
+
+
+def test_inspect_tag_filter(run_cli, tmp_path):
+    """inspect --tag filters headings to those with matching tag."""
+    md = tmp_path / "doc.md"
+    md.write_text(
+        '<!-- docweave: {"tags": ["security", "api"]} -->\n'
+        "# Authentication\n\nContent.\n\n"
+        '<!-- docweave: {"tags": ["api", "performance"]} -->\n'
+        "# Rate Limits\n\nContent.\n\n"
+        "# Changelog\n\nUpdates.\n"
+    )
+    # Filter by "security" — should only get Authentication
+    result = run_cli("inspect", str(md), "--tag", "security")
+    assert result.json["ok"] is True
+    headings = result.json["result"]["headings"]
+    assert len(headings) == 1
+    assert headings[0]["text"] == "Authentication"
+
+
+def test_inspect_tag_filter_multiple_matches(run_cli, tmp_path):
+    """inspect --tag returns all headings with the tag."""
+    md = tmp_path / "doc.md"
+    md.write_text(
+        '<!-- docweave: {"tags": ["security", "api"]} -->\n'
+        "# Authentication\n\nContent.\n\n"
+        '<!-- docweave: {"tags": ["api", "performance"]} -->\n'
+        "# Rate Limits\n\nContent.\n\n"
+        "# Changelog\n\nUpdates.\n"
+    )
+    result = run_cli("inspect", str(md), "--tag", "api")
+    headings = result.json["result"]["headings"]
+    assert len(headings) == 2
+    texts = [h["text"] for h in headings]
+    assert "Authentication" in texts
+    assert "Rate Limits" in texts
+
+
+def test_inspect_tag_filter_case_insensitive(run_cli, tmp_path):
+    """Tag matching is case-insensitive."""
+    md = tmp_path / "doc.md"
+    md.write_text(
+        '<!-- docweave: {"tags": ["Security"]} -->\n'
+        "# Auth\n\nContent.\n"
+    )
+    result = run_cli("inspect", str(md), "--tag", "security")
+    assert len(result.json["result"]["headings"]) == 1
+
+
+def test_inspect_tag_no_match(run_cli, tmp_path):
+    """inspect --tag with no matches returns empty headings."""
+    md = tmp_path / "doc.md"
+    md.write_text("# Title\n\nContent.\n")
+    result = run_cli("inspect", str(md), "--tag", "nonexistent")
+    assert result.json["result"]["headings"] == []
+
+
+def test_view_tag_filter(run_cli, tmp_path):
+    """view --tag returns blocks from sections with matching tag."""
+    md = tmp_path / "doc.md"
+    md.write_text(
+        '<!-- docweave: {"tags": ["security"]} -->\n'
+        "# Authentication\n\nAuth content.\n\n"
+        "# Changelog\n\nChangelog content.\n"
+    )
+    result = run_cli("view", str(md), "--tag", "security")
+    assert result.json["ok"] is True
+    blocks = result.json["result"]["blocks"]
+    # Should include the heading and its content, not Changelog
+    texts = [b["text"] for b in blocks]
+    assert "Authentication" in texts
+    assert "Auth content." in texts
+    assert "Changelog" not in texts
+
+
+def test_view_tag_no_match_warns(run_cli, tmp_path):
+    """view --tag with no matches returns warning."""
+    md = tmp_path / "doc.md"
+    md.write_text("# Title\n\nContent.\n")
+    result = run_cli("view", str(md), "--tag", "nonexistent")
+    assert result.json["ok"] is True
+    assert len(result.json["result"]["blocks"]) == 0
+    assert any("WARN_TAG_NOT_FOUND" in w["code"] for w in result.json["warnings"])
