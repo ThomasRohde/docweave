@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from docweave.backends.base import BackendAdapter
-from docweave.models import Block, InspectResult, NormalizedDocument, SourceSpan
+from docweave.models import Block, HeadingInfo, InspectResult, NormalizedDocument, SourceSpan
 
 
 def _hash(text: str) -> str:
@@ -184,7 +184,10 @@ class WordBackend(BackendAdapter):
                 "roundtrip_risk": "medium",
             },
             block_count=doc.block_count,
-            headings=[b.text for b in doc.blocks if b.kind == "heading"],
+            headings=[
+                HeadingInfo(text=b.text, level=b.level or 1, annotations=b.annotations)
+                for b in doc.blocks if b.kind == "heading"
+            ],
         )
 
     def resolve_anchor(self, view: Any, anchor: dict[str, Any]) -> Any:

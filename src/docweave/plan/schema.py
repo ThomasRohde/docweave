@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 import yaml
 from pydantic import BaseModel, field_validator, model_validator
@@ -24,6 +24,7 @@ OperationType = Literal[
     "delete_block",
     "set_heading",
     "normalize_whitespace",
+    "set_context",
 ]
 
 VALID_ANCHOR_TYPES = {"heading", "quote", "block_id", "hash", "ordinal"}
@@ -37,6 +38,7 @@ class OperationSpec(BaseModel):
     anchor: dict
     content: PatchContent | None = None
     replacement: str | None = None
+    context: dict[str, Any] | None = None  # for set_context operations
 
     @field_validator("anchor")
     @classmethod
@@ -60,6 +62,9 @@ class OperationSpec(BaseModel):
             raise ValueError(msg)
         if self.op == "replace_text" and self.replacement is None:
             msg = "Operation 'replace_text' requires a 'replacement' field"
+            raise ValueError(msg)
+        if self.op == "set_context" and self.context is None:
+            msg = "Operation 'set_context' requires a 'context' field"
             raise ValueError(msg)
         return self
 
