@@ -1,0 +1,13 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: set_heading
+    anchor:
+      by: heading
+      value: Purpose
+    content:
+      kind: markdown
+      value: "New Purpose Title"

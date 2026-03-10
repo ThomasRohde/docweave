@@ -1,0 +1,14 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: insert_after
+    anchor:
+      by: heading
+      value: Purpose
+    content:
+      kind: markdown
+      value: |
+        This is a new paragraph inserted after the Purpose heading.

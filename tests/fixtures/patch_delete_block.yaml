@@ -1,0 +1,10 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: delete_block
+    anchor:
+      by: heading
+      value: Non-Functional

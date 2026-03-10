@@ -1,0 +1,12 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: replace_text
+    anchor:
+      by: quote
+      value: "demonstrate docweave"
+      context_before: "purpose is to"
+    replacement: "showcase the docweave CLI"

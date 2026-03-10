@@ -1,0 +1,13 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: insert_after
+    anchor:
+      by: heading
+      value: Purpose
+    content:
+      kind: blockquote
+      value: This is an important note.

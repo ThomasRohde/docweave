@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "docweave"
+version = "0.1.0"
+description = "Agent-first CLI for structured document editing"
+requires-python = ">=3.12"
+dependencies = [
+    "typer[all]>=0.15",
+    "pydantic>=2.0",
+    "orjson>=3.9",
+    "markdown-it-py>=3.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.8",
+]
+
+[project.scripts]
+docweave = "docweave.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docweave"]
+
+[tool.ruff]
+line-length = 99
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

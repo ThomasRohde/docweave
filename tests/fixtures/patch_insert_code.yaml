@@ -1,0 +1,16 @@
+version: 1
+target:
+  file: sample.md
+  backend: auto
+operations:
+  - id: op_001
+    op: insert_after
+    anchor:
+      by: heading
+      value: Purpose
+    content:
+      kind: code_block
+      language: python
+      value: |
+        def example():
+            return 42
