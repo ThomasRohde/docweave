@@ -166,6 +166,17 @@ def _load_document(
         )
         emit(envelope)
         raise typer.Exit(code=ExitCode.VALIDATION)
+    except Exception as exc:
+        envelope = error_envelope(
+            command_name,
+            [ErrorDetail(
+                code="ERR_IO",
+                message=f"Cannot read file: {file} ({type(exc).__name__}: {exc})",
+            )],
+            target=str(file),
+        )
+        emit(envelope)
+        raise typer.Exit(code=ExitCode.IO)
 
     return backend, doc
 
@@ -197,8 +208,10 @@ def guide() -> None:
                 "description": "Return structural metadata about a document.",
                 "status": "available",
                 "options": {
-                    "--tag": "Filter headings to those whose annotations contain this tag "
-                        "(case-insensitive match against annotations.tags list).",
+                    "--tag": "Filter headings by annotation tag "
+                        "(case-insensitive match against annotations.tags list)."
+                        " Can be repeated for OR matching.",
+                    "--list-tags": "List all unique tags found in document headings.",
                 },
                 "result_schema": {
                     "file": "string",
@@ -220,7 +233,8 @@ def guide() -> None:
                 "options": {
                     "--section": "Filter by section name (matches any hierarchy level).",
                     "--tag": "Filter to sections whose headings have this annotation tag "
-                        "(case-insensitive match against annotations.tags list).",
+                        "(case-insensitive match against annotations.tags list)."
+                        " Can be repeated for OR matching.",
                 },
                 "result_schema": {
                     "blocks": (
@@ -234,6 +248,11 @@ def guide() -> None:
             "find": {
                 "description": "Search blocks for a text query.",
                 "status": "available",
+                "options": {
+                    "--section": "Filter by section name.",
+                    "--tag": "Filter to sections whose headings have this annotation tag."
+                        " Can be repeated for OR matching.",
+                },
                 "result_schema": {
                     "query": "string",
                     "results": "array[Block]",
@@ -380,7 +399,9 @@ def guide() -> None:
                 "anchor": "Dict with 'by' and 'value' keys "
                     "(and optional occurrence, section, context_before, context_after).",
                 "content": "Required for insert_after, insert_before, "
-                    "replace_block, set_heading. Dict with 'kind' and 'value'.",
+                    "replace_block, set_heading. Dict with 'kind' and 'value'. "
+                    "Note: insert_after on a heading inserts immediately after"
+                    " the heading line, not after the entire section.",
                 "replacement": "Required for replace_text. The replacement string.",
                 "context": "Required for set_context. Dict of annotation key-value pairs "
                     "(merged into existing annotations on the target heading).",
@@ -437,20 +458,39 @@ def guide() -> None:
 @app.command()
 def inspect(
     file: Path = typer.Argument(..., help="Path to the document to inspect."),
-    tag: str | None = typer.Option(
+    tag: list[str] | None = typer.Option(
         None, "--tag",
-        help="Filter headings to those whose annotations contain this tag.",
+        help="Filter headings by annotation tag. Can be repeated for OR matching.",
+    ),
+    list_tags: bool = typer.Option(
+        False, "--list-tags",
+        help="List all unique tags found in document headings.",
     ),
 ) -> None:
     """Return structural metadata about a document."""
     t0 = time.monotonic()
     backend, _doc = _load_document("inspect", file)
     result = backend.inspect(file)
+
+    if list_tags:
+        all_tags: set[str] = set()
+        for h in result.headings:
+            for t in h.annotations.get("tags", []):
+                all_tags.add(t)
+        tag_list = sorted(all_tags)
+        elapsed = int((time.monotonic() - t0) * 1000)
+        envelope = success_envelope(
+            "inspect", {"tags": tag_list, "count": len(tag_list)},
+            target=str(file), duration_ms=elapsed,
+        )
+        emit(envelope)
+        return
+
     if tag:
-        tag_lower = tag.lower()
+        tag_lowers = {t.lower() for t in tag}
         result.headings = [
             h for h in result.headings
-            if tag_lower in [t.lower() for t in h.annotations.get("tags", [])]
+            if tag_lowers & {t.lower() for t in h.annotations.get("tags", [])}
         ]
     elapsed = int((time.monotonic() - t0) * 1000)
     envelope = success_envelope(
@@ -467,9 +507,10 @@ def view(
         help="Filter by section name (matches any level in the hierarchy,"
             " not paths like 'Parent/Child').",
     ),
-    tag: str | None = typer.Option(
+    tag: list[str] | None = typer.Option(
         None, "--tag",
-        help="Filter to sections whose headings have this annotation tag.",
+        help="Filter to sections whose headings have this annotation tag."
+            " Can be repeated for OR matching.",
     ),
 ) -> None:
     """Return the full normalized block list for a document."""
@@ -478,12 +519,12 @@ def view(
     warnings: list[Warning] = []
 
     if tag and not section:
-        # Find heading texts whose annotations contain the tag
-        tag_lower = tag.lower()
+        # Find heading texts whose annotations contain any of the tags
+        tag_lowers = {t.lower() for t in tag}
         tagged_sections = {
             b.text for b in doc.blocks
             if b.kind == "heading"
-            and tag_lower in [t.lower() for t in b.annotations.get("tags", [])]
+            and tag_lowers & {t.lower() for t in b.annotations.get("tags", [])}
         }
         if tagged_sections:
             doc.blocks = [
@@ -494,7 +535,7 @@ def view(
             doc.blocks = []
             warnings.append(Warning(
                 code="WARN_TAG_NOT_FOUND",
-                message=f"No sections found with tag {tag!r}.",
+                message=f"No sections found with tag(s) {tag!r}.",
             ))
 
     if section:
@@ -527,6 +568,11 @@ def find(
         help="Filter by section name (matches any level in the hierarchy,"
             " not paths like 'Parent/Child').",
     ),
+    tag: list[str] | None = typer.Option(
+        None, "--tag",
+        help="Filter to sections whose headings have this annotation tag."
+            " Can be repeated for OR matching.",
+    ),
 ) -> None:
     """Search blocks for a text query (searches normalized text, not raw Markdown syntax)."""
     from docweave.anchors import search_blocks
@@ -543,6 +589,26 @@ def find(
 
     _backend, doc = _load_document("find", file)
     warnings: list[Warning] = []
+
+    if tag:
+        tag_lowers = {t.lower() for t in tag}
+        tagged_sections = {
+            b.text for b in doc.blocks
+            if b.kind == "heading"
+            and tag_lowers & {t.lower() for t in b.annotations.get("tags", [])}
+        }
+        if tagged_sections:
+            doc.blocks = [
+                b for b in doc.blocks
+                if any(s in tagged_sections for s in b.section_path)
+            ]
+        else:
+            doc.blocks = []
+            warnings.append(Warning(
+                code="WARN_TAG_NOT_FOUND",
+                message=f"No sections found with tag(s) {tag!r}.",
+            ))
+
     if section:
         section_lower = section.lower()
         all_blocks = doc.blocks
@@ -995,6 +1061,7 @@ def apply_cmd(
     sem_diff = semantic_diff(before_doc, after_doc)
 
     # Evidence bundle
+    apply_warnings: list[Warning] = []
     if evidence_dir is not None:
         from docweave.evidence.bundle import write_evidence_bundle
 
@@ -1047,6 +1114,14 @@ def apply_cmd(
             )
             emit(envelope)
             raise typer.Exit(code=ExitCode.IO)
+        except (TypeError, ValueError) as exc:
+            # Serialization errors (e.g. non-JSON-serializable metadata).
+            # Apply already succeeded, so just warn instead of failing.
+            evidence_dir = None  # suppress evidence_dir in result
+            apply_warnings.append(Warning(
+                code="WARN_EVIDENCE_WRITE_FAILED",
+                message=f"Evidence bundle write failed: {exc}",
+            ))
 
     # Validation
     val_report = validate_document(after_doc)
@@ -1081,7 +1156,8 @@ def apply_cmd(
 
     elapsed = int((time.monotonic() - t0) * 1000)
     envelope = success_envelope(
-        "apply", result_dict, target=str(file), duration_ms=elapsed,
+        "apply", result_dict, target=str(file),
+        warnings=apply_warnings or None, duration_ms=elapsed,
     )
     emit(envelope)
 
@@ -1115,8 +1191,10 @@ def fleet_cmd(
 
     # Phase 1: Validate all patches upfront before touching any file.
     patch_jobs: list[tuple[Path, Path, object]] = []
+    validation_failures: list[dict] = []
     for p in patches:
         if not p.exists():
+            # Missing patch file is bad user input — immediate exit
             envelope = error_envelope(
                 "fleet",
                 [ErrorDetail(code="ERR_IO_FILE_NOT_FOUND", message=f"Patch file not found: {p}")],
@@ -1127,38 +1205,63 @@ def fleet_cmd(
         try:
             patch_data = load_patch(p)
         except ValueError as exc:
-            envelope = error_envelope(
-                "fleet",
-                [ErrorDetail(code="ERR_VALIDATION_PATCH_SCHEMA", message=str(exc))],
-            )
-            emit(envelope)
-            raise typer.Exit(code=ExitCode.VALIDATION)
+            validation_failures.append({
+                "patch": str(p),
+                "file": None,
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": f"ERR_VALIDATION_PATCH_SCHEMA: {exc}",
+            })
+            continue
 
         target_file_str = patch_data.target.get("file")
         if not target_file_str:
-            envelope = error_envelope(
-                "fleet",
-                [ErrorDetail(
-                    code="ERR_VALIDATION",
-                    message=f"Patch '{p}' must have target.file set for fleet apply.",
-                )],
-            )
-            emit(envelope)
-            raise typer.Exit(code=ExitCode.VALIDATION)
+            validation_failures.append({
+                "patch": str(p),
+                "file": None,
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": f"Patch '{p}' must have target.file set for fleet apply.",
+            })
+            continue
 
         file_path = Path(target_file_str)
         if not file_path.exists():
-            envelope = error_envelope(
-                "fleet",
-                [ErrorDetail(
-                    code="ERR_IO_FILE_NOT_FOUND",
-                    message=f"Target file not found: {file_path} (referenced by patch {p})",
-                )],
-            )
-            emit(envelope)
-            raise typer.Exit(code=ExitCode.IO)
+            validation_failures.append({
+                "patch": str(p),
+                "file": str(file_path),
+                "ok": False,
+                "ops_applied": 0,
+                "dry_run": dry_run,
+                "error": f"Target file not found: {file_path} (referenced by patch {p})",
+            })
+            continue
 
         patch_jobs.append((p, file_path, patch_data))
+
+    # If no valid patches remain, emit error and exit
+    if not patch_jobs and validation_failures:
+        elapsed = int((time.monotonic() - t0) * 1000)
+        fleet_result = {
+            "total": len(validation_failures),
+            "succeeded": 0,
+            "failed": len(validation_failures),
+            "dry_run": dry_run,
+            "parallel": parallel,
+            "results": validation_failures,
+        }
+        envelope = make_envelope(
+            "fleet", ok=False, result=fleet_result,
+            errors=[ErrorDetail(
+                code="ERR_FLEET_ALL_FAILED",
+                message=f"All {len(validation_failures)} patches failed validation.",
+            )],
+            duration_ms=elapsed,
+        )
+        emit(envelope)
+        raise typer.Exit(code=ExitCode.VALIDATION)
 
     # Phase 2: Run applies — serial or parallel.
     def _run_one(job: tuple) -> dict:
@@ -1186,10 +1289,19 @@ def fleet_cmd(
 
             ev_dir: Path | None = None
             if evidence_dir is not None:
-                import hashlib
-                tag = hashlib.md5(str(file_path).encode()).hexdigest()[:8]
-                ev_dir = Path(evidence_dir) / tag
+                import hashlib as _hl
+                ev_tag = _hl.md5(str(file_path).encode()).hexdigest()[:8]
+                ev_dir = Path(evidence_dir) / ev_tag
                 ev_dir.mkdir(parents=True, exist_ok=True)
+
+            # Capture before state for evidence
+            before_backend = detect_backend(file_path)
+            try:
+                before_text = before_backend.extract_text(file_path)
+                before_doc = before_backend.load_view(file_path)
+            except Exception:
+                before_text = ""
+                before_doc = None
 
             if exec_plan.backend == "word-docx":
                 from docweave.plan.applier_docx import apply_plan_docx
@@ -1197,6 +1309,31 @@ def fleet_cmd(
                 apply_result = apply_plan_docx(file_path, exec_plan, backup=backup_opt)
             else:
                 apply_result = apply_plan(file_path, exec_plan, backup=backup_opt)
+
+            # Write evidence bundle if requested
+            if ev_dir is not None and before_doc is not None:
+                try:
+                    from docweave.diff.raw import raw_diff
+                    from docweave.diff.semantic import semantic_diff
+                    from docweave.evidence.bundle import write_evidence_bundle
+
+                    after_backend = detect_backend(file_path)
+                    after_text = after_backend.extract_text(file_path)
+                    after_doc = after_backend.load_view(file_path)
+
+                    raw_hunks = raw_diff(before_text, after_text)
+                    sem_diff = semantic_diff(before_doc, after_doc)
+
+                    write_evidence_bundle(
+                        ev_dir,
+                        before_view=before_doc.model_dump(mode="json"),
+                        after_view=after_doc.model_dump(mode="json"),
+                        plan=exec_plan.model_dump(mode="json"),
+                        sem_diff=sem_diff,
+                        raw_hunks=raw_hunks,
+                    )
+                except Exception:
+                    pass  # Evidence is best-effort in fleet mode
 
             return {
                 "patch": str(p_path),
@@ -1247,6 +1384,9 @@ def fleet_cmd(
     else:
         for job in patch_jobs:
             results.append(_run_one(job))
+
+    # Merge validation failures into results
+    results = validation_failures + results
 
     succeeded = sum(1 for r in results if r["ok"])
     failed = len(results) - succeeded

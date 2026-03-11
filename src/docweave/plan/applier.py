@@ -244,7 +244,7 @@ def apply_plan(
     tmp_name = f".docweave_tmp_{secrets.token_hex(4)}"
     tmp_path = path.parent / tmp_name
     try:
-        tmp_path.write_text(new_content, "utf-8")
+        tmp_path.write_text(new_content, "utf-8", newline="")
         os.replace(tmp_path, path)
     except Exception:
         # Clean up temp file if replace fails

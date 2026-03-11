@@ -133,7 +133,8 @@ def test_fleet_missing_target_file_in_patch(run_cli, tmp_path):
     result = run_cli("fleet", "--patch", str(patch))
     env = result.json
     assert env["ok"] is False
-    assert any(e["code"] == "ERR_VALIDATION" for e in env["errors"])
+    # Now returns fleet result with per-patch failure instead of immediate exit
+    assert env["result"]["failed"] >= 1
 
 
 def test_fleet_missing_patch_file(run_cli, tmp_path):
@@ -164,7 +165,8 @@ def test_fleet_missing_target_doc(run_cli, tmp_path):
     result = run_cli("fleet", "--patch", str(patch))
     env = result.json
     assert env["ok"] is False
-    assert any(e["code"] == "ERR_IO_FILE_NOT_FOUND" for e in env["errors"])
+    # Now returns fleet result with per-patch failure instead of immediate exit
+    assert env["result"]["failed"] >= 1
 
 
 def test_fleet_one_bad_anchor_partial_failure(run_cli, tmp_path):

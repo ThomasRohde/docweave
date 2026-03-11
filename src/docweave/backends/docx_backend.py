@@ -174,7 +174,7 @@ class WordBackend(BackendAdapter):
             file=str(path),
             backend=self.name,
             blocks=blocks,
-            metadata={"_docx_document": document},
+            metadata={},
         )
 
     def inspect(self, path: Path) -> InspectResult:

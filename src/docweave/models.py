@@ -29,6 +29,7 @@ class NormalizedDocument(BaseModel):
     backend: str
     blocks: list[Block]
     metadata: dict = {}
+    parse_warnings: list[str] = []
 
     @property
     def headings(self) -> list[Block]:

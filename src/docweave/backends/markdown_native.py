@@ -56,6 +56,7 @@ class MarkdownBackend(BackendAdapter):
         blocks: list[Block] = []
         heading_stack: list[str] = []
         pending_annotations: dict[str, Any] = {}
+        parse_warnings: list[str] = []
         seq = 0
         i = 0
 
@@ -259,6 +260,15 @@ class MarkdownBackend(BackendAdapter):
                 parsed = _parse_docweave_comment(text)
                 if parsed is not None:
                     pending_annotations = parsed
+                    # Warn if the next token is not a heading
+                    next_tok = tokens[i + 1] if i + 1 < len(tokens) else None
+                    if next_tok is None or next_tok.type != "heading_open":
+                        line_num = token_map[0] + 1 if token_map else "?"
+                        parse_warnings.append(
+                            f"Annotation comment at line {line_num} is not immediately"
+                            " before a heading; it will be assigned to the next"
+                            " heading encountered."
+                        )
                     i += 1
                     continue
 
@@ -286,6 +296,7 @@ class MarkdownBackend(BackendAdapter):
             file=file_label,
             backend=self.name,
             blocks=blocks,
+            parse_warnings=parse_warnings,
         )
 
     def load_view(self, path: Path) -> NormalizedDocument:

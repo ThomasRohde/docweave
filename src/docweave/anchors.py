@@ -21,7 +21,8 @@ class OccurrenceOutOfRangeError(Exception):
         self.requested = requested
         self.available = available
         super().__init__(
-            f"Occurrence {requested} requested but only {available} blocks match"
+            f"Occurrence {requested} requested (1-indexed) but only"
+            f" {available} block(s) match the anchor"
         )
 
 
@@ -50,6 +51,11 @@ class AnchorMatch(BaseModel):
     confidence: float
     match_type: str
     context: str
+
+    @field_validator("confidence")
+    @classmethod
+    def _round_confidence(cls, v: float) -> float:
+        return round(v, 4)
 
 
 def parse_anchor_spec(spec: str) -> Anchor:
