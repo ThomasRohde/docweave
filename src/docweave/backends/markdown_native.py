@@ -3,14 +3,31 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import os
+import re
 from pathlib import Path
 from typing import Any
 
 from markdown_it import MarkdownIt
 
 from docweave.backends.base import BackendAdapter
-from docweave.models import Block, InspectResult, NormalizedDocument, SourceSpan
+from docweave.models import Block, HeadingInfo, InspectResult, NormalizedDocument, SourceSpan
+
+_DOCWEAVE_COMMENT_RE = re.compile(
+    r"^\s*<!--\s*docweave:\s*(\{.*\})\s*-->\s*$", re.DOTALL,
+)
+
+
+def _parse_docweave_comment(text: str) -> dict | None:
+    """Extract JSON payload from a ``<!-- docweave: {...} -->`` comment."""
+    m = _DOCWEAVE_COMMENT_RE.match(text.strip())
+    if m:
+        try:
+            return json.loads(m.group(1))
+        except json.JSONDecodeError:
+            return None
+    return None
 
 
 class MarkdownBackend(BackendAdapter):
@@ -38,6 +55,7 @@ class MarkdownBackend(BackendAdapter):
 
         blocks: list[Block] = []
         heading_stack: list[str] = []
+        pending_annotations: dict[str, Any] = {}
         seq = 0
         i = 0
 
@@ -56,6 +74,8 @@ class MarkdownBackend(BackendAdapter):
 
                 seq += 1
                 raw = _extract_raw(lines, token_map)
+                annotations = pending_annotations
+                pending_annotations = {}
                 blocks.append(Block(
                     block_id=f"blk_{seq:03d}",
                     kind="heading",
@@ -68,6 +88,7 @@ class MarkdownBackend(BackendAdapter):
                         end_line=token_map[1],
                     ),
                     stable_hash=_hash(raw),
+                    annotations=annotations,
                 ))
                 i += 3
 
@@ -234,6 +255,13 @@ class MarkdownBackend(BackendAdapter):
                 token_map = tok.map
                 text = tok.content
 
+                # Check for docweave annotation comment
+                parsed = _parse_docweave_comment(text)
+                if parsed is not None:
+                    pending_annotations = parsed
+                    i += 1
+                    continue
+
                 seq += 1
                 raw = _extract_raw(lines, token_map)
                 blocks.append(Block(
@@ -282,7 +310,14 @@ class MarkdownBackend(BackendAdapter):
                 "roundtrip_risk": "low",
             },
             block_count=doc.block_count,
-            headings=[b.text for b in doc.blocks if b.kind == "heading"],
+            headings=[
+                HeadingInfo(
+                    text=b.text, level=b.level or 1,
+                    block_id=b.block_id, section_path=b.section_path,
+                    annotations=b.annotations,
+                )
+                for b in doc.blocks if b.kind == "heading"
+            ],
         )
 
     def resolve_anchor(self, view: Any, anchor: dict[str, Any]) -> Any:

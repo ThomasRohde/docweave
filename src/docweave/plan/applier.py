@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import os
+import re
 import secrets
 import shutil
 from datetime import UTC, datetime
@@ -12,6 +14,10 @@ from pathlib import Path
 from pydantic import BaseModel
 
 from docweave.plan.planner import ExecutionPlan
+
+_DOCWEAVE_COMMENT_LINE_RE = re.compile(
+    r"^\s*<!--\s*docweave:\s*\{.*\}\s*-->\s*$", re.DOTALL,
+)
 
 
 class FingerprintConflictError(Exception):
@@ -81,6 +87,11 @@ def _render_content(
         return "- " + value
     # Unknown kind — return as-is
     return value
+
+
+def _render_annotation(annotations: dict) -> str:
+    """Render annotations as a docweave HTML comment line."""
+    return f"<!-- docweave: {json.dumps(annotations, ensure_ascii=False)} -->\n"
 
 
 def apply_plan(
@@ -185,6 +196,33 @@ def apply_plan(
             content = _normalize_content("#" * level + " " + stripped)
             replacement_lines = content.splitlines(keepends=True)
             lines[start_idx:end_idx] = replacement_lines
+
+        elif op_type == "set_context":
+            new_context = op.get("context", {})
+            # Check if there's an existing docweave comment on the line before
+            comment_idx = start_idx - 1
+            if comment_idx >= 0:
+                existing_line = lines[comment_idx].strip()
+                if _DOCWEAVE_COMMENT_LINE_RE.match(existing_line):
+                    # Parse existing, merge with new context
+                    try:
+                        m = re.search(r"\{.*\}", existing_line, re.DOTALL)
+                        if m:
+                            existing_ctx = json.loads(m.group(0))
+                            existing_ctx.update(new_context)
+                            new_context = existing_ctx
+                    except json.JSONDecodeError:
+                        pass
+                    # Replace the existing comment line
+                    lines[comment_idx:comment_idx + 1] = [
+                        _render_annotation(new_context),
+                    ]
+                else:
+                    # Insert new comment line before the heading
+                    lines[start_idx:start_idx] = [_render_annotation(new_context)]
+            else:
+                # Heading is at the very top of the file
+                lines[start_idx:start_idx] = [_render_annotation(new_context)]
 
         elif op_type == "normalize_whitespace":
             block_lines = lines[start_idx:end_idx]

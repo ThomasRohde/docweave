@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 from pydantic import BaseModel, computed_field
 
 
@@ -19,6 +21,7 @@ class Block(BaseModel):
     level: int | None = None
     source_span: SourceSpan
     stable_hash: str  # SHA-256[:16] of raw_text
+    annotations: dict[str, Any] = {}  # hidden context from docweave comments
 
 
 class NormalizedDocument(BaseModel):
@@ -42,6 +45,14 @@ class NormalizedDocument(BaseModel):
         return len(self.headings)
 
 
+class HeadingInfo(BaseModel):
+    text: str
+    level: int
+    block_id: str
+    section_path: list[str]
+    annotations: dict[str, Any] = {}
+
+
 class InspectResult(BaseModel):
     file: str
     backend: str
@@ -50,4 +61,4 @@ class InspectResult(BaseModel):
     supports: dict
     fidelity: dict
     block_count: int
-    headings: list[str]
+    headings: list[HeadingInfo]

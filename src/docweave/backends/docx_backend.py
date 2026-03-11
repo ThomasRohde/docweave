@@ -8,7 +8,8 @@ from pathlib import Path
 from typing import Any
 
 from docweave.backends.base import BackendAdapter
-from docweave.models import Block, InspectResult, NormalizedDocument, SourceSpan
+from docweave.backends.docx_annotations import annotation_key, read_annotations
+from docweave.models import Block, HeadingInfo, InspectResult, NormalizedDocument, SourceSpan
 
 
 def _hash(text: str) -> str:
@@ -89,6 +90,9 @@ class WordBackend(BackendAdapter):
         document = Document(str(path))
         body = document.element.body
 
+        # Read annotations from custom XML part
+        stored_annotations = read_annotations(document)
+
         blocks: list[Block] = []
         heading_stack: list[str] = []
         seq = 0
@@ -125,6 +129,12 @@ class WordBackend(BackendAdapter):
                 if not text and kind != "heading":
                     continue
 
+                # Look up annotations for headings
+                annotations: dict[str, Any] = {}
+                if kind == "heading":
+                    key = annotation_key(text, level)
+                    annotations = stored_annotations.get(key, {})
+
                 seq += 1
                 blocks.append(Block(
                     block_id=f"blk_{seq:03d}",
@@ -138,6 +148,7 @@ class WordBackend(BackendAdapter):
                         end_line=para_index,
                     ),
                     stable_hash=_hash(text),
+                    annotations=annotations,
                 ))
 
             elif tag == "tbl":
@@ -184,7 +195,14 @@ class WordBackend(BackendAdapter):
                 "roundtrip_risk": "medium",
             },
             block_count=doc.block_count,
-            headings=[b.text for b in doc.blocks if b.kind == "heading"],
+            headings=[
+                HeadingInfo(
+                    text=b.text, level=b.level or 1,
+                    block_id=b.block_id, section_path=b.section_path,
+                    annotations=b.annotations,
+                )
+                for b in doc.blocks if b.kind == "heading"
+            ],
         )
 
     def resolve_anchor(self, view: Any, anchor: dict[str, Any]) -> Any:

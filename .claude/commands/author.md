@@ -31,8 +31,10 @@ author.
 
 ```
 docweave inspect <file>              # Document metadata and structure
+docweave inspect <file> --tag X      # Headings with annotation tag X
 docweave view <file>                 # Full block list
 docweave view <file> --section X     # Blocks under section X
+docweave view <file> --tag X         # Blocks from sections tagged X
 docweave find <file> <query>         # Search for text
 docweave anchor <file> <spec>        # Test anchor resolution
 docweave plan <file> -p patch.yaml   # Preview execution plan (dry run)
@@ -109,7 +111,7 @@ Example pattern:
 ...
 ```
 
-After writing, validate:
+After writing, validate and annotate:
 
 ```bash
 docweave validate <file>
@@ -117,6 +119,29 @@ docweave inspect <file>
 ```
 
 Fix any heading structure issues before moving on.
+
+### Annotate the skeleton
+
+Use `set_context` patches to tag each section with metadata. This enables
+teammates (and future agents) to discover sections by topic:
+
+```yaml
+operations:
+  - id: op_tag_intro
+    op: set_context
+    anchor:
+      by: heading
+      value: Introduction
+    context:
+      summary: "Overview of the subject and motivation"
+      tags: ["overview"]
+      status: "skeleton"
+```
+
+Apply the annotation patch, then verify with `docweave inspect <file>` —
+each heading should show its annotations. Teammates can use
+`docweave inspect <file> --tag <tag>` to find their assigned sections and
+`docweave view <file> --tag <tag>` to read them.
 
 ---
 

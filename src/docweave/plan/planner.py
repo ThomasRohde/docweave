@@ -47,6 +47,7 @@ def _describe_action(op_type: str, match: AnchorMatch) -> str:
         "delete_block": f"Delete {block_desc}",
         "set_heading": f"Set heading at {block_desc}",
         "normalize_whitespace": f"Normalize whitespace in {block_desc}",
+        "set_context": f"Set context annotations on {block_desc}",
     }
     return descriptions.get(op_type, f"{op_type} on {block_desc}")
 

@@ -380,11 +380,21 @@ def guide() -> None:
 @app.command()
 def inspect(
     file: Path = typer.Argument(..., help="Path to the document to inspect."),
+    tag: str | None = typer.Option(
+        None, "--tag",
+        help="Filter headings to those whose annotations contain this tag.",
+    ),
 ) -> None:
     """Return structural metadata about a document."""
     t0 = time.monotonic()
     backend, _doc = _load_document("inspect", file)
     result = backend.inspect(file)
+    if tag:
+        tag_lower = tag.lower()
+        result.headings = [
+            h for h in result.headings
+            if tag_lower in [t.lower() for t in h.annotations.get("tags", [])]
+        ]
     elapsed = int((time.monotonic() - t0) * 1000)
     envelope = success_envelope(
         "inspect", result.model_dump(), target=str(file), duration_ms=elapsed,
@@ -400,11 +410,36 @@ def view(
         help="Filter by section name (matches any level in the hierarchy,"
             " not paths like 'Parent/Child').",
     ),
+    tag: str | None = typer.Option(
+        None, "--tag",
+        help="Filter to sections whose headings have this annotation tag.",
+    ),
 ) -> None:
     """Return the full normalized block list for a document."""
     t0 = time.monotonic()
     _backend, doc = _load_document("view", file)
     warnings: list[Warning] = []
+
+    if tag and not section:
+        # Find heading texts whose annotations contain the tag
+        tag_lower = tag.lower()
+        tagged_sections = {
+            b.text for b in doc.blocks
+            if b.kind == "heading"
+            and tag_lower in [t.lower() for t in b.annotations.get("tags", [])]
+        }
+        if tagged_sections:
+            doc.blocks = [
+                b for b in doc.blocks
+                if any(s in tagged_sections for s in b.section_path)
+            ]
+        else:
+            doc.blocks = []
+            warnings.append(Warning(
+                code="WARN_TAG_NOT_FOUND",
+                message=f"No sections found with tag {tag!r}.",
+            ))
+
     if section:
         section_lower = section.lower()
         all_blocks = doc.blocks

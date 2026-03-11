@@ -29,6 +29,7 @@ operations:
 | `replace_text` | Replace a substring within the anchored block | No | Yes |
 | `set_heading` | Change heading text or level | Yes | No |
 | `normalize_whitespace` | Normalize whitespace in block | No | No |
+| `set_context` | Set hidden context annotations on a heading | No | No |
 
 ## Anchor Types
 
@@ -173,6 +174,45 @@ operations:
         The field emerged in the late 1990s when researchers
         first observed the phenomenon in controlled settings.
 ```
+
+## Context Annotations
+
+The `set_context` operation embeds hidden metadata on a heading as an HTML comment.
+These annotations are invisible when the document is rendered but are surfaced by
+`docweave inspect` for progressive discovery by AI agents.
+
+```yaml
+operations:
+  - id: ctx_intro
+    op: set_context
+    anchor:
+      by: heading
+      value: "Introduction"
+    context:
+      summary: "Covers the project's origin, goals, and target audience"
+      tags: ["overview", "getting-started"]
+      status: "complete"
+```
+
+This inserts (or updates) a comment immediately before the heading:
+
+```markdown
+<!-- docweave: {"summary": "Covers the project's origin, goals, and target audience", "tags": ["overview", "getting-started"], "status": "complete"} -->
+# Introduction
+```
+
+The `context` field accepts any JSON-serialisable dictionary. Common keys:
+
+| Key | Description |
+|-----|-------------|
+| `summary` | Brief description of the section's content |
+| `tags` | List of topic tags for filtering/search |
+| `status` | Authoring status (e.g. "draft", "review", "complete") |
+| `audience` | Intended audience for the section |
+| `dependencies` | Sections that should be read first |
+
+When `set_context` targets a heading that already has annotations, the new
+context is **merged** (new keys are added, existing keys are overwritten).
 
 ## Tips for Reliable Patches
 
