@@ -1,0 +1,90 @@
+{
+  "tasks": [
+    {
+      "task": "Find performance sections",
+      "plain": {
+        "tokens": 99613,
+        "calls": 56,
+        "sections_found": 45
+      },
+      "annotated": {
+        "tokens": 1119,
+        "calls": 1,
+        "sections_found": 12
+      }
+    },
+    {
+      "task": "Find draft sections",
+      "plain": {
+        "tokens": 99613,
+        "calls": 56,
+        "sections_found": 19
+      },
+      "annotated": {
+        "tokens": 4442,
+        "calls": 1,
+        "sections_found": 20
+      }
+    },
+    {
+      "task": "Edit token management",
+      "plain": {
+        "tokens": 7154,
+        "calls": 4,
+        "sections_found": 2
+      },
+      "annotated": {
+        "tokens": 1502,
+        "calls": 2,
+        "sections_found": 1
+      }
+    },
+    {
+      "task": "Find ops audience sections",
+      "plain": {
+        "tokens": 99613,
+        "calls": 56,
+        "sections_found": 46
+      },
+      "annotated": {
+        "tokens": 4442,
+        "calls": 1,
+        "sections_found": 20
+      }
+    },
+    {
+      "task": "Dependency analysis",
+      "plain": {
+        "tokens": 9524,
+        "calls": 11,
+        "sections_found": 8
+      },
+      "annotated": {
+        "tokens": 4442,
+        "calls": 1,
+        "sections_found": 6
+      }
+    },
+    {
+      "task": "View compliance content",
+      "plain": {
+        "tokens": 7635,
+        "calls": 6,
+        "sections_found": 4
+      },
+      "annotated": {
+        "tokens": 4335,
+        "calls": 1,
+        "sections_found": 6
+      }
+    }
+  ],
+  "totals": {
+    "plain_tokens": 323152,
+    "annotated_tokens": 20282,
+    "token_savings": 302870,
+    "token_savings_pct": 93.7,
+    "plain_calls": 189,
+    "annotated_calls": 7
+  }
+}

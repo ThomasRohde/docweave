@@ -26,6 +26,9 @@ author.
    NEVER use absolute paths like `/tmp/patches/` — on Windows, `/tmp` resolves to
    a system temp directory that is not visible across agents. Before spawning
    teammates, create the patch directories with `mkdir -p tmp/patches/`.
+8. **Use `uvx` if `docweave` is not installed.** If the `docweave` command is
+   not found, use `uvx docweave` instead (e.g., `uvx docweave validate <file>`).
+   This runs docweave directly from PyPI without requiring a prior install.
 
 ## Docweave CLI Quick Reference
 

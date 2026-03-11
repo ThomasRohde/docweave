@@ -1,12 +1,102 @@
+<!-- docweave: {"summary": "Project overview — agent-first CLI for structured document editing", "tags": ["overview", "getting-started"], "status": "complete"} -->
 # docweave
 
-Agent-first CLI for structured document editing.
+**The document editing CLI that makes AI agents 16x cheaper and 27x faster.**
 
-Docweave parses Markdown and Word (.docx) documents into a normalized block model, resolves structural anchors, and applies targeted edits through a declarative YAML patch format. Every command returns a stable JSON envelope on `stdout`, making it ideal for AI agents, CI pipelines, and scriptable workflows.
+Docweave gives AI agents structured, surgical access to Markdown and Word documents. Instead of dumping an entire file into context, agents call `inspect` to see a document's structure with hidden metadata, then drill into exactly the sections they need. The result: fewer tokens, fewer tool calls, better edits.
 
-The PyPI package name is `docweave`, and it installs the `docweave` command.
+```
+Without docweave:  "Here's the entire 40KB document. Find the security section and update it."
+With docweave:     inspect --tag security → view --section "Token Management" → apply --patch edit.yaml
+```
 
-## Highlights
+<!-- docweave: {"summary": "Benchmark evidence for token savings, speed, and accuracy", "tags": ["overview", "benchmark", "agents"], "status": "complete"} -->
+## Why Annotations Matter: The Numbers
+
+We benchmarked six realistic agent tasks against a 55-heading architecture document &mdash; with and without docweave annotations:
+
+| Metric | Without Annotations | With Annotations | Improvement |
+|--------|--------------------:|------------------:|:-----------:|
+| **Tokens consumed** | 323,152 | 20,282 | **93.7% fewer** |
+| **Tool calls** | 189 | 7 | **96.3% fewer** |
+| **Cost per run** | $0.97 | $0.06 | **16x cheaper** |
+
+### Task-by-task breakdown
+
+| Task | Plain (tokens) | Annotated (tokens) | Saved | Calls: Plain &rarr; Annotated |
+|------|---------------:|-------------------:|------:|:-----------------------------:|
+| Find performance sections | 99,613 | 1,119 | **98.9%** | 56 &rarr; 1 |
+| Find draft sections | 99,613 | 4,442 | **95.5%** | 56 &rarr; 1 |
+| Edit token management | 7,154 | 1,502 | **79.0%** | 4 &rarr; 2 |
+| Find ops-audience sections | 99,613 | 4,442 | **95.5%** | 56 &rarr; 1 |
+| Dependency analysis | 9,524 | 4,442 | **53.4%** | 11 &rarr; 1 |
+| View compliance content | 7,635 | 4,335 | **43.2%** | 6 &rarr; 1 |
+
+### It's not just speed &mdash; it's accuracy
+
+Without annotations, agents must guess. With annotations, they know.
+
+- **Status detection**: A plain agent guessed 19 draft sections using a content-length heuristic. The annotated agent found exactly 20 &mdash; the correct answer. You can't infer status from content.
+- **Audience filtering**: Keyword matching flagged 46 of 55 sections as "ops-relevant" (84% false positive rate). Annotations identified exactly 20.
+- **Dependency analysis**: Text search found 8 sections mentioning "auth." Annotations captured exactly 6 with explicit dependency declarations &mdash; no noise, no false positives.
+
+### What this means at scale
+
+At **$3/MTok** (Claude Sonnet input pricing):
+
+| Scale | Savings |
+|-------|--------:|
+| 100 agent runs/day | **$91/day** |
+| 1,000 agent runs/day | **$909/day** |
+| 10,000 agent runs/day | **$9,086/day** |
+
+> The benchmark code is in [`benchmarks/`](benchmarks/). Run it yourself: `python benchmarks/generate_agentic_doc.py && python benchmarks/agentic_benchmark.py`
+
+<!-- docweave: {"summary": "Key features and value propositions", "tags": ["overview", "features"], "status": "complete"} -->
+## How It Works
+
+Docweave parses documents into a normalized block model, resolves structural anchors, and applies targeted edits through a declarative YAML patch format. Every command returns a stable JSON envelope on `stdout`.
+
+### The agent workflow
+
+```
+1. inspect doc.md              → headings + annotations (tags, status, audience, summaries)
+2. inspect doc.md --tag X      → filter to sections you care about
+3. view doc.md --tag X         → read only the content of those sections
+4. apply ... --patch ...       → make targeted edits
+5. apply ... --patch ...       → set_context to update annotations after edits
+```
+
+One `inspect` call on a 55-heading document costs ~4,400 tokens. That single call gives the agent the summary, status, audience, tags, and dependencies for every section &mdash; enough to decide exactly where to look next without reading any content.
+
+### Annotations: the key innovation
+
+Add a single HTML comment before any heading:
+
+```markdown
+<!-- docweave: {"summary": "OAuth2 flow with PKCE", "tags": ["security", "api"], "status": "draft"} -->
+## Authentication
+```
+
+This comment is invisible when rendered but surfaced by `inspect`. The agent sees:
+
+```json
+{
+  "text": "Authentication",
+  "level": 2,
+  "block_id": "blk_003",
+  "annotations": {
+    "summary": "OAuth2 flow with PKCE",
+    "tags": ["security", "api"],
+    "status": "draft"
+  }
+}
+```
+
+Now it can filter by tag (`--tag security`), check status without reading content, and understand section relationships through `dependencies` &mdash; all in a single tool call.
+
+<!-- docweave: {"summary": "All features listed", "tags": ["overview", "features"], "status": "complete"} -->
+## Features
 
 - **Structured JSON output** &mdash; Every response is a Pydantic-validated `Envelope` with `ok`, `errors`, `warnings`, and `metrics` fields. Parse one schema regardless of success or failure.
 - **Multi-format support** &mdash; Native backends for Markdown and Word (.docx) with automatic detection.
@@ -17,22 +107,26 @@ The PyPI package name is `docweave`, and it installs the `docweave` command.
 - **Evidence bundles** &mdash; Generate before/after snapshots, diffs, and validation reports for audit trails.
 - **Transaction journal** &mdash; Every `apply` is recorded with full provenance for rollback and review.
 
+<!-- docweave: {"summary": "Install via uv, pip, or from source", "tags": ["getting-started", "installation"], "status": "complete"} -->
 ## Installation
 
 Requires **Python 3.12+**.
 
+<!-- docweave: {"summary": "Install as a uv tool from PyPI", "tags": ["installation"], "status": "complete"} -->
 ### With `uv` (after the PyPI release)
 
 ```bash
 uv tool install docweave
 ```
 
+<!-- docweave: {"summary": "Install directly from GitHub", "tags": ["installation"], "status": "complete"} -->
 ### From the repository
 
 ```bash
 uv tool install git+https://github.com/ThomasRohde/docweave.git
 ```
 
+<!-- docweave: {"summary": "Editable install with dev dependencies for contributors", "tags": ["installation", "development"], "status": "complete"} -->
 ### Development install
 
 ```bash
@@ -54,6 +148,7 @@ docweave --version
 docweave guide
 ```
 
+<!-- docweave: {"summary": "Common CLI invocations covering inspect, view, find, apply, diff, validate, and journal", "tags": ["getting-started", "examples"], "status": "complete"} -->
 ## Quick Start
 
 ```bash
@@ -94,6 +189,7 @@ docweave validate doc.md
 docweave journal --file doc.md
 ```
 
+<!-- docweave: {"summary": "Complete command reference table", "tags": ["reference", "commands"], "status": "complete"} -->
 ## Commands
 
 | Command      | Description                                              |
@@ -111,6 +207,7 @@ docweave journal --file doc.md
 
 > Run `docweave guide` for the full machine-readable command reference.
 
+<!-- docweave: {"summary": "Envelope schema — the JSON wrapper around every CLI response", "tags": ["reference", "api"], "status": "complete"} -->
 ## JSON Envelope
 
 Every command emits a JSON envelope to `stdout`:
@@ -145,6 +242,7 @@ On failure, `ok` is `false` and `errors` contains structured error details:
 }
 ```
 
+<!-- docweave: {"summary": "YAML patch file format with operations, anchors, and content kinds", "tags": ["reference", "patching"], "status": "complete"} -->
 ## Patch Format
 
 Edits are described in YAML patch files:
@@ -176,6 +274,7 @@ operations:
         Updated scope section content.
 ```
 
+<!-- docweave: {"summary": "All patch operation types: insert, replace, delete, set_heading, set_context", "tags": ["reference", "patching"], "status": "complete"} -->
 ### Supported Operations
 
 | Operation      | Description                               |
@@ -187,6 +286,7 @@ operations:
 | `set_heading`  | Change a heading's text                   |
 | `set_context`  | Set hidden annotations on a heading       |
 
+<!-- docweave: {"summary": "Anchor types for targeting blocks: heading, content, index, hash", "tags": ["reference", "patching"], "status": "complete"} -->
 ### Anchor Types
 
 | Anchor (`by`)  | Description                                         |
@@ -198,21 +298,22 @@ operations:
 
 Anchors can be refined with `--section`, `--context-before`, `--context-after`, and `--occurrence` for precise targeting.
 
-## Annotations & Progressive Discovery
+<!-- docweave: {"summary": "Hidden metadata on headings for agent-driven progressive discovery", "tags": ["annotations", "agents", "features"], "status": "complete"} -->
+## Annotations Reference
 
-Docweave supports hidden annotations on heading blocks — structured metadata that is invisible when the document is rendered but surfaced by `inspect`. This enables **progressive discovery**: an agent calls `inspect` to see the document structure with context, then drills into specific sections.
+<!-- docweave: {"summary": "HTML comment syntax for Markdown, custom XML for Word", "tags": ["annotations", "reference"], "status": "complete"} -->
+### Format by backend
 
-### Annotation format
-
-In Markdown, annotations are HTML comments placed before a heading:
+**Markdown** &mdash; HTML comments placed before a heading:
 
 ```markdown
 <!-- docweave: {"summary": "Authentication flow overview", "tags": ["security", "api"], "status": "draft"} -->
 ## Authentication
 ```
 
-In Word (.docx), annotations are stored in a custom XML part inside the archive, invisible to Word users.
+**Word (.docx)** &mdash; Custom XML part inside the archive, invisible to Word users.
 
+<!-- docweave: {"summary": "Standard annotation keys: summary, tags, status, audience, dependencies", "tags": ["annotations", "reference"], "status": "complete"} -->
 ### Common annotation keys
 
 | Key            | Type       | Purpose                              |
@@ -223,6 +324,7 @@ In Word (.docx), annotations are stored in a custom XML part inside the archive,
 | `audience`     | `string`   | Target reader                        |
 | `dependencies` | `string[]` | Sections this one depends on         |
 
+<!-- docweave: {"summary": "set_context operation with merge semantics", "tags": ["annotations", "patching"], "status": "complete"} -->
 ### Setting annotations via patches
 
 Use the `set_context` operation to add or merge annotations:
@@ -242,6 +344,7 @@ operations:
 
 Merge semantics: new keys are added, existing keys are overwritten.
 
+<!-- docweave: {"summary": "Filter inspect and view output with --tag", "tags": ["annotations", "commands"], "status": "complete"} -->
 ### Querying by tag
 
 ```bash
@@ -252,8 +355,7 @@ docweave inspect doc.md --tag security
 docweave view doc.md --tag api
 ```
 
-The `inspect` output includes `block_id`, `section_path`, and `annotations` for each heading, giving agents everything they need to target a section directly.
-
+<!-- docweave: {"summary": "Process exit codes 0/10/20/40/50/90", "tags": ["reference"], "status": "complete"} -->
 ## Exit Codes
 
 | Code | Meaning              |
@@ -265,6 +367,7 @@ The `inspect` output includes `block_id`, `section_path`, and `annotations` for 
 | `50` | I/O error            |
 | `90` | Internal error       |
 
+<!-- docweave: {"summary": "Structured error codes: ERR_VALIDATION, ERR_PERMISSION, ERR_CONFLICT, ERR_IO, ERR_INTERNAL", "tags": ["reference"], "status": "complete"} -->
 ## Error Codes
 
 | Code                    | Description                                            |
@@ -275,6 +378,7 @@ The `inspect` output includes `block_id`, `section_path`, and `annotations` for 
 | `ERR_IO`                | File-system I/O failure                                |
 | `ERR_INTERNAL_UNHANDLED`| Unexpected internal error                              |
 
+<!-- docweave: {"summary": "Source tree layout: cli, envelope, config, backends, plan, diff, evidence", "tags": ["architecture", "development"], "status": "complete"} -->
 ## Architecture
 
 ```
@@ -304,6 +408,7 @@ src/docweave/
     └── bundle.py       # Before/after snapshot bundles
 ```
 
+<!-- docweave: {"summary": "Dev setup, test, and lint commands", "tags": ["development"], "status": "complete"} -->
 ## Development
 
 ```bash
@@ -323,6 +428,7 @@ ruff check src/ tests/
 pytest tests/ --cov=docweave --cov-report=term-missing
 ```
 
+<!-- docweave: {"summary": "Dependencies: Typer, Pydantic, orjson, markdown-it-py, python-docx, PyYAML, Rich, Hatchling", "tags": ["architecture", "reference"], "status": "complete"} -->
 ## Tech Stack
 
 | Component      | Library                                                         |
@@ -336,6 +442,7 @@ pytest tests/ --cov=docweave --cov-report=term-missing
 | Terminal UI    | [Rich](https://github.com/Textualize/rich)                     |
 | Build system   | [Hatchling](https://hatch.pypa.io/)                            |
 
+<!-- docweave: {"summary": "Contribution workflow: fork, branch, test, PR", "tags": ["development", "contributing"], "status": "complete"} -->
 ## Contributing
 
 1. Fork the repository
@@ -344,6 +451,7 @@ pytest tests/ --cov=docweave --cov-report=term-missing
 4. Ensure `pytest tests/ -v` and `ruff check src/ tests/` pass
 5. Submit a pull request
 
+<!-- docweave: {"summary": "License reference", "tags": ["legal"], "status": "complete"} -->
 ## License
 
 See [LICENSE](LICENSE) for details.

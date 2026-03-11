@@ -1,0 +1,480 @@
+docweave inspect .\README.md
+{
+    "ok": true,
+    "request_id": "req_20260311_035614_c076",
+    "command": "inspect",
+    "target": "README.md",
+    "result": {
+        "file": "README.md",
+        "backend": "markdown-native",
+        "tier": "native-safe",
+        "editable": true,
+        "supports": {
+            "comments": false,
+            "tables": true,
+            "styles": false,
+            "track_changes": false
+        },
+        "fidelity": {
+            "write_mode": "native",
+            "roundtrip_risk": "low"
+        },
+        "block_count": 72,
+        "headings": [
+            {
+                "text": "docweave",
+                "level": 1,
+                "block_id": "blk_001",
+                "section_path": [
+                    "docweave"
+                ],
+                "annotations": {
+                    "summary": "Project overview — agent-first CLI for structured document editing",
+                    "tags": [
+                        "overview",
+                        "getting-started"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Highlights",
+                "level": 2,
+                "block_id": "blk_005",
+                "section_path": [
+                    "docweave",
+                    "Highlights"
+                ],
+                "annotations": {
+                    "summary": "Key features and value propositions",
+                    "tags": [
+                        "overview",
+                        "features"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Installation",
+                "level": 2,
+                "block_id": "blk_007",
+                "section_path": [
+                    "docweave",
+                    "Installation"
+                ],
+                "annotations": {
+                    "summary": "Install via uv, pip, or from source",
+                    "tags": [
+                        "getting-started",
+                        "installation"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "With `uv` (after the PyPI release)",
+                "level": 3,
+                "block_id": "blk_009",
+                "section_path": [
+                    "docweave",
+                    "Installation",
+                    "With `uv` (after the PyPI release)"
+                ],
+                "annotations": {
+                    "summary": "Install as a uv tool from PyPI",
+                    "tags": [
+                        "installation"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "From the repository",
+                "level": 3,
+                "block_id": "blk_011",
+                "section_path": [
+                    "docweave",
+                    "Installation",
+                    "From the repository"
+                ],
+                "annotations": {
+                    "summary": "Install directly from GitHub",
+                    "tags": [
+                        "installation"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Development install",
+                "level": 3,
+                "block_id": "blk_013",
+                "section_path": [
+                    "docweave",
+                    "Installation",
+                    "Development install"
+                ],
+                "annotations": {
+                    "summary": "Editable install with dev dependencies for contributors",
+                    "tags": [
+                        "installation",
+                        "development"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Quick Start",
+                "level": 2,
+                "block_id": "blk_019",
+                "section_path": [
+                    "docweave",
+                    "Quick Start"
+                ],
+                "annotations": {
+                    "summary": "Common CLI invocations covering inspect, view, find, apply, diff, validate, and journal",
+                    "tags": [
+                        "getting-started",
+                        "examples"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Commands",
+                "level": 2,
+                "block_id": "blk_021",
+                "section_path": [
+                    "docweave",
+                    "Commands"
+                ],
+                "annotations": {
+                    "summary": "Complete command reference table",
+                    "tags": [
+                        "reference",
+                        "commands"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "JSON Envelope",
+                "level": 2,
+                "block_id": "blk_024",
+                "section_path": [
+                    "docweave",
+                    "JSON Envelope"
+                ],
+                "annotations": {
+                    "summary": "Envelope schema — the JSON wrapper around every CLI response",
+                    "tags": [
+                        "reference",
+                        "api"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Patch Format",
+                "level": 2,
+                "block_id": "blk_029",
+                "section_path": [
+                    "docweave",
+                    "Patch Format"
+                ],
+                "annotations": {
+                    "summary": "YAML patch file format with operations, anchors, and content kinds",
+                    "tags": [
+                        "reference",
+                        "patching"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Supported Operations",
+                "level": 3,
+                "block_id": "blk_032",
+                "section_path": [
+                    "docweave",
+                    "Patch Format",
+                    "Supported Operations"
+                ],
+                "annotations": {
+                    "summary": "All patch operation types: insert, replace, delete, set_heading, set_context",
+                    "tags": [
+                        "reference",
+                        "patching"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Anchor Types",
+                "level": 3,
+                "block_id": "blk_034",
+                "section_path": [
+                    "docweave",
+                    "Patch Format",
+                    "Anchor Types"
+                ],
+                "annotations": {
+                    "summary": "Anchor types for targeting blocks: heading, content, index, hash",
+                    "tags": [
+                        "reference",
+                        "patching"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Annotations & Progressive Discovery",
+                "level": 2,
+                "block_id": "blk_037",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery"
+                ],
+                "annotations": {
+                    "summary": "Hidden metadata on headings for agent-driven progressive discovery",
+                    "tags": [
+                        "annotations",
+                        "agents",
+                        "features"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Annotation format",
+                "level": 3,
+                "block_id": "blk_039",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Annotation format"
+                ],
+                "annotations": {
+                    "summary": "HTML comment syntax for Markdown, custom XML for Word",
+                    "tags": [
+                        "annotations",
+                        "reference"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Common annotation keys",
+                "level": 3,
+                "block_id": "blk_043",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Common annotation keys"
+                ],
+                "annotations": {
+                    "summary": "Standard annotation keys: summary, tags, status, audience, dependencies",
+                    "tags": [
+                        "annotations",
+                        "reference"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Setting annotations via patches",
+                "level": 3,
+                "block_id": "blk_045",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Setting annotations via patches"
+                ],
+                "annotations": {
+                    "summary": "set_context operation with merge semantics",
+                    "tags": [
+                        "annotations",
+                        "patching"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Querying by tag",
+                "level": 3,
+                "block_id": "blk_049",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Querying by tag"
+                ],
+                "annotations": {
+                    "summary": "Filter inspect and view output with --tag",
+                    "tags": [
+                        "annotations",
+                        "commands"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Why annotate?",
+                "level": 3,
+                "block_id": "blk_052",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Why annotate?"
+                ],
+                "annotations": {
+                    "summary": "Motivation and best practices for annotating during authoring and review",
+                    "tags": [
+                        "annotations",
+                        "best-practices"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Recommended workflow for agents",
+                "level": 3,
+                "block_id": "blk_056",
+                "section_path": [
+                    "docweave",
+                    "Annotations & Progressive Discovery",
+                    "Recommended workflow for agents"
+                ],
+                "annotations": {
+                    "summary": "Five-step inspect-filter-view-edit-annotate loop for AI agents",
+                    "tags": [
+                        "annotations",
+                        "agents",
+                        "best-practices"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Exit Codes",
+                "level": 2,
+                "block_id": "blk_059",
+                "section_path": [
+                    "docweave",
+                    "Exit Codes"
+                ],
+                "annotations": {
+                    "summary": "Process exit codes 0/10/20/40/50/90",
+                    "tags": [
+                        "reference"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Error Codes",
+                "level": 2,
+                "block_id": "blk_061",
+                "section_path": [
+                    "docweave",
+                    "Error Codes"
+                ],
+                "annotations": {
+                    "summary": "Structured error codes: ERR_VALIDATION, ERR_PERMISSION, ERR_CONFLICT, ERR_IO, ERR_INTERNAL",
+                    "tags": [
+                        "reference"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Architecture",
+                "level": 2,
+                "block_id": "blk_063",
+                "section_path": [
+                    "docweave",
+                    "Architecture"
+                ],
+                "annotations": {
+                    "summary": "Source tree layout: cli, envelope, config, backends, plan, diff, evidence",
+                    "tags": [
+                        "architecture",
+                        "development"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Development",
+                "level": 2,
+                "block_id": "blk_065",
+                "section_path": [
+                    "docweave",
+                    "Development"
+                ],
+                "annotations": {
+                    "summary": "Dev setup, test, and lint commands",
+                    "tags": [
+                        "development"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Tech Stack",
+                "level": 2,
+                "block_id": "blk_067",
+                "section_path": [
+                    "docweave",
+                    "Tech Stack"
+                ],
+                "annotations": {
+                    "summary": "Dependencies: Typer, Pydantic, orjson, markdown-it-py, python-docx, PyYAML, Rich, Hatchling",
+                    "tags": [
+                        "architecture",
+                        "reference"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "Contributing",
+                "level": 2,
+                "block_id": "blk_069",
+                "section_path": [
+                    "docweave",
+                    "Contributing"
+                ],
+                "annotations": {
+                    "summary": "Contribution workflow: fork, branch, test, PR",
+                    "tags": [
+                        "development",
+                        "contributing"
+                    ],
+                    "status": "complete"
+                }
+            },
+            {
+                "text": "License",
+                "level": 2,
+                "block_id": "blk_071",
+                "section_path": [
+                    "docweave",
+                    "License"
+                ],
+                "annotations": {
+                    "summary": "License reference",
+                    "tags": [
+                        "legal"
+                    ],
+                    "status": "complete"
+                }
+            }
+        ]
+    },
+    "errors": [],
+    "warnings": [],
+    "metrics": {
+        "duration_ms": 63
+    },
+    "version": "0.10.0"
+}

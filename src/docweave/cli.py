@@ -196,13 +196,20 @@ def guide() -> None:
             "inspect": {
                 "description": "Return structural metadata about a document.",
                 "status": "available",
+                "options": {
+                    "--tag": "Filter headings to those whose annotations contain this tag "
+                        "(case-insensitive match against annotations.tags list).",
+                },
                 "result_schema": {
                     "file": "string",
                     "backend": "string",
                     "tier": "string",
                     "editable": "boolean",
                     "block_count": "integer",
-                    "headings": "array[string] — heading texts in document order",
+                    "headings": (
+                        "array[HeadingInfo] — {text, level, block_id,"
+                        " section_path, annotations}"
+                    ),
                     "supports": "object — {comments, tables, styles, track_changes}",
                     "fidelity": "object — {write_mode, roundtrip_risk}",
                 },
@@ -210,10 +217,16 @@ def guide() -> None:
             "view": {
                 "description": "Return the full normalized block list for a document.",
                 "status": "available",
+                "options": {
+                    "--section": "Filter by section name (matches any hierarchy level).",
+                    "--tag": "Filter to sections whose headings have this annotation tag "
+                        "(case-insensitive match against annotations.tags list).",
+                },
                 "result_schema": {
                     "blocks": (
                         "array[Block] — {block_id, kind, section_path,"
-                        " text, raw_text, level, source_span, stable_hash}"
+                        " text, raw_text, level, source_span, stable_hash,"
+                        " annotations}"
                     ),
                     "block_count": "integer",
                 },
@@ -351,7 +364,7 @@ def guide() -> None:
             "operation_types": [
                 "insert_after", "insert_before", "replace_block",
                 "replace_text", "delete_block", "set_heading",
-                "normalize_whitespace",
+                "normalize_whitespace", "set_context",
             ],
             "anchor_types": {
                 "heading": "heading:<text> — match heading by exact/fuzzy text",
@@ -369,7 +382,51 @@ def guide() -> None:
                 "content": "Required for insert_after, insert_before, "
                     "replace_block, set_heading. Dict with 'kind' and 'value'.",
                 "replacement": "Required for replace_text. The replacement string.",
+                "context": "Required for set_context. Dict of annotation key-value pairs "
+                    "(merged into existing annotations on the target heading).",
             },
+        },
+        "backends": {
+            "description": "Supported document formats, auto-detected by file extension.",
+            "markdown": {
+                "extensions": [".md", ".markdown"],
+                "tier": "full",
+                "annotations_format": (
+                    "HTML comments: <!-- docweave: {\"key\": \"value\"} --> "
+                    "placed immediately before headings. Invisible when rendered."
+                ),
+            },
+            "word-docx": {
+                "extensions": [".docx"],
+                "tier": "full",
+                "extra": "Requires python-docx: pip install docweave[docx]",
+                "annotations_format": (
+                    "Custom XML part inside the .docx archive. "
+                    "Invisible to Word users, survives normal editing."
+                ),
+            },
+        },
+        "annotations": {
+            "description": (
+                "Hidden context metadata on headings, surfaced by 'inspect' "
+                "for progressive discovery by AI agents. Use the set_context "
+                "patch operation to add or update annotations, and --tag on "
+                "inspect/view to filter by tag."
+            ),
+            "common_keys": {
+                "summary": "string — brief description of the section's content",
+                "tags": "string[] — categorical labels for filtering (used by --tag)",
+                "status": "string — authoring status (e.g. draft, review, complete)",
+                "audience": "string — intended reader",
+                "dependencies": "string[] — sections that should be read first",
+            },
+            "best_practices": [
+                "Always annotate headings when authoring or reviewing documents "
+                "so docweave inspect can provide useful structural overviews.",
+                "Use tags consistently to enable --tag filtering across commands.",
+                "set_context merges into existing annotations (additive, not destructive).",
+                "Annotations survive content edits — they are preserved across apply operations.",
+            ],
         },
     }
     elapsed = int((time.monotonic() - t0) * 1000)

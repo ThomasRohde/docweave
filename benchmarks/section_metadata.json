@@ -1,0 +1,569 @@
+[
+  {
+    "title": "System Overview",
+    "tags": [
+      "architecture",
+      "overview"
+    ],
+    "status": "complete",
+    "audience": "all",
+    "summary": "High-level architecture and system components"
+  },
+  {
+    "title": "Design Philosophy",
+    "tags": [
+      "architecture"
+    ],
+    "status": "complete",
+    "audience": "architect",
+    "summary": "Core principles and trade-offs",
+    "parent": "System Overview"
+  },
+  {
+    "title": "Component Diagram",
+    "tags": [
+      "architecture",
+      "diagrams"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Visual component relationships",
+    "parent": "System Overview"
+  },
+  {
+    "title": "Technology Stack",
+    "tags": [
+      "architecture",
+      "infrastructure"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Languages, frameworks, and tools used",
+    "parent": "System Overview"
+  },
+  {
+    "title": "Authentication Service",
+    "tags": [
+      "api",
+      "security"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "OAuth2/OIDC authentication and authorization flows"
+  },
+  {
+    "title": "OAuth2 Flow",
+    "tags": [
+      "api",
+      "security"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Authorization code and token exchange flows",
+    "parent": "Authentication Service"
+  },
+  {
+    "title": "Token Management",
+    "tags": [
+      "security",
+      "performance"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "JWT lifecycle, refresh, and revocation",
+    "parent": "Authentication Service"
+  },
+  {
+    "title": "Rate Limiting",
+    "tags": [
+      "security",
+      "performance"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Per-client and per-endpoint rate limits",
+    "parent": "Authentication Service"
+  },
+  {
+    "title": "Security Audit Log",
+    "tags": [
+      "security",
+      "compliance"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Immutable audit trail for auth events",
+    "parent": "Authentication Service"
+  },
+  {
+    "title": "Database Layer",
+    "tags": [
+      "database",
+      "infrastructure"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "PostgreSQL schema, migrations, and query patterns"
+  },
+  {
+    "title": "Schema Design",
+    "tags": [
+      "database"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Entity relationships and normalization choices",
+    "parent": "Database Layer"
+  },
+  {
+    "title": "Migration Strategy",
+    "tags": [
+      "database",
+      "deployment"
+    ],
+    "status": "complete",
+    "audience": "ops",
+    "summary": "Zero-downtime migration patterns",
+    "parent": "Database Layer"
+  },
+  {
+    "title": "Query Optimization",
+    "tags": [
+      "database",
+      "performance"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Index strategy and slow query analysis",
+    "parent": "Database Layer"
+  },
+  {
+    "title": "Connection Pooling",
+    "tags": [
+      "database",
+      "performance",
+      "infrastructure"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "PgBouncer config and pool sizing",
+    "parent": "Database Layer"
+  },
+  {
+    "title": "Backup and Recovery",
+    "tags": [
+      "database",
+      "ops"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Point-in-time recovery and backup schedules",
+    "parent": "Database Layer"
+  },
+  {
+    "title": "API Gateway",
+    "tags": [
+      "api",
+      "infrastructure"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Request routing, middleware, and API versioning"
+  },
+  {
+    "title": "Route Configuration",
+    "tags": [
+      "api"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Endpoint mapping and path parameters",
+    "parent": "API Gateway"
+  },
+  {
+    "title": "Middleware Pipeline",
+    "tags": [
+      "api",
+      "security"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Auth, logging, CORS, and compression middleware",
+    "parent": "API Gateway"
+  },
+  {
+    "title": "API Versioning",
+    "tags": [
+      "api"
+    ],
+    "status": "review",
+    "audience": "architect",
+    "summary": "URL-based versioning strategy and deprecation policy",
+    "parent": "API Gateway"
+  },
+  {
+    "title": "Error Handling",
+    "tags": [
+      "api"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Structured error responses and error codes",
+    "parent": "API Gateway"
+  },
+  {
+    "title": "GraphQL Integration",
+    "tags": [
+      "api",
+      "frontend"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "GraphQL schema and resolver architecture",
+    "parent": "API Gateway"
+  },
+  {
+    "title": "Caching Layer",
+    "tags": [
+      "performance",
+      "infrastructure"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Redis caching strategy and invalidation patterns"
+  },
+  {
+    "title": "Cache Strategy",
+    "tags": [
+      "performance"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Cache-aside pattern and TTL policies",
+    "parent": "Caching Layer"
+  },
+  {
+    "title": "Invalidation Patterns",
+    "tags": [
+      "performance"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Event-driven and time-based invalidation",
+    "parent": "Caching Layer"
+  },
+  {
+    "title": "Redis Cluster Config",
+    "tags": [
+      "performance",
+      "infrastructure"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Cluster topology and failover settings",
+    "parent": "Caching Layer"
+  },
+  {
+    "title": "Event System",
+    "tags": [
+      "architecture",
+      "infrastructure"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Async event bus, domain events, and CQRS patterns"
+  },
+  {
+    "title": "Event Schema",
+    "tags": [
+      "architecture"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Event envelope format and versioning",
+    "parent": "Event System"
+  },
+  {
+    "title": "Kafka Configuration",
+    "tags": [
+      "infrastructure"
+    ],
+    "status": "review",
+    "audience": "ops",
+    "summary": "Topic partitioning and consumer groups",
+    "parent": "Event System"
+  },
+  {
+    "title": "Dead Letter Queue",
+    "tags": [
+      "infrastructure",
+      "ops"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Failed event handling and retry policies",
+    "parent": "Event System"
+  },
+  {
+    "title": "Event Sourcing",
+    "tags": [
+      "architecture",
+      "database"
+    ],
+    "status": "draft",
+    "audience": "architect",
+    "summary": "Event store and projection rebuilds",
+    "parent": "Event System"
+  },
+  {
+    "title": "Monitoring and Observability",
+    "tags": [
+      "ops",
+      "infrastructure"
+    ],
+    "status": "review",
+    "audience": "ops",
+    "summary": "Metrics, logging, tracing, and alerting"
+  },
+  {
+    "title": "Metrics Collection",
+    "tags": [
+      "ops",
+      "performance"
+    ],
+    "status": "complete",
+    "audience": "ops",
+    "summary": "Prometheus metrics and custom counters",
+    "parent": "Monitoring and Observability"
+  },
+  {
+    "title": "Distributed Tracing",
+    "tags": [
+      "ops",
+      "performance"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "OpenTelemetry spans and trace propagation",
+    "parent": "Monitoring and Observability"
+  },
+  {
+    "title": "Log Aggregation",
+    "tags": [
+      "ops"
+    ],
+    "status": "complete",
+    "audience": "ops",
+    "summary": "Structured logging and ELK pipeline",
+    "parent": "Monitoring and Observability"
+  },
+  {
+    "title": "Alerting Rules",
+    "tags": [
+      "ops"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "PagerDuty integration and alert thresholds",
+    "parent": "Monitoring and Observability"
+  },
+  {
+    "title": "SLO Dashboard",
+    "tags": [
+      "ops",
+      "performance"
+    ],
+    "status": "draft",
+    "audience": "all",
+    "summary": "Service level objectives and error budgets",
+    "parent": "Monitoring and Observability"
+  },
+  {
+    "title": "CI/CD Pipeline",
+    "tags": [
+      "deployment",
+      "infrastructure"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Build, test, and deployment automation"
+  },
+  {
+    "title": "Build Configuration",
+    "tags": [
+      "deployment"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Docker multi-stage builds and caching",
+    "parent": "CI/CD Pipeline"
+  },
+  {
+    "title": "Test Strategy",
+    "tags": [
+      "testing",
+      "deployment"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Unit, integration, and e2e test stages",
+    "parent": "CI/CD Pipeline"
+  },
+  {
+    "title": "Deployment Stages",
+    "tags": [
+      "deployment"
+    ],
+    "status": "review",
+    "audience": "ops",
+    "summary": "Canary and blue-green deployment strategies",
+    "parent": "CI/CD Pipeline"
+  },
+  {
+    "title": "Rollback Procedures",
+    "tags": [
+      "deployment",
+      "ops"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "Automated and manual rollback triggers",
+    "parent": "CI/CD Pipeline"
+  },
+  {
+    "title": "Frontend Architecture",
+    "tags": [
+      "frontend",
+      "architecture"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "React SPA structure, state management, and SSR"
+  },
+  {
+    "title": "Component Library",
+    "tags": [
+      "frontend"
+    ],
+    "status": "complete",
+    "audience": "developer",
+    "summary": "Design system and reusable UI components",
+    "parent": "Frontend Architecture"
+  },
+  {
+    "title": "State Management",
+    "tags": [
+      "frontend",
+      "architecture"
+    ],
+    "status": "review",
+    "audience": "developer",
+    "summary": "Redux toolkit and server state with React Query",
+    "parent": "Frontend Architecture"
+  },
+  {
+    "title": "Performance Budget",
+    "tags": [
+      "frontend",
+      "performance"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "Core Web Vitals targets and bundle analysis",
+    "parent": "Frontend Architecture"
+  },
+  {
+    "title": "Accessibility",
+    "tags": [
+      "frontend",
+      "compliance"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "WCAG 2.1 AA conformance and ARIA patterns",
+    "parent": "Frontend Architecture"
+  },
+  {
+    "title": "Data Processing Pipeline",
+    "tags": [
+      "data",
+      "infrastructure"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "ETL jobs, data lake, and analytics pipeline"
+  },
+  {
+    "title": "Ingestion Layer",
+    "tags": [
+      "data"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "Streaming ingestion from multiple sources",
+    "parent": "Data Processing Pipeline"
+  },
+  {
+    "title": "Transformation Rules",
+    "tags": [
+      "data"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "dbt models and data quality checks",
+    "parent": "Data Processing Pipeline"
+  },
+  {
+    "title": "Analytics Warehouse",
+    "tags": [
+      "data",
+      "database"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "Star schema and materialized views",
+    "parent": "Data Processing Pipeline"
+  },
+  {
+    "title": "Compliance and Governance",
+    "tags": [
+      "compliance",
+      "security"
+    ],
+    "status": "draft",
+    "audience": "all",
+    "summary": "GDPR, SOC2, and data governance policies"
+  },
+  {
+    "title": "Data Classification",
+    "tags": [
+      "compliance",
+      "security"
+    ],
+    "status": "review",
+    "audience": "all",
+    "summary": "PII handling and data sensitivity levels",
+    "parent": "Compliance and Governance"
+  },
+  {
+    "title": "GDPR Compliance",
+    "tags": [
+      "compliance"
+    ],
+    "status": "draft",
+    "audience": "developer",
+    "summary": "Right to erasure, data portability, consent management",
+    "parent": "Compliance and Governance"
+  },
+  {
+    "title": "Audit Requirements",
+    "tags": [
+      "compliance",
+      "security"
+    ],
+    "status": "draft",
+    "audience": "ops",
+    "summary": "SOC2 controls and evidence collection",
+    "parent": "Compliance and Governance"
+  }
+]
